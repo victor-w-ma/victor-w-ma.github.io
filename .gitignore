@@ -1,0 +1,10 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-metadata
+/.bundle/
+/vendor/
+destop.ini
+/_posts/replace.sh
+/_posts/dict.txt
+/_posts/desktop.ini
