@@ -5,6 +5,6 @@ baseurl: ""
 # url: ""
 
 markdown: kramdown
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
