@@ -1,5 +1,5 @@
 ---
-visible: 0
+published: false
 ---
 
 # 绿帽奴的心路历程
