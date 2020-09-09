@@ -4,4 +4,4 @@ layout: page
 permalink: /contact/
 ---
 
-- **Email**: [victorwmq@outlook.com](mailto:victorwmq@outlook.com)
+- **Email**: [victorwma@outlook.com](mailto:victorwma@outlook.com)
