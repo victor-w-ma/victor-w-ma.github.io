@@ -6,7 +6,7 @@ _site/
 .jekyll-metadata
 /.bundle/
 /vendor/
-destop.ini
+desktop.ini
 /_posts/replace.sh
 /_posts/dict.txt
 /_posts/desktop.ini
