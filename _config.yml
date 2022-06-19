@@ -8,3 +8,4 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+google_analytics: G-HYN8MF0VM4
