@@ -2,10 +2,11 @@ title: 中文SM经典小说
 email: victorwmq@outlook.com
 description: 高质量中文SM小说集合
 baseurl: ""
-# url: ""
 
 markdown: kramdown
-theme: minima
+remote_theme: jekyll/minima
+
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 google_analytics: G-HYN8MF0VM4
