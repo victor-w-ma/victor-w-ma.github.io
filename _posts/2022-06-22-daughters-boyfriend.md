@@ -1,5 +1,5 @@
 ---
-title: "[5★] 女儿的男友"
+title: "女儿的男友"
 layout: post
 ---
 
