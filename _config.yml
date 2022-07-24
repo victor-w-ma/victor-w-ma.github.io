@@ -9,4 +9,5 @@ remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+
 google_analytics: G-HYN8MF0VM4
