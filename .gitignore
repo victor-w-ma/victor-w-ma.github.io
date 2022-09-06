@@ -1,6 +1,4 @@
 *.docx
-*-metadata.md
-
 # Jekyll
 _site/
 .sass-cache/
