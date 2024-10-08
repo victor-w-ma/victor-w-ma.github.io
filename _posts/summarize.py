@@ -12,6 +12,7 @@ with open(path) as file_:
             head_level = None
         if head_level:
             heading = line[head_level + 1:-1]
-            link = heading.replace('-', '').replace(' ', '-').replace('、', '')
+            link = heading.lower().replace(' ', '-')
+            link = ''.join(c for c in link if c.isalnum() or c == '-')
             toc_item = f'{" " * (head_level - 1) * 4}- [{heading}](#{link})'
             print(toc_item)
