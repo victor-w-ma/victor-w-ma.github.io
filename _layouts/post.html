@@ -28,11 +28,11 @@ layout: base
     <!-- Styled like/dislike buttons -->
     <div id="like-dislike-container">
       <button id="like-button" class="reaction-button like-button">
-        <span class="icon">👍</span> 
+        <span class="material-icons">thumb_up_alt</span>
         <span class="count" id="like-count">0</span>
       </button>
       <button id="dislike-button" class="reaction-button dislike-button">
-        <span class="icon">👎</span> 
+        <span class="material-icons">thumb_down_alt</span>
         <span class="count" id="dislike-count">0</span>
       </button>
     </div>
@@ -96,6 +96,9 @@ layout: base
   .dislike-button.active {
     background-color: #fff0f0;
     color: #cc0000;
+  }
+  .reaction-button .material-icons {
+    margin-right: 8px;  /* This adds space between the icon and the number */
   }
 </style>
 
