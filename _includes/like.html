@@ -24,39 +24,29 @@
     border: none;
     border-radius: 20px;
     background-color: #f0f0f0;
+    color: #333;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
     font-size: 16px;
   }
   .reaction-button:hover {
     background-color: #e0e0e0;
   }
+  .reaction-button.active {
+    background-color: #d0d0d0;
+  }
+  /* .like-button:hover, .like-button.active {
+    color: #0066cc;
+  }
+  .dislike-button:hover, .dislike-button.active {
+    color: #cc0000;
+  } */
   .reaction-button .icon {
     margin-right: 8px;
     font-size: 18px;
   }
   .reaction-button .count {
     font-weight: bold;
-  }
-  .like-button:hover {
-    background-color: #e6f3ff;
-    color: #0066cc;
-  }
-  .dislike-button:hover {
-    background-color: #fff0f0;
-    color: #cc0000;
-  }
-  .reaction-button.active {
-    background-color: #e0e0e0;
-    font-weight: bold;
-  }
-  .like-button.active {
-    background-color: #e6f3ff;
-    color: #0066cc;
-  }
-  .dislike-button.active {
-    background-color: #fff0f0;
-    color: #cc0000;
   }
   .reaction-button .material-icons {
     margin-right: 8px;

@@ -43,15 +43,21 @@
       border-radius: 4px;
     }
     #comment-form button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 15px;
-      border: none;
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
     }
     #comment-form button:hover {
-      background-color: #45a049;
+      background-color: #e0e0e0;
+      border-color: #ccc;
+    }
+    #comment-form button:active {
+      background-color: #222;
     }
     .comment {
       background-color: #f9f9f9;
@@ -81,7 +87,6 @@
     #comment-form input[type="text"]:focus,
     #comment-form textarea:focus {
       outline: none;
-      /* border-color: #4CAF50; */
     }
   </style>
 
@@ -135,15 +140,6 @@
           console.error("Error adding comment: ", error);
         });
       });
-
-      function autoResizeTextarea() {
-        this.style.height = 'auto';
-        this.style.height = (this.scrollHeight) + 'px';
-      }
-
-      const commentTextarea = document.getElementById('comment');
-      commentTextarea.addEventListener('input', autoResizeTextarea);
-      commentTextarea.addEventListener('focus', autoResizeTextarea);
     });
   </script>
 </section>
