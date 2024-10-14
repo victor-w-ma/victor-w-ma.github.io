@@ -119,14 +119,19 @@ layout: base
 
     function updateButtonStates() {
       var currentReaction = getCurrentReaction();
-      likeButton.classList.toggle('active', currentReaction === 'like');
-      dislikeButton.classList.toggle('active', currentReaction === 'dislike');
+      likeButton.classList.remove('active');
+      dislikeButton.classList.remove('active');
+      if (currentReaction === 'like') {
+        likeButton.classList.add('active');
+      } else if (currentReaction === 'dislike') {
+        dislikeButton.classList.add('active');
+      }
     }
 
     dbRef.on('value', function(snapshot) {
       var data = snapshot.val() || { likes: 0, dislikes: 0 };
-      likeCountElem.textContent = data.likes || 0;  // Ensure 0 is displayed if null
-      dislikeCountElem.textContent = data.dislikes || 0;  // Ensure 0 is displayed if null
+      likeCountElem.textContent = data.likes || 0;
+      dislikeCountElem.textContent = data.dislikes || 0;
       updateButtonStates();
     });
 
@@ -136,7 +141,7 @@ layout: base
       if (currentReaction === reactionType) {
         // User is un-reacting
         dbRef.child(reactionType + 's').transaction(function(current) {
-          return Math.max((current || 0) - 1, 0);  // Ensure count doesn't go below 0
+          return Math.max((current || 0) - 1, 0);
         });
         setCurrentReaction(null);
       } else {
@@ -144,7 +149,7 @@ layout: base
         if (currentReaction) {
           // Remove previous reaction
           dbRef.child(currentReaction + 's').transaction(function(current) {
-            return Math.max((current || 1) - 1, 0);  // Ensure count doesn't go below 0
+            return Math.max((current || 1) - 1, 0);
           });
         }
         // Add new reaction
@@ -153,6 +158,7 @@ layout: base
         });
         setCurrentReaction(reactionType);
       }
+      updateButtonStates();
     }
 
     likeButton.addEventListener('click', function() {
