@@ -1,0 +1,149 @@
+<section class="comments">
+  <h2>Comments</h2>
+  <form id="comment-form">
+    <div>
+      <label for="nickname">Nickname:</label>
+      <input type="text" id="nickname" name="nickname" required>
+    </div>
+    <div>
+      <label for="comment">Comment:</label>
+      <textarea id="comment" name="comment" required></textarea>
+    </div>
+    <button type="submit">Post Comment</button>
+  </form>
+  <div id="comments-list"></div>
+
+  <style>
+    .comments {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+    }
+    .comments h2 {
+      color: #333;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    #comment-form {
+      margin-bottom: 20px;
+    }
+    #comment-form div {
+      margin-bottom: 10px;
+    }
+    #comment-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    #comment-form input[type="text"],
+    #comment-form textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    #comment-form button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #comment-form button:hover {
+      background-color: #45a049;
+    }
+    .comment {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .comment-author {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    .comment-content {
+      margin-top: 5px;
+    }
+    #comment-form textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: none;
+      overflow: hidden;
+      min-height: 50px;
+    }
+    #comment-form input[type="text"]:focus,
+    #comment-form textarea:focus {
+      outline: none;
+      /* border-color: #4CAF50; */
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get a reference to the database service
+      const database = firebase.database();
+
+      // Get the current post's URL and canonicalize it for use as a unique identifier
+      const postId = "{{ page.url | slugify }}";
+
+      // Function to add a new comment
+      function addComment(nickname, comment) {
+        return database.ref('comments/' + postId).push({
+          nickname: nickname,
+          comment: comment,
+          timestamp: firebase.database.ServerValue.TIMESTAMP
+        });
+      }
+
+      // Function to display a comment
+      function displayComment(nickname, comment) {
+        const commentsList = document.getElementById('comments-list');
+        const commentElement = document.createElement('div');
+        commentElement.className = 'comment';
+        commentElement.innerHTML = `
+          <div class="comment-author">${nickname}</div>
+          <div class="comment-content">${comment}</div>
+        `;
+        commentsList.appendChild(commentElement);
+      }
+
+      // Load existing comments for this post
+      database.ref('comments/' + postId).on('child_added', (snapshot) => {
+        const comment = snapshot.val();
+        displayComment(comment.nickname, comment.comment);
+      });
+
+      // Handle form submission
+      document.getElementById('comment-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nickname = document.getElementById('nickname').value;
+        const comment = document.getElementById('comment').value;
+        
+        addComment(nickname, comment).then(() => {
+          // Clear the form
+          document.getElementById('nickname').value = '';
+          document.getElementById('comment').value = '';
+          console.log('Comment added successfully');
+        }).catch((error) => {
+          console.error("Error adding comment: ", error);
+        });
+      });
+
+      function autoResizeTextarea() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+      }
+
+      const commentTextarea = document.getElementById('comment');
+      commentTextarea.addEventListener('input', autoResizeTextarea);
+      commentTextarea.addEventListener('focus', autoResizeTextarea);
+    });
+  </script>
+</section>
