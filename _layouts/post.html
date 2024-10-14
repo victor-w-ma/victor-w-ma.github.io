@@ -24,6 +24,18 @@ layout: base
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}</p>
+    
+    <!-- Styled like/dislike buttons -->
+    <div id="like-dislike-container">
+      <button id="like-button" class="reaction-button like-button">
+        <span class="icon">👍</span> 
+        <span class="count" id="like-count">0</span>
+      </button>
+      <button id="dislike-button" class="reaction-button dislike-button">
+        <span class="icon">👎</span> 
+        <span class="count" id="dislike-count">0</span>
+      </button>
+    </div>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
@@ -36,3 +48,122 @@ layout: base
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
+<style>
+  #like-dislike-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
+  .reaction-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  .reaction-button:hover {
+    background-color: #e0e0e0;
+  }
+  .reaction-button .icon {
+    margin-right: 8px;
+    font-size: 18px;
+  }
+  .reaction-button .count {
+    font-weight: bold;
+  }
+  .like-button:hover {
+    background-color: #e6f3ff;
+    color: #0066cc;
+  }
+  .dislike-button:hover {
+    background-color: #fff0f0;
+    color: #cc0000;
+  }
+  .reaction-button.active {
+    background-color: #e0e0e0;
+    font-weight: bold;
+  }
+  .like-button.active {
+    background-color: #e6f3ff;
+    color: #0066cc;
+  }
+  .dislike-button.active {
+    background-color: #fff0f0;
+    color: #cc0000;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var postId = "{{ page.url | slugify }}";
+    var dbRef = firebase.database().ref('posts/' + postId);
+
+    var likeButton = document.getElementById('like-button');
+    var dislikeButton = document.getElementById('dislike-button');
+    var likeCountElem = document.getElementById('like-count');
+    var dislikeCountElem = document.getElementById('dislike-count');
+
+    function getCurrentReaction() {
+      return localStorage.getItem('reaction_' + postId);
+    }
+
+    function setCurrentReaction(reaction) {
+      localStorage.setItem('reaction_' + postId, reaction);
+    }
+
+    function updateButtonStates() {
+      var currentReaction = getCurrentReaction();
+      likeButton.classList.toggle('active', currentReaction === 'like');
+      dislikeButton.classList.toggle('active', currentReaction === 'dislike');
+    }
+
+    dbRef.on('value', function(snapshot) {
+      var data = snapshot.val() || { likes: 0, dislikes: 0 };
+      likeCountElem.textContent = data.likes || 0;  // Ensure 0 is displayed if null
+      dislikeCountElem.textContent = data.dislikes || 0;  // Ensure 0 is displayed if null
+      updateButtonStates();
+    });
+
+    function handleReaction(reactionType) {
+      var currentReaction = getCurrentReaction();
+      
+      if (currentReaction === reactionType) {
+        // User is un-reacting
+        dbRef.child(reactionType + 's').transaction(function(current) {
+          return Math.max((current || 0) - 1, 0);  // Ensure count doesn't go below 0
+        });
+        setCurrentReaction(null);
+      } else {
+        // User is reacting or changing reaction
+        if (currentReaction) {
+          // Remove previous reaction
+          dbRef.child(currentReaction + 's').transaction(function(current) {
+            return Math.max((current || 1) - 1, 0);  // Ensure count doesn't go below 0
+          });
+        }
+        // Add new reaction
+        dbRef.child(reactionType + 's').transaction(function(current) {
+          return (current || 0) + 1;
+        });
+        setCurrentReaction(reactionType);
+      }
+    }
+
+    likeButton.addEventListener('click', function() {
+      handleReaction('like');
+    });
+
+    dislikeButton.addEventListener('click', function() {
+      handleReaction('dislike');
+    });
+
+    // Initialize button states
+    updateButtonStates();
+  });
+</script>
