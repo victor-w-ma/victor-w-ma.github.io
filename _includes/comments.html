@@ -60,11 +60,14 @@
       background-color: #222;
     }
     .comment {
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+      position: relative;
       padding: 10px;
-      margin-bottom: 10px;
+      padding-right: 100px;
+      background-color: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 15px;
+      margin-bottom: 15px;
     }
     .comment-author {
       font-weight: bold;
@@ -73,6 +76,82 @@
     }
     .comment-content {
       margin-top: 5px;
+    }
+    .comment-actions {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+    }
+    .comment-actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+      margin-left: 5px;
+      display: flex;
+      align-items: center;
+      color: #636363; /* Balanced gray color for the buttons */
+    }
+    .comment-actions i {
+      font-size: 18px;
+      margin-right: 2px;
+      color: #636363; /* Balanced gray color for the icons */
+    }
+    .comment-actions span {
+      font-size: 14px;
+      color: #636363; /* Balanced gray color for the text */
+    }
+    .nested-comments {
+      margin-left: 20px;
+      border-left: 2px solid #ddd;
+      padding-left: 10px;
+      padding-top: 10px; /* Add top padding to match the reply form */
+      max-width: calc(100% - 30px);
+    }
+    .reply-form {
+      margin-top: 0; /* Remove top margin */
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    .comment-form, .reply-form {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .comment-form input,
+    .comment-form textarea,
+    .reply-form input,
+    .reply-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .comment-form textarea,
+    .reply-form textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .comment-form button,
+    .reply-form button {
+      background-color: #f0f0f0;  /* Grayish color matching the "Post comment" button */
+      color: #333;  /* Dark text color for contrast */
+      border: 1px solid #ccc;  /* Light border */
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .comment-form button:hover,
+    .reply-form button:hover {
+      background-color: #e0e0e0;  /* Slightly darker shade for hover effect */
     }
     #comment-form textarea {
       width: 100%;
@@ -88,7 +167,50 @@
     #comment-form textarea:focus {
       outline: none;
     }
+    .reply-form textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: none;
+      overflow: hidden;
+      min-height: 50px;
+    }
+    .reply-form textarea:focus {
+      outline: none;
+    }
+    #comment-form textarea,
+    .reply-form textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: none;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    #comment-form textarea {
+      min-height: 100px;
+    }
+    .reply-form textarea {
+      min-height: 50px;
+    }
+    #comment-form input[type="text"],
+    .reply-form input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
   </style>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -99,30 +221,140 @@
       const postId = "{{ page.url | slugify }}";
 
       // Function to add a new comment
-      function addComment(nickname, comment) {
+      function addComment(nickname, comment, parentId = null) {
         return database.ref('comments/' + postId).push({
           nickname: nickname,
           comment: comment,
-          timestamp: firebase.database.ServerValue.TIMESTAMP
+          timestamp: firebase.database.ServerValue.TIMESTAMP,
+          parentId: parentId,
+          likes: 0,
+          dislikes: 0
         });
       }
 
+      // Function to update likes/dislikes
+      function updateLikes(commentId, field) {
+        const likeStorageKey = `comment_${commentId}_likes`;
+        const dislikeStorageKey = `comment_${commentId}_dislikes`;
+        const currentVote = localStorage.getItem(likeStorageKey) ? 'likes' : 
+                            localStorage.getItem(dislikeStorageKey) ? 'dislikes' : null;
+
+        const ref = database.ref(`comments/${postId}/${commentId}`);
+        ref.transaction((comment) => {
+          if (comment) {
+            if (currentVote === field) {
+              // Undo the vote
+              comment[field]--;
+              localStorage.removeItem(`comment_${commentId}_${field}`);
+            } else {
+              // Change vote
+              if (currentVote) {
+                comment[currentVote]--;
+                localStorage.removeItem(`comment_${commentId}_${currentVote}`);
+              }
+              comment[field]++;
+              localStorage.setItem(`comment_${commentId}_${field}`, 'true');
+            }
+          }
+          return comment;
+        }).then(() => {
+          updateButtonStates(commentId);
+        });
+      }
+
+      // Function to update button states
+      function updateButtonStates(commentId) {
+        const likeBtn = document.querySelector(`[data-comment-id="${commentId}"] .like-btn`);
+        const dislikeBtn = document.querySelector(`[data-comment-id="${commentId}"] .dislike-btn`);
+        const likeVote = localStorage.getItem(`comment_${commentId}_likes`);
+        const dislikeVote = localStorage.getItem(`comment_${commentId}_dislikes`);
+
+        if (likeBtn && dislikeBtn) {
+          likeBtn.classList.toggle('active', !!likeVote);
+          dislikeBtn.classList.toggle('active', !!dislikeVote);
+        }
+      }
+
       // Function to display a comment
-      function displayComment(nickname, comment) {
-        const commentsList = document.getElementById('comments-list');
+      function displayComment(commentId, comment, parentElement = document.getElementById('comments-list')) {
         const commentElement = document.createElement('div');
         commentElement.className = 'comment';
         commentElement.innerHTML = `
-          <div class="comment-author">${nickname}</div>
-          <div class="comment-content">${comment}</div>
+          <div class="comment-author">${comment.nickname}</div>
+          <div class="comment-content">${comment.comment}</div>
+          <div class="comment-actions">
+            <button class="like-btn" data-comment-id="${commentId}">
+              <i class="material-icons">thumb_up</i>
+              <span>${comment.likes || 0}</span>
+            </button>
+            <button class="dislike-btn" data-comment-id="${commentId}">
+              <i class="material-icons">thumb_down</i>
+              <span>${comment.dislikes || 0}</span>
+            </button>
+            <button class="reply-btn" data-comment-id="${commentId}">
+              <i class="material-icons">reply</i>
+            </button>
+          </div>
+          <div class="nested-comments" id="nested-comments-${commentId}"></div>
         `;
-        commentsList.appendChild(commentElement);
+        parentElement.appendChild(commentElement);
+
+        // Add event listeners for like and dislike buttons
+        const likeBtn = commentElement.querySelector('.like-btn');
+        const dislikeBtn = commentElement.querySelector('.dislike-btn');
+
+        likeBtn.addEventListener('click', () => updateLikes(commentId, 'likes'));
+        dislikeBtn.addEventListener('click', () => updateLikes(commentId, 'dislikes'));
+
+        // Update initial button states
+        updateButtonStates(commentId);
+
+        // Add event listener for reply button
+        commentElement.querySelector('.reply-btn').addEventListener('click', () => showReplyForm(commentId));
       }
+
+      // Function to show reply form
+      function showReplyForm(parentId) {
+        // Remove any existing reply form
+        if (activeReplyForm) {
+          activeReplyForm.remove();
+          activeReplyForm = null;
+        }
+
+        const parentComment = document.querySelector(`#nested-comments-${parentId}`);
+        const replyForm = document.createElement('form');
+        replyForm.className = 'reply-form';
+        replyForm.innerHTML = `
+          <input type="text" placeholder="Your nickname" required>
+          <textarea placeholder="Your reply" required></textarea>
+          <button type="submit">Reply</button>
+        `;
+        parentComment.appendChild(replyForm);
+        activeReplyForm = replyForm;
+
+        replyForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const nickname = this.querySelector('input').value;
+          const comment = this.querySelector('textarea').value;
+          addComment(nickname, comment, parentId).then(() => {
+            replyForm.remove();
+            activeReplyForm = null;
+          });
+        });
+      }
+
+      let activeReplyForm = null;
 
       // Load existing comments for this post
       database.ref('comments/' + postId).on('child_added', (snapshot) => {
+        const commentId = snapshot.key;
         const comment = snapshot.val();
-        displayComment(comment.nickname, comment.comment);
+        if (!comment.parentId) {
+          displayComment(commentId, comment);
+        } else {
+          const parentElement = document.getElementById(`nested-comments-${comment.parentId}`);
+          displayComment(commentId, comment, parentElement);
+        }
       });
 
       // Handle form submission
@@ -139,6 +371,23 @@
         }).catch((error) => {
           console.error("Error adding comment: ", error);
         });
+      });
+
+      // Update likes/dislikes in real-time
+      database.ref('comments/' + postId).on('child_changed', (snapshot) => {
+        const commentId = snapshot.key;
+        const comment = snapshot.val();
+        const commentElement = document.querySelector(`[data-comment-id="${commentId}"]`).closest('.comment');
+        commentElement.querySelector('.like-btn span').textContent = comment.likes || 0;
+        commentElement.querySelector('.dislike-btn span').textContent = comment.dislikes || 0;
+      });
+
+      // Update the event listener for reply buttons
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.reply-btn')) {
+          const commentId = e.target.closest('.reply-btn').dataset.commentId;
+          showReplyForm(commentId);
+        }
       });
     });
   </script>
