@@ -17,16 +17,14 @@ layout: base
           {{ mdate | date: date_format }}
         </time>
       {%- endif -%}
+      • {{ page.content | strip_html | strip | character_count }}字
       {%- if page.author -%}
         • {% for author in page.author %}
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
-      {%- endif -%}</p>
-    
-    <p class="post-meta post-length">
-      <i>{{ page.content | strip_html | strip | character_count }}字</i>
+      {%- endif -%}
     </p>
     
     {% include like.html %}
