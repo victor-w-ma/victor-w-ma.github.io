@@ -25,6 +25,10 @@ layout: base
         {% endfor %}
       {%- endif -%}</p>
     
+    <p class="post-meta post-length">
+      <i>{{ page.content | strip_html | strip | character_count }}字</i>
+    </p>
+    
     {% include like.html %}
   </header>
 
