@@ -17,7 +17,6 @@ layout: base
           {{ mdate | date: date_format }}
         </time>
       {%- endif -%}
-      • {{ page.content | strip_html | strip | character_count }}字
       {%- if page.author -%}
         • {% for author in page.author %}
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -25,6 +24,7 @@ layout: base
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}
+      <span id="char-count-section" style="display: none;">• <span id="character-count"></span>字</span>
     </p>
     
     {% include like.html %}
@@ -41,4 +41,16 @@ layout: base
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const content = document.querySelector('.post-content').innerText;
+      const charCount = content.replace(/\s+/g, '').length;
+      const charCountSection = document.getElementById('char-count-section');
+      const charCountSpan = document.getElementById('character-count');
+      
+      charCountSpan.textContent = charCount;
+      charCountSection.style.display = 'inline';
+    });
+  </script>
 </article>
