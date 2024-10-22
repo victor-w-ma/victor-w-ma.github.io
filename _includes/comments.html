@@ -1,15 +1,15 @@
 <section class="comments">
-  <h2>Comments</h2>
+  <h2>评论</h2>
   <form id="comment-form">
     <div>
-      <label for="nickname">Nickname:</label>
+      <label for="nickname">昵称：</label>
       <input type="text" id="nickname" name="nickname" required>
     </div>
     <div>
-      <label for="comment">Comment:</label>
+      <label for="comment">评论：</label>
       <textarea id="comment" name="comment" required></textarea>
     </div>
-    <button type="submit">Post Comment</button>
+    <button type="submit">发布</button>
   </form>
   <div id="comments-list"></div>
 
@@ -325,9 +325,9 @@
         const replyForm = document.createElement('form');
         replyForm.className = 'reply-form';
         replyForm.innerHTML = `
-          <input type="text" placeholder="Your nickname" required>
-          <textarea placeholder="Your reply" required></textarea>
-          <button type="submit">Reply</button>
+          <input type="text" placeholder="昵称" required>
+          <textarea placeholder="回复" required></textarea>
+          <button type="submit">发布</button>
         `;
         parentComment.appendChild(replyForm);
         activeReplyForm = replyForm;
