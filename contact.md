@@ -8,4 +8,4 @@ permalink: /contact/
 - **X**: [@VictorWSMa](https://x.com/VictorWSMa)
 - **Telegram**: [@VictorWMa](https://t.me/VictorWMa)
 - **Discord**: [中文SM经典小说](https://discord.gg/uzvUy8Ha)
-- **QQ群**: 574331935
+- **QQ群**: 835552330
