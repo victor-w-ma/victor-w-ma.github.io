@@ -31,6 +31,8 @@ layout: base
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
+    <h1>目录</h1>
+    <div id="toc"></div>
     {{ content }}
   </div>
 
@@ -51,6 +53,45 @@ layout: base
       
       charCountSpan.textContent = charCount;
       charCountSection.style.display = 'inline';
+
+      const articleContent = document.querySelector('.post-content');
+      const headers = articleContent.querySelectorAll('h1, h2, h3');
+      const toc = document.getElementById('toc');
+      const tocList = document.createElement('ul');
+      
+      let currentLevel = 1;
+      let currentUl = tocList;
+      let previousUl = null;
+      
+      headers.forEach((header, index) => {
+        if (index === 0 && header.textContent === '目录') return; // Skip TOC title
+        
+        const level = parseInt(header.tagName.charAt(1));
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        
+        // Create an id for the header if it doesn't have one
+        if (!header.id) {
+          header.id = header.textContent.toLowerCase().replace(/\s+/g, '-');
+        }
+        
+        a.href = '#' + header.id;
+        a.textContent = header.textContent;
+        li.appendChild(a);
+        
+        if (level > currentLevel) {
+          previousUl = currentUl;
+          currentUl = document.createElement('ul');
+          previousUl.lastElementChild.appendChild(currentUl);
+        } else if (level < currentLevel) {
+          currentUl = previousUl;
+        }
+        
+        currentUl.appendChild(li);
+        currentLevel = level;
+      });
+      
+      toc.appendChild(tocList);
     });
   </script>
 </article>
