@@ -15,3 +15,8 @@ google_analytics: G-HYN8MF0VM4
 # Keep header navigation explicit so utility docs don't appear as tabs.
 header_pages:
   - contact.md
+
+# Hide utility docs from site output/navigation.
+exclude:
+  - AGENTS.md
+  - cursor-agent-chat-log.md
