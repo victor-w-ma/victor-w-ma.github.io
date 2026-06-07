@@ -20,3 +20,4 @@ header_pages:
 exclude:
   - AGENTS.md
   - cursor-agent-chat-log.md
+  - _works
