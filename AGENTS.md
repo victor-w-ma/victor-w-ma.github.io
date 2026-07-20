@@ -129,3 +129,14 @@ graph TD
 - 涉及大量替换（如全文统一大小写、引号风格切换、拼音→原词、**的/地/得**），用 Python 脚本一次性处理整个 body，比逐处 `StrReplace` 更可靠；YAML front matter 要单独保留。
 - 共用逻辑在 `scripts/post_format.py`（`split_front_matter`、`fix_body`、`fix_de_di_dei`、`audit` 等）；各篇故事的 `scripts/fix_*.py` 只放本篇专有替换，通过 `extra_replacements` 等参数传入。
 - 完成后用 `audit()` 或 Python 数一下剩余的 ASCII `"`、目标缩写出现次数，确认替换干净。
+
+## Cursor Cloud specific instructions
+
+这是一个 Jekyll 3.8 静态站点（Ruby 3.2）。依赖已由启动更新脚本安装到 `vendor/bundle`（`bundle install`）。以下为运行时的非显然注意事项：
+
+- **本地预览用 `--no-watch`**：`bundle exec jekyll serve --no-watch --host 0.0.0.0 --port 4000 --config _config.yml,_config.local-preview.yml`。默认的 `--watch`（自动重建）在 Ruby 3.2 下会崩溃（`pathutil` 读取 `/proc/version` 触发 `no implicit conversion of Hash into Integer`）。所以改动 `_posts/` 后需手动重跑 `jekyll build` 或重启 serve 才能看到更新，没有热重载。
+- **构建即校验**：`bundle exec jekyll build --config _config.yml,_config.local-preview.yml` 会渲染全部 `_posts/`，是本仓库事实上的 lint/test；构建通过即视为通过。仓库没有单独的测试套件。`jekyll doctor` 在此旧版本 + 新 `addressable` 下会报错，勿用。
+- **`_config.local-preview.yml`**：本地预览需叠加此配置（`_config.yml,_config.local-preview.yml`），它会排除 `vendor/` 和一篇有问题的草稿目录，避免构建报错。
+- **`remote_theme`**：主题 `jekyll/minima` 在构建时从 GitHub 拉取，需要网络；离线环境会构建失败。
+- **`webrick`**：已加入 `Gemfile`（Ruby 3.0+ 移除了默认 webrick，而 Jekyll 3.x 的 `serve` 仍依赖它）。
+- `Gemfile.lock`、`_site/`、`vendor/` 均被 `.gitignore` 忽略，不要提交。
