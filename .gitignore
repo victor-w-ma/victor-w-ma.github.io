@@ -6,6 +6,7 @@ _site/
 .jekyll-metadata
 /.bundle/
 /vendor/
+.DS_Store
 desktop.ini
 /_posts/replace.sh
 /_posts/dict.txt
