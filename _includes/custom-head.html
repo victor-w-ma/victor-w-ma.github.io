@@ -3,6 +3,29 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<style>
+  /* Scale site type from Minima's 16px base to 20px (×1.25). Rem rules follow html. */
+  html {
+    font-size: 20px;
+  }
+
+  body {
+    font-size: 20px;
+    line-height: 1.65;
+  }
+
+  /* Former absolute px sizes, retargeted to the new base. */
+  .post-meta,
+  figcaption,
+  code.highlighter-rouge {
+    font-size: 0.875rem; /* was 14px @16 → 17.5px @20 */
+  }
+
+  pre {
+    font-size: 0.9375rem; /* was 15px @16 → 18.75px @20 */
+  }
+</style>
+
 <script>
   var firebaseConfig = {
     apiKey: "AIzaSyBZV2Zn9DXdeWWIQNZRZlxjnW8aqZNOK-Y",
