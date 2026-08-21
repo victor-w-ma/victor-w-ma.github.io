@@ -19,10 +19,17 @@ layout: base
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-    <ul class="post-list">
+    <div class="post-sort" role="toolbar" aria-label="文章排序">
+      <span class="post-sort-label">排序</span>
+      <button type="button" class="post-sort-button is-active" data-sort="date" aria-pressed="true">时间</button>
+      <button type="button" class="post-sort-button" data-sort="likes" aria-pressed="false" title="按净点赞（赞减踩）排序">点赞</button>
+      <button type="button" class="post-sort-button" data-sort="comments" aria-pressed="false">评论</button>
+      <button type="button" class="post-sort-button" data-sort="views" aria-pressed="false">阅读</button>
+    </div>
+    <ul class="post-list" id="post-list">
       {%- assign date_format = "%Y-%m-%d" -%}
       {%- for post in posts -%}
-      <li>
+      <li data-post-id="{{ post.url | slugify }}" data-date="{{ post.date | date: '%s' }}">
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
@@ -54,6 +61,7 @@ layout: base
       </div>
     {%- endif %}
 
+    {% include post-list-sort.html %}
   {%- endif -%}
 
 </div>
