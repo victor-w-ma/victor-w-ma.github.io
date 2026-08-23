@@ -21,3 +21,5 @@ exclude:
   - AGENTS.md
   - cursor-agent-chat-log.md
   - _works
+  - _posts/archive
+  - _posts/archive/**
