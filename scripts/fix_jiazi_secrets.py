@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Extract 架子秘密 from backlog, format, and publish."""
+"""Second-pass format for the published 架子秘密 post."""
 
 from __future__ import annotations
 
-import re
 import sys
 from pathlib import Path
 
@@ -16,11 +15,7 @@ from post_format import (  # pylint: disable=wrong-import-position
     split_front_matter,
 )
 
-BACKLOG = ROOT / '_posts' / 'backlog' / 'xiaoer-1.md'
 TARGET = ROOT / '_posts' / '2026-08-22-jiazi-secrets.md'
-START = '# 架子秘密'
-END = '# 随手流水文'
-FRONT = '---\nlayout: post\ntitle: "架子秘密"\n---\n'
 
 STORY_REPLACEMENTS: list[tuple[str, str]] = [
     ('YIN水', '淫水'),
@@ -30,6 +25,7 @@ STORY_REPLACEMENTS: list[tuple[str, str]] = [
     ('赵楚楚', '李楚楚'),
     ('屁股肉一塔', '屁股肉一塌'),
     ('加Q3232388053', '加QQ3232388053'),
+    ('发给我Q说', '发给我QQ说'),
     ('恰如春梦 了无痕', '恰如春梦了无痕'),
     ('看安静的看着我', '她安静地看着我'),
     ('我也要要看看', '我也要看看'),
@@ -37,6 +33,17 @@ STORY_REPLACEMENTS: list[tuple[str, str]] = [
     ('晓儿发个我这段', '晓儿发给我这段'),
     ('L艰难着拿着', 'L艰难地拿着'),
     ('俩个', '两个'),
+    ('往商层里', '往商场里'),
+    ('充满着抚媚', '充满着妩媚'),
+    ('窥觊过', '觊觎过'),
+    ('比其她的女人', '比其他的女人'),
+    ('屄中O', 'B中哦'),
+    ('太不现实了把', '太不现实了吧'),
+    ('抱进在怀里', '抱进怀里'),
+    ('那也是是我', '那也是我'),
+    ('会不会也会更廖伊溪一样', '会不会也跟廖伊溪一样'),
+    ('自始自终', '自始至终'),
+    ('我不等晓儿问、', '我不等晓儿问，'),
 ]
 
 EXTRA_DE_DEI: list[tuple[str, str]] = [
@@ -49,10 +56,38 @@ EXTRA_DE_DEI: list[tuple[str, str]] = [
     ('高贵的多的屁眼', '高贵得多的屁眼'),
     ('只懂的舔', '只懂得舔'),
     ('只懂的吃', '只懂得吃'),
+    ('时间过的总是', '时间过得总是'),
+    ('混的很熟', '混得很熟'),
+    ('揉的那么用力', '揉得那么用力'),
+    ('硬的发痛', '硬得发痛'),
+    ('写的夸张点', '写得夸张点'),
+    ('唬的住', '唬得住'),
+    ('写的猛一点', '写得猛一点'),
+    ('写的很乱', '写得很乱'),
+    ('写的更夸张', '写得更夸张'),
+    ('写的那么邪恶', '写得那么邪恶'),
+    ('写的太多夸张', '写得太多夸张'),
+    ('写的太夸张', '写得太夸张'),
+    ('写的好一点', '写得好一点'),
+    ('写的最平淡', '写得最平淡'),
+    ('我看的到', '我看得到'),
+    ('笑的很好看', '笑得很好看'),
+    ('看的我是', '看得我是'),
+    ('过的充实', '过得充实'),
+    ('听的晕晕乎乎', '听得晕晕乎乎'),
+    ('都要来的高贵', '都要来得高贵'),
+    ('回答的那么好', '回答得那么好'),
+    ('吃的好开心', '吃得好开心'),
+    ('也懒的拐弯抹角', '也懒得拐弯抹角'),
+    ('吹的我屁眼冷', '吹得我屁眼冷'),
 ]
 
 EXTRA_FALSE_POSITIVE: list[tuple[str, str]] = [
     ('更让我兴奋地是', '更让我兴奋的是'),
+    ('对于这样地请求', '对于这样的请求'),
+    ('曾给我地回答', '曾给我的回答'),
+    ('非常得意地样子', '非常得意的样子'),
+    ('越来越得意地神色', '越来越得意的神色'),
 ]
 
 EXTRA_DI: list[tuple[str, str]] = [
@@ -70,6 +105,7 @@ EXTRA_DI: list[tuple[str, str]] = [
     ('自导自演的叫', '自导自演地叫'),
     ('很自豪的跟我', '很自豪地跟我'),
     ('不停的秀恩爱', '不停地秀恩爱'),
+    ('不停不停的秀着', '不停不停地秀着'),
     ('轻咬的嘴唇楚楚动人地望着', '轻咬着嘴唇，楚楚动人地望着'),
     ('小声的说着', '小声地说着'),
     ('不可思议的望着', '不可思议地望着'),
@@ -82,6 +118,7 @@ EXTRA_DI: list[tuple[str, str]] = [
     ('慢慢悠悠的说着', '慢慢悠悠地说着'),
     ('悠哉的拿起', '悠哉地拿起'),
     ('平淡的说着', '平淡地说着'),
+    ('平淡的，自然的说完', '平淡地，自然地说完'),
     ('慢悠悠的把', '慢悠悠地把'),
     ('大大咧咧的跟', '大大咧咧地跟'),
     ('乐呵呵的看着', '乐呵呵地看着'),
@@ -102,39 +139,46 @@ EXTRA_DI: list[tuple[str, str]] = [
     ('大大的敞开着', '大大地敞开着'),
     ('千方百计的羞辱', '千方百计地羞辱'),
     ('不停的磕头', '不停地磕头'),
+    ('确切的说', '确切地说'),
+    ('热烈的亲上', '热烈地亲上'),
+    ('放心的干我', '放心地干我'),
+    ('整齐的跪成', '整齐地跪成'),
+    ('迫切的想知道', '迫切地想知道'),
+    ('清晰的看到', '清晰地看到'),
+    ('颤抖的问她', '颤抖地问她'),
+    ('一整排的跪在', '一整排地跪在'),
+    ('久久的坐在', '久久地坐在'),
+    ('淡淡的写完', '淡淡地写完'),
+    ('莫名其妙的说', '莫名其妙地说'),
+    ('莫名的生气', '莫名地生气'),
+    ('爽快的拉屎', '爽快地拉屎'),
+    ('赤身裸体的躺在', '赤身裸体地躺在'),
+    ('无端的想起', '无端地想起'),
+    ('安静的坐着', '安静地坐着'),
+    ('大概的说吧', '大概地说吧'),
+    ('舒服的躺坐', '舒服地躺坐'),
+    ('迫不及待的说出', '迫不及待地说出'),
+    ('不敢相信的说出', '不敢相信地说出'),
+    ('各种花式的玩着', '各种花式地玩着'),
+    ('平平淡淡的过了', '平平淡淡地过了'),
+    ('本能的幻想', '本能地幻想'),
+    ('简单的罗列', '简单地罗列'),
+    ('没好气的白我', '没好气地白我'),
+    ('不知不觉的我也就爱上', '不知不觉地，我也就爱上'),
+    ('赤裸裸的说想', '赤裸裸地说想'),
+    ('装模作样的生气', '装模作样地生气'),
+    ('恋恋不舍的对着', '恋恋不舍地对着'),
 ]
 
 
-def extract_story(raw: str) -> tuple[str, str]:
-    start = raw.find(START)
-    end = raw.find(END)
-    if start < 0 or end < 0 or end <= start:
-        raise ValueError(f'cannot find {START!r} .. {END!r} in {BACKLOG}')
-    story = raw[start:end]
-    rest = raw[end:].lstrip('\n')
-    story = re.sub(r'^# 架子秘密\n+', '', story)
-    story = re.sub(r'^## 一\s*$', '# （一）', story, flags=re.M)
-    story = re.sub(r'^## 二\s*$', '# （二）', story, flags=re.M)
-    story = re.sub(r'^## 三\s*$', '# （三）', story, flags=re.M)
-    story = re.sub(r'^## 四\s*$', '# （四）', story, flags=re.M)
-    story = re.sub(r'^## 五\s*$', '# （五）', story, flags=re.M)
-    story = re.sub(r'^## 架子秘密五后篇\s*$', '# 五后篇', story, flags=re.M)
-    story = re.sub(r'^### \d+\n+', '', story, flags=re.M)
-    story = story.replace('\u201c', '"').replace('\u201d', '"')
-    story = re.sub(r'[ \t]+\n', '\n', story)
-    story = re.sub(r'\n{3,}', '\n\n', story)
-    story = re.sub(r'^(# .+)\n(?!\n)', r'\1\n\n', story, flags=re.M)
-    return story.strip() + '\n', rest
-
-
 def main() -> None:
-    raw = BACKLOG.read_text(encoding='utf-8')
-    if raw.startswith('---'):
-        _, raw_body = split_front_matter(raw)
-    else:
-        raw_body = raw
-
-    body, remainder = extract_story(raw_body)
+    raw = TARGET.read_text(encoding='utf-8')
+    front, body = split_front_matter(raw)
+    if not front:
+        raise ValueError(f'missing front matter in {TARGET}')
+    # Re-apply from already-curly text: convert quotes back so fix_body
+    # can normalize them without seeing leftover ASCII.
+    body = body.replace('\u201c', '"').replace('\u201d', '"')
     fixed = fix_body(
         body,
         extra_replacements=STORY_REPLACEMENTS,
@@ -142,10 +186,8 @@ def main() -> None:
         extra_di=EXTRA_DI,
         extra_false_positive_fixes=EXTRA_FALSE_POSITIVE,
     )
-    TARGET.write_text(FRONT + '\n' + fixed, encoding='utf-8')
-    BACKLOG.write_text(remainder, encoding='utf-8')
+    TARGET.write_text(front + '\n' + fixed, encoding='utf-8')
     print(f'Wrote {TARGET}')
-    print(f'Trimmed {BACKLOG}')
     print('Audit:')
     print_audit(fixed)
 
