@@ -5,6 +5,7 @@
 ## 文件布局
 
 - 新故事放在 `_posts/YYYY-MM-DD-slug.md`，日期用今天的日期，`slug` 为简洁的英文短语（参考同目录已有命名习惯，如 `submissive-couple-experience-with-my-wife.md`、`dominant-couple-submissive-couple.md`）。
+- `_posts/archive/` 只存档、不上线。不要把其中文件改成 `YYYY-MM-DD-*.md` 发布；配置里已排除该目录。
 - 不要主动创建 `*-metadata.md` 同名伴随文件，仅在被明确要求时创建。
 - 不要新增其他文档文件（README、说明等），除非用户明确要求。
 
