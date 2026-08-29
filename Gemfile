@@ -32,3 +32,7 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 gem 'rexml'
 
 gem 'jekyll-remote-theme'
+
+# WEBrick was removed from Ruby's default gems in Ruby 3.0+, but Jekyll 3.x's
+# built-in server (`jekyll serve`) still requires it.
+gem 'webrick', '~> 1.8'
