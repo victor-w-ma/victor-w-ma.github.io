@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "合租情侣的奴隶生活"
+status: 连载
 ---
 
 # 序章

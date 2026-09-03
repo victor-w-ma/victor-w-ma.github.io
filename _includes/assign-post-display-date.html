@@ -1,0 +1,48 @@
+{%- comment -%}
+  Sets post_display_date, post_display_unix, post_display_day,
+  post_base_status, post_badge_label, and post_badge_class.
+
+  Visible date is the later of date / last_modified_at / modified_date.
+  Badge: 更新 if that date is within 15 days; otherwise 连载 / 断更 / 完结
+  from front matter `status` (default 完结).
+{%- endcomment -%}
+{%- assign post_display_date = include.entry.date -%}
+{%- assign post_display_unix = include.entry.date | date: '%s' | plus: 0 -%}
+{%- if include.entry.last_modified_at -%}
+  {%- assign _cand_unix = include.entry.last_modified_at | date: '%s' | plus: 0 -%}
+  {%- if _cand_unix > post_display_unix -%}
+    {%- assign post_display_date = include.entry.last_modified_at -%}
+    {%- assign post_display_unix = _cand_unix -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if include.entry.modified_date -%}
+  {%- assign _cand_unix = include.entry.modified_date | date: '%s' | plus: 0 -%}
+  {%- if _cand_unix > post_display_unix -%}
+    {%- assign post_display_date = include.entry.modified_date -%}
+    {%- assign post_display_unix = _cand_unix -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign post_display_day = post_display_date | date: '%Y-%m-%d' -%}
+{%- assign _cutoff_unix = site.time | date: '%s' | plus: 0 | minus: 1296000 -%}
+{%- assign _cutoff_day = _cutoff_unix | date: '%Y-%m-%d' -%}
+{%- assign post_is_new = false -%}
+{%- if post_display_day >= _cutoff_day -%}
+  {%- assign post_is_new = true -%}
+{%- endif -%}
+{%- assign post_base_status = include.entry.status | default: '完结' -%}
+{%- if post_base_status != '连载' and post_base_status != '断更' and post_base_status != '完结' -%}
+  {%- assign post_base_status = '完结' -%}
+{%- endif -%}
+{%- if post_is_new -%}
+  {%- assign post_badge_label = '更新' -%}
+  {%- assign post_badge_class = 'is-updated' -%}
+{%- elsif post_base_status == '连载' -%}
+  {%- assign post_badge_label = '连载' -%}
+  {%- assign post_badge_class = 'is-serializing' -%}
+{%- elsif post_base_status == '断更' -%}
+  {%- assign post_badge_label = '断更' -%}
+  {%- assign post_badge_class = 'is-hiatus' -%}
+{%- else -%}
+  {%- assign post_badge_label = '完结' -%}
+  {%- assign post_badge_class = 'is-complete' -%}
+{%- endif -%}
