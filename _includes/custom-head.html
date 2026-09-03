@@ -24,6 +24,38 @@
   pre {
     font-size: 0.9375rem; /* was 15px @16 → 18.75px @20 */
   }
+
+  .post-status-badge {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 2.35em;
+    color: #fff;
+    font-size: 0.75em;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.4;
+    padding: 0.08em 0.32em;
+    border-radius: 0.28em;
+    margin-right: 0.45em;
+    vertical-align: 0.08em;
+    text-align: center;
+  }
+
+  .post-status-badge.is-updated {
+    background: #b36e6e;
+  }
+
+  .post-status-badge.is-serializing {
+    background: #5d8c6f;
+  }
+
+  .post-status-badge.is-complete {
+    background: #6e757c;
+  }
+
+  .post-status-badge.is-hiatus {
+    background: #7c7874;
+  }
 </style>
 
 <script>
@@ -37,4 +69,63 @@
     databaseURL: "https://classic-chinese-sm-novels-default-rtdb.firebaseio.com"
   };
   firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var NEW_DAYS = 15;
+    var BADGE_CLASS = {
+      '更新': 'is-updated',
+      '连载': 'is-serializing',
+      '完结': 'is-complete',
+      '断更': 'is-hiatus'
+    };
+
+    function pad2(n) {
+      return n < 10 ? '0' + n : String(n);
+    }
+
+    function todayYmd() {
+      var d = new Date();
+      return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+    }
+
+    function daysBetween(olderYmd, newerYmd) {
+      var a = olderYmd.split('-');
+      var b = newerYmd.split('-');
+      var da = new Date(Number(a[0]), Number(a[1]) - 1, Number(a[2]));
+      var db = new Date(Number(b[0]), Number(b[1]) - 1, Number(b[2]));
+      return Math.round((db - da) / 86400000);
+    }
+
+    function applyBadge(timeEl, label) {
+      var badge = timeEl.previousElementSibling;
+      if (!badge || !badge.classList || !badge.classList.contains('post-status-badge')) {
+        badge = document.createElement('span');
+        timeEl.parentNode.insertBefore(badge, timeEl);
+      }
+      badge.className = 'post-status-badge ' + (BADGE_CLASS[label] || BADGE_CLASS['完结']);
+      badge.setAttribute('aria-label', label);
+      badge.textContent = label;
+    }
+
+    var today = todayYmd();
+    var nodes = document.querySelectorAll('time[data-day]');
+    for (var i = 0; i < nodes.length; i++) {
+      var timeEl = nodes[i];
+      var day = timeEl.getAttribute('data-day');
+      var base = timeEl.getAttribute('data-status') || '完结';
+      if (!BADGE_CLASS[base]) {
+        base = '完结';
+      }
+      var label = base;
+      if (day) {
+        var age = daysBetween(day, today);
+        if (age >= 0 && age <= NEW_DAYS) {
+          label = '更新';
+        }
+      }
+      applyBadge(timeEl, label);
+    }
+  });
 </script>

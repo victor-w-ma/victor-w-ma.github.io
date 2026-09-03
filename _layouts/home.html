@@ -29,8 +29,9 @@ layout: base
     <ul class="post-list" id="post-list">
       {%- assign date_format = "%Y-%m-%d" -%}
       {%- for post in posts -%}
-      <li data-post-id="{{ post.url | slugify }}" data-date="{{ post.date | date: '%s' }}">
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+      {%- include assign-post-display-date.html entry=post -%}
+      <li data-post-id="{{ post.url | slugify }}" data-date="{{ post_display_unix }}">
+        <span class="post-meta">{%- include post-date-label.html -%}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
