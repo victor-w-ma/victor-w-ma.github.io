@@ -811,7 +811,7 @@
       return Promise.reject(new Error('no database'));
     }
     submitBtn.disabled = true;
-    return database.ref('inlineComments/' + postId + '/' + threadId + '/comments').push({
+    return database.ref('posts/' + postId + '/inlineThreads/' + threadId + '/comments').push({
       nickname: nickname,
       comment: comment,
       timestamp: firebase.database.ServerValue.TIMESTAMP,
@@ -820,6 +820,7 @@
       commentInput.value = '';
       submitBtn.disabled = false;
       showError('');
+      renderThread();
     }).catch(function (err) {
       submitBtn.disabled = false;
       showError('发布失败，请重试。');
@@ -832,7 +833,7 @@
       showError('评论服务还没准备好，请稍后再试。');
       return Promise.reject(new Error('no database'));
     }
-    var threadRef = database.ref('inlineComments/' + postId).push();
+    var threadRef = database.ref('posts/' + postId + '/inlineThreads').push();
     var commentRef = threadRef.child('comments').push();
     var payload = {
       quote: anchor.quote,
@@ -855,6 +856,9 @@
       submitBtn.disabled = false;
       titleEl.textContent = '这段话的评论';
       showError('');
+      renderThread();
+      refreshHighlights();
+      positionPanel();
     }).catch(function (err) {
       submitBtn.disabled = false;
       showError('发布失败，请重试。');
@@ -1010,7 +1014,7 @@
       return;
     }
     database = firebase.database();
-    database.ref('inlineComments/' + postId).on('value', applySnapshot, function (err) {
+    database.ref('posts/' + postId + '/inlineThreads').on('value', applySnapshot, function (err) {
       console.error('inline comments listen failed', err);
     });
   }
