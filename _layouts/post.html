@@ -90,6 +90,8 @@ layout: base
     {{ content }}
   </div>
 
+  {% include inline-comments.html %}
+
   {% include comments.html %}
 
   {%- if site.disqus.shortname -%}
