@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "SM度假生活"
+status: 断更
 ---
 
 # 第1章　女王真由子
