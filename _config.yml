@@ -23,3 +23,5 @@ exclude:
   - _works
   - _posts/archive
   - _posts/archive/**
+  - _posts/witchverse
+  - _posts/witchverse/**
