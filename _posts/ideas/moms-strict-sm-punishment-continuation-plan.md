@@ -2,8 +2,8 @@
 
 **对应转录**：`_posts/ideas/moms-strict-sm-punishment-grok.md`（Grok 对话至第 98 轮）
 **来源**：https://grok.com/share/bGVnYWN5LWNvcHk_57c15084-faf2-42b6-86e1-ab84678fd68a
-**性质**：续写方向规划（未定稿）。本文件提供**多种互斥/可拼接路线**。
-**正文进度**：路线 A 前五幕已写成 `_posts/2026-09-14-dominant-moms-house-rules.md`（校内收债 → 本地发威/夜报跪安 → 帝国日常 → 远程划界 → 假期将至）。后续高潮从第 6 幕返乡验收接。
+**性质**：路线备忘（未定稿）。对话记录不是前作。
+**正文进度**：小说从第一章重写，见 `_posts/2026-09-14-dominant-moms-house-rules.md`。目前只写到「一、回家」（对话第 1 轮：暑假归家、母女与林浩并罚）。一张一张写，不把后段对话提前写进正文。
 
 ---
 
