@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "强势妈妈的家规"
+status: 断更
 ---
 
 > 整理自 Grok 对话： https://grok.com/share/bGVnYWN5LWNvcHk_57c15084-faf2-42b6-86e1-ab84678fd68a
