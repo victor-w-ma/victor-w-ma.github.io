@@ -7,16 +7,8 @@ layout: base
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       {%- assign date_format = "%Y-%m-%d" -%}
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.modified_date -%}
-        ~ 
-        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
-        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
-          {{ mdate | date: date_format }}
-        </time>
-      {%- endif -%}
+      {%- include assign-post-display-date.html entry=page -%}
+      {%- include post-date-label.html itemprop=true -%}
       {%- if page.author -%}
         • {% for author in page.author %}
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -25,6 +17,7 @@ layout: base
         {% endfor %}
       {%- endif -%}
       <span id="char-count-section" style="display: none;">• <span id="character-count"></span>字</span>
+      <span id="view-count-section" style="display: none;">• <span id="view-count"></span>次阅读</span>
     </p>
     
     {% include like.html %}
@@ -96,6 +89,8 @@ layout: base
     </script>
     {{ content }}
   </div>
+
+  {% include inline-comments.html %}
 
   {% include comments.html %}
 

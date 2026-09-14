@@ -1,0 +1,156 @@
+<style>
+  .post-sort {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 1.25rem;
+  }
+  .post-sort-label {
+    color: #828282;
+    font-size: 0.875rem;
+    margin-right: 2px;
+  }
+  .post-sort-button {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    transition: background-color 0.3s ease;
+  }
+  .post-sort-button:hover {
+    background-color: #f0f0f0;
+  }
+  .post-sort-button.is-active {
+    background-color: #f0f0f0;
+  }
+  .post-sort-button.is-active:hover {
+    background-color: #e0e0e0;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var SORT_STORAGE_KEY = 'postListSort';
+    var VALID_SORTS = { date: true, likes: true, comments: true, views: true };
+    var list = document.getElementById('post-list');
+    if (!list) {
+      return;
+    }
+
+    var items = Array.prototype.slice.call(list.querySelectorAll('li[data-post-id]'));
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.post-sort-button[data-sort]'));
+    var statsById = {};
+
+    function netLikes(stats) {
+      return (stats.likes || 0) - (stats.dislikes || 0);
+    }
+
+    function sortValue(item, mode) {
+      var stats = statsById[item.getAttribute('data-post-id')] || {};
+      if (mode === 'likes') {
+        return netLikes(stats);
+      }
+      if (mode === 'comments') {
+        return stats.comments || 0;
+      }
+      if (mode === 'views') {
+        return stats.views || 0;
+      }
+      return Number(item.getAttribute('data-date')) || 0;
+    }
+
+    function currentSort() {
+      var params = new URLSearchParams(window.location.search);
+      var fromQuery = params.get('sort');
+      if (fromQuery && VALID_SORTS[fromQuery]) {
+        return fromQuery;
+      }
+      var fromStorage = localStorage.getItem(SORT_STORAGE_KEY);
+      if (fromStorage && VALID_SORTS[fromStorage]) {
+        return fromStorage;
+      }
+      return 'date';
+    }
+
+    function setActiveButton(mode) {
+      buttons.forEach(function(button) {
+        var isActive = button.getAttribute('data-sort') === mode;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    }
+
+    function persistSort(mode) {
+      localStorage.setItem(SORT_STORAGE_KEY, mode);
+      var url = new URL(window.location.href);
+      if (mode === 'date') {
+        url.searchParams.delete('sort');
+      } else {
+        url.searchParams.set('sort', mode);
+      }
+      history.replaceState(null, '', url);
+    }
+
+    function applySort(mode) {
+      items.sort(function(a, b) {
+        var delta = sortValue(b, mode) - sortValue(a, mode);
+        if (delta !== 0) {
+          return delta;
+        }
+        return (Number(b.getAttribute('data-date')) || 0) - (Number(a.getAttribute('data-date')) || 0);
+      });
+      items.forEach(function(item) {
+        list.appendChild(item);
+      });
+      setActiveButton(mode);
+    }
+
+    function countComments(node) {
+      if (!node) {
+        return 0;
+      }
+      return Object.keys(node).length;
+    }
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var mode = button.getAttribute('data-sort');
+        persistSort(mode);
+        applySort(mode);
+      });
+    });
+
+    applySort(currentSort());
+
+    if (typeof firebase === 'undefined') {
+      return;
+    }
+
+    var database = firebase.database();
+    Promise.all([
+      database.ref('posts').once('value'),
+      database.ref('comments').once('value')
+    ]).then(function(snapshots) {
+      var posts = snapshots[0].val() || {};
+      var comments = snapshots[1].val() || {};
+      items.forEach(function(item) {
+        var postId = item.getAttribute('data-post-id');
+        var post = posts[postId] || {};
+        statsById[postId] = {
+          likes: post.likes || 0,
+          dislikes: post.dislikes || 0,
+          views: post.views || 0,
+          comments: countComments(comments[postId])
+        };
+      });
+      applySort(currentSort());
+    }).catch(function(error) {
+      console.error('Failed to load post stats:', error);
+    });
+  });
+</script>
