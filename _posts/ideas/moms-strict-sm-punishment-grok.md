@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # Grok 对话转录：Mom's Strict SM Punishment
 
 > 来源：https://grok.com/share/bGVnYWN5LWNvcHk_57c15084-faf2-42b6-86e1-ab84678fd68a
