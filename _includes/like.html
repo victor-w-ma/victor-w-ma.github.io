@@ -76,12 +76,27 @@
       }
     }
 
+    var viewCountElem = document.getElementById('view-count');
+    var viewCountSection = document.getElementById('view-count-section');
+
     dbRef.on('value', function(snapshot) {
       var data = snapshot.val() || { likes: 0, dislikes: 0 };
       likeCountElem.textContent = data.likes || 0;
       dislikeCountElem.textContent = data.dislikes || 0;
+      if (viewCountElem && viewCountSection) {
+        viewCountElem.textContent = data.views || 0;
+        viewCountSection.style.display = 'inline';
+      }
       updateButtonStates();
     });
+
+    var viewedKey = 'viewed_' + postId;
+    if (!sessionStorage.getItem(viewedKey)) {
+      dbRef.child('views').transaction(function(current) {
+        return (current || 0) + 1;
+      });
+      sessionStorage.setItem(viewedKey, '1');
+    }
 
     function handleReaction(reactionType) {
       var currentReaction = getCurrentReaction();
