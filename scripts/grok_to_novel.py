@@ -91,6 +91,12 @@ META_PATTERNS = [
     re.compile(r"^随时告诉我"),
     re.compile(r"^如果你想加长"),
     re.compile(r"^\* \* \*$"),
+    re.compile(r"^还是下一次"),
+    re.compile(r"^目前张岚还蒙在鼓里"),
+    re.compile(r"^女校长[＞>]"),
+    re.compile(r"^（例如："),
+    re.compile(r"^现在最后一个"),
+    re.compile(r"^李娜兴奋地点头"),
     re.compile(r"^……$"),
 ]
 
@@ -98,6 +104,157 @@ SUBTITLE_RE = re.compile(r"^### .+$")
 META_BOLD_RE = re.compile(r"^\*\*(核心压制链|主要人物|其他设定|\d+\.)")
 OPTION_LINE = re.compile(
     r"^\- .*(其他方向|详细场景|主线回归|最新发展|想加的|续写更长|其他剧情|其他发展)"
+)
+STORY_BULLET = re.compile(r"^\- (每天|同时督促|把小薇)")
+
+OPENING_REPLACEMENTS = (
+    (
+        "同一晚，城市的另一个小区，王芳的家里灯火通明却安静得诡异。",
+        "王芳住的另一头，这套屋子灯还亮着，却静得不像有人说话。",
+    ),
+    (
+        "与此同时，在城市的另一所普通中学，王芳的儿子王浩也出事了。",
+        "王浩在另一所中学念书。那天，他也闯了祸。",
+    ),
+    (
+        "新的一周，李明又在学校闯祸了。",
+        "李明又在学校闯祸了。",
+    ),
+    (
+        "几天后的一个周末晚上，王教练带着老婆韩梅再次来到林晓红家。"
+        "这一次，他们没有再遮遮掩掩，而是直接把家庭新规矩彻底定了下来。",
+        "那个周末，王教练带韩梅来到林晓红家，把新规矩当面说清楚。",
+    ),
+    (
+        '我们一起好好"谈谈"。',
+        "我们一起好好谈一谈。",
+    ),
+    (
+        "家里瞬间只剩下三个人：王教练、韩梅和林晓红。",
+        "小薇和张强一出门，屋里就只剩他们三个人。",
+    ),
+    (
+        "周日下午，王教练独自开车来到陈老师家。他把车停好后，"
+        "没有按门铃，而是直接跪在门口，双手举过头顶，保持着标准的跪姿等待。",
+        "王教练把车停在陈老师楼下，没按门铃，直接跪在门外的台阶上等候。",
+    ),
+    (
+        "张岚腿软地离开办公室后，门被轻轻关上。陈老师靠在办公桌上，"
+        "胸口还在剧烈起伏。",
+        "办公室门关上后，陈老师靠在桌边，胸口还在起伏。",
+    ),
+    (
+        "陈老师决定亲自处理最后一个顽固学生的问题。她带着李娜一起开车前往林晓红家进行家访。",
+        "陈老师没有耽搁。当晚，她就带着李娜再次来到林晓红家。",
+    ),
+    (
+        "上次在家狠狠\u201c教育\u201d了丈夫李伟，又在办公室第一次成功调教张岚，"
+        "还狠狠教训了替张岚出头的王芳——表妹王芳的两个表姐妹都已经彻底臣服。"
+        "现在轮到她的儿子李明闯祸了。",
+        "上次在家收拾了丈夫李伟，又在办公室压住了张岚，连替她出头的王芳也没躲过。"
+        "现在轮到她的儿子李明闯祸了。",
+    ),
+    (
+        "期中考试后，成绩继续不理想，陈老师决定亲自家访\u201c解决问题\u201d。",
+        "成绩继续不理想，陈老师决定亲自家访。",
+    ),
+    (
+        "期中考试成绩出来后，陈老师的班数学和英语平均分双双下滑，尤其明显。",
+        "陈老师的班数学和英语平均分双双下滑，尤其明显。",
+    ),
+    (
+        "孙洁每周五个晚上的补课进行了一个多月后，效果出现了明显的分化。",
+        "孙洁每周五个晚上的补课进行了一个多月，效果出现了明显的分化。",
+    ),
+)
+
+PREVIEW_PARA_PREFIXES = (
+    "而李伟还在",
+    "而张岚，还在",
+    "而张岚已经",
+    "而张岚和王芳，此时",
+    "张岚回家后，会把",
+    "回家后，她把",
+    "而王芳回家后",
+    "儿子李明的调皮",
+    "明天张岚带李伟",
+    "目前张岚还蒙在鼓里",
+    "从那天起，两个家庭的权力结构",
+    "王教练是绝对的主宰者",
+    "童年的阴影没有消失",
+    "（例如：",
+    "例如：某",
+    "还是下一次",
+    "女校长＞",
+    "女校长>",
+    "而李伟，表面上",
+    "张岚回家后，表面上",
+    "而孙洁走出办公室后",
+    "而孙洁心里清楚",
+    "李娜兴奋地点点头",
+    "她没有立刻告诉张岚，只是暗暗",
+    "林晓红躺在王教练",
+    "而王芳，点燃一根烟",
+    "回家后，陈老师把",
+    "陈老师看着狼狈不堪的两人，但眼神深处",
+    "他完全不知道妻子此行",
+    "两个老公被严格隔开",
+    "张岚暂时完全没有发现",
+    "而林晓，似乎也越来越享受",
+    "表面上还是冷艳的班主任",
+    "她表面上还是冷艳的",
+    "心里清楚：又多了一个",
+    "她在学校是压制家长的",
+    "这份双重快感",
+    "她们谁也没说话，但心里都清楚",
+    "她终于彻底明白",
+    "她终于在另一个学校找回了",
+    "原来……掌控别人的感觉",
+    "林老师第一次真正体验",
+    "年轻漂亮的英语老师李娜已经被",
+    "她终于尝到了把屈辱",
+    "她知道，从今天起",
+    "只有孙洁一个人，在每周五个晚上",
+    "她只能继续忍耐，期待",
+    "陈老师独自冷笑",
+    "只剩三个顽固学生",
+    "孙洁低着头，眼里满是复杂的情绪",
+    "孙洁低着头，眼里闪着复杂的光芒",
+    "而她的丈夫张明，依然什么都不知道",
+    "李娜看着他们恐惧的样子，心里涌起强烈的征服快感",
+    "王芳气势比来时更盛",
+    "回家后，她先把儿子王浩狠骂",
+    "他完全不知道妻子此行",
+    "两个老公被严格隔开",
+)
+
+NARRATOR_LINE = re.compile(
+    r"^(他完全不知道|两个老公被严格隔开|张岚暂时完全没有发现|"
+    r"而林晓，似乎也越来越享受|办公室里里的画面瞬间定格|"
+    r"冷笑总结道|冷声总结[：:])"
+)
+
+OUTLINE_HEADER = re.compile(
+    r"^(第一天晚上|第二天和第三天更狠|"
+    r"第一个家庭[：:]\s*单亲爸爸|第二个家庭[：:]\s*有钱强势爸爸|"
+    r"张伟家[：:]\s*单亲爸爸越来越过分|刘老板家[：:]\s*老婆帮凶|"
+    r"孙洁的补课噩梦一天比一天严重)[：:]?\s*$"
+)
+OUTLINE_ONLY = re.compile(r"^(张伟家|刘老板家)$")
+
+META_LINE = re.compile(
+    r"^(还是|目前张岚|目前情况|女校长[＞>]|刘校长（最|现在压制|现在学校|"
+    r"现在刘老板|现在所有|（例如：|例如：某|想继续|告诉我|或者|"
+    r"需要继续|需要我|请告诉|随时告诉)"
+)
+
+META_BULLET_KEYWORDS = (
+    "回家后", "下次", "主线", "更详细", "继续", "发展", "反应", "卷入",
+    "尝试", "延长", "逞强", "发现", "加倍", "深入", "其他老师", "其他人物",
+    "其他方向", "增加更多", "陈老师回家", "李娜回家", "张岚儿子", "表姐妹",
+    "校长后续", "林老师回家", "王芳下次", "赵梅回家", "孙洁某天", "孙洁终于",
+    "陈老师知道", "这些家长", "李娜下次", "陈老师还是", "陈老师下次",
+    "韩梅知道", "其他人物剧情",
 )
 
 
@@ -171,6 +328,19 @@ def _clean_body(body):
       line = line.strip()[2:-2]
     if line.strip().startswith("**用户：**"):
       continue
+    if line.strip().startswith("- "):
+      if STORY_BULLET.match(line.strip()):
+        lines.append(line)
+      elif any(k in line for k in META_BULLET_KEYWORDS):
+        skip_list = True
+      elif OPTION_LINE.match(line.strip()):
+        skip_list = True
+      else:
+        skip_list = True
+      continue
+    if META_LINE.match(line.strip()):
+      skip_list = True
+      continue
     if any(p.match(line.strip()) for p in META_PATTERNS):
       skip_list = False
       continue
@@ -193,6 +363,198 @@ def _clean_body(body):
   text = re.sub(r"\n{3,}", "\n\n", text)
   text = re.sub(r"'([^']+)'", r'"\1"', text)
   text = _normalize_quotes(text)
+  return text.strip()
+
+
+def _is_preview_paragraph(para):
+  text = para.strip()
+  if not text:
+    return True
+  if text.startswith("- "):
+    return not STORY_BULLET.match(text)
+  if any(text.startswith(prefix) for prefix in PREVIEW_PARA_PREFIXES):
+    return True
+  if re.match(r"^而(李伟|张岚|王芳|陈老师).*(…|\.\.\.)", text):
+    return True
+  if "完全不知道" in text and text.startswith("而"):
+    return True
+  if text.startswith("而王芳，点燃一根烟"):
+    return True
+  if re.search(r"(发泄到|继续发泄|全部转移|全部带回|全部带回家|狠操了).*……$", text):
+    return True
+  if "权力结构彻底稳固" in text:
+    return True
+  if text.startswith("王芳带着") and "离开学校" in text and text.endswith("……"):
+    return True
+  return False
+
+
+def _fix_nested_quotes(text):
+  """Restore inner Chinese quotes broken by per-line ASCII pairing."""
+  text = re.sub(
+      r"(?<=[\u4e00-\u9fff\d，。！？；：、])\"([^\"]{1,16})\""
+      r"(?=[\u4e00-\u9fff\d，。！？；：、])",
+      lambda m: "\u201c" + m.group(1) + "\u201d",
+      text,
+  )
+  # Erroneous early close before nested emphasis inside dialogue.
+  text = re.sub(
+      r"(?<=[\u4e00-\u9fff])\u201d(?=\u201c[\u4e00-\u9fff]{1,8}\u201d)",
+      "",
+      text,
+  )
+  for wrong, right in (
+      ("\u201d教育\u201c", "\u201c教育\u201d"),
+      ("\u201d管理\u201c", "\u201c管理\u201d"),
+      ("\u201d配合\u201c", "\u201c配合\u201d"),
+      ("\u201d欺负\u201c", "\u201c欺负\u201d"),
+      ("\u201d谈谈\u201c", "\u201c谈谈\u201d"),
+      ("\u201d岚狗\u201c", "\u201c岚狗\u201d"),
+  ):
+    text = text.replace(wrong, right)
+  return text
+
+
+def _strip_narrator_paragraphs(text):
+  paras = re.split(r"\n\n+", text.strip())
+  kept = []
+  narrator_substr = (
+      "心里清楚：又多了一个",
+      "心里都清楚：这耻辱",
+      "她终于彻底明白：",
+      "她表面上还是",
+      "他表面上还是",
+      "表面上还是那个",
+      "表面上还是冷艳",
+      "已经彻底变成了屈辱的性奴生活",
+  )
+  for para in paras:
+    first = para.strip().split("\n", 1)[0]
+    if any(first.startswith(p) for p in PREVIEW_PARA_PREFIXES):
+      continue
+    if any(s in para for s in narrator_substr):
+      continue
+    if NARRATOR_LINE.match(first):
+      continue
+    if OUTLINE_HEADER.match(first.strip()):
+      continue
+    if OUTLINE_ONLY.match(first.strip()):
+      continue
+    kept.append(para)
+  return "\n\n".join(kept).strip()
+
+
+def _bullets_to_prose(text):
+  out = []
+  for line in text.split("\n"):
+    m = re.match(r"^\- (早上|白天|晚上|同时)([：:]) (.+)$", line)
+    if m:
+      out.append(f"{m.group(1)}，{m.group(3)}")
+      continue
+    m = re.match(r"^\- (每天|把小薇|同时)(.+)$", line)
+    if m:
+      body = m.group(2).strip().rstrip("；;")
+      if body.startswith("：") or body.startswith(":"):
+        body = body[1:].strip()
+      out.append(f"{body.rstrip('。')}。")
+      continue
+    out.append(line)
+  return "\n".join(out)
+
+
+def _trim_chapter_end(body):
+  paras = re.split(r"\n\n+", body.strip())
+  while paras:
+    last = paras[-1].strip()
+    if not last:
+      paras.pop()
+      continue
+    if _is_preview_paragraph(last):
+      paras.pop()
+      continue
+    lines = last.split("\n")
+    if all(not ln.strip() or ln.strip().startswith("- ") for ln in lines):
+      if any(
+          ln.strip().startswith("- ")
+          and not STORY_BULLET.match(ln.strip())
+          for ln in lines
+      ):
+        paras.pop()
+        continue
+    break
+  return "\n\n".join(paras).strip()
+
+
+def _polish_chapter(body):
+  text = body
+  for old, new in OPENING_REPLACEMENTS:
+    text = text.replace(old, new)
+  text = text.replace("\n回忆：征服的开始\n", "\n")
+  text = text.replace("\n回到现在\n", "\n")
+  text = text.replace("冷笑总结道：", "冷笑道：")
+  text = text.replace("冷声总结：", "冷声道：")
+  text = text.replace(
+      "……以及林老师在另一所学校突然觉醒后带来的那一点点、隐秘的\u201c掌控快感\u201d。",
+      "。",
+  )
+  text = re.sub(
+      r"陈老师开车回家时，天已经黑了。她38岁的身体还带着学校办公室里调教张岚和王芳两个表姐妹后的余热——"
+      r"双手微微发酸，下体隐隐湿润，脖子上挂着两把小钥匙（给她们戴的贞操锁）。"
+      r"今天一次性收拾了两个中年强势女人，让她心情大爽，却也激起了更强烈的征服欲。",
+      "陈老师开车回家时，天已经黑了。她38岁的身体还带着白天压张岚、又收拾王芳后的余热——"
+      "双手微微发酸，下体隐隐湿润，脖子上挂着给张岚戴的那把小钥匙。"
+      "收拾完两个中年女人，她心情大爽，征服欲却更强了。",
+      text,
+      count=1,
+  )
+  text = re.sub(
+      r"^办公室里，空气中弥漫着淫靡而压抑的气味。\n\n"
+      r"陈老师正玩得兴起。张岚和王芳两个表姐妹被并排按在办公桌上，[^\n]+\n\n"
+      r"“叫啊！你们两个当妈的，在家那么强势[^\n]+\n\n"
+      r"张岚和王芳哭得梨花带雨，[^\n]+\n\n",
+      "",
+      text,
+      count=1,
+  )
+  text = re.sub(r"办公室里的画面瞬间定格。\n\n", "", text)
+  text = re.sub(
+      r"王芳整理好衣服离开学校时，气势比来时更盛。她终于在另一个学校找回了些许掌控感——"
+      r"虽然在陈老师和校长面前她是母狗，但在这种弱势班主任面前，她依旧是那个强势的表妹。\n\n"
+      r"回家后，她先把儿子王浩狠骂了一顿，然后打电话给张岚：\n\n"
+      r"“岚姐，我这边也处理了。你儿子那边要是再惹事，可别再拉上我一起挨操！”\n\n",
+      "",
+      text,
+  )
+  text = re.sub(
+      r"\n王教练——这个在林晓红家威风凛凛[^\n]+\n",
+      "\n",
+      text,
+      count=1,
+  )
+  text = re.sub(
+      r"陈老师没有耽搁。当晚，她就带着李娜再次来到林晓红家。\n\n到达时已经是晚上，",
+      "陈老师没有耽搁。当晚，她就带着李娜再次登门。",
+      text,
+      count=1,
+  )
+  text = re.sub(
+      r"陈老师坐在沙发上，把脚伸到王教练嘴边。他立刻张嘴含住她的脚趾，"
+      r"认真地舔着，像最卑微的奴隶一样。\n\n"
+      r"“主人……我现在在林晓红家已经完全掌控了局面。韩梅也听我的，"
+      r"我们夫妻俩一起把张强和小薇操得服服帖帖……晓红现在也很听话……”\n\n"
+      r"陈老师舒服地眯起眼睛，用脚趾玩弄着他的舌头，冷笑道：\n\n"
+      r"“很好。你记住，你在外面再怎么当主人，在我面前永远只是我的狗。"
+      r"林晓红家的事，你办得越好，我就越会奖励你。”\n\n",
+      "",
+      text,
+      count=1,
+  )
+  text = text.replace("\n\n说完，她脱掉睡袍", "\n\n她脱掉睡袍")
+  text = _strip_narrator_paragraphs(text)
+  text = _bullets_to_prose(text)
+  text = _trim_chapter_end(text)
+  text = _fix_nested_quotes(text)
+  text = re.sub(r"\n{3,}", "\n\n", text)
   return text.strip()
 
 
@@ -224,7 +586,8 @@ def _opening_chapter(section_1, section_2):
     childhood = ""
 
   parts = [p for p in (intro, childhood, bridge, scene) if p]
-  return "\n\n".join(parts)
+  merged = "\n\n".join(parts)
+  return _polish_chapter(merged)
 
 
 def main():
@@ -237,9 +600,6 @@ def main():
       'title: "中年夫妻的隐秘枷锁"',
       "---",
       "",
-      "> 整理自 Grok 对话："
-      " https://grok.com/share/bGVnYWN5LWNvcHk_c83e2e7e-6612-45ef-9a28-c36a621c16d7",
-      "",
   ]
 
   for num in SECTION_ORDER:
@@ -248,6 +608,8 @@ def main():
     body = _clean_body(sections[num])
     if num == 2 and 1 in sections:
       body = _opening_chapter(sections[1], sections[num])
+    else:
+      body = _polish_chapter(body)
     title = PART_TITLES[num]
     out.append(f"## {title}")
     out.append("")
@@ -256,6 +618,7 @@ def main():
 
   text = "\n".join(out).rstrip() + "\n"
   text = _apply_typos(text)
+  text = _fix_nested_quotes(text)
   _DST.write_text(text, encoding="utf-8")
   print(f"wrote {_DST} ({len(out)} blocks)")
 

@@ -1,0 +1,279 @@
+<div id="inline-comment-toolbar" class="inline-comment-toolbar" hidden>
+  <button type="button" id="inline-comment-add-btn" class="inline-comment-add-btn">
+    <span class="material-icons" aria-hidden="true">mode_comment</span>
+    评论
+  </button>
+</div>
+
+<div id="inline-comment-backdrop" class="inline-comment-backdrop" hidden></div>
+
+<div id="inline-comment-panel" class="inline-comment-panel" hidden role="dialog" aria-labelledby="inline-comment-panel-title">
+  <div class="inline-comment-panel-inner">
+    <header class="inline-comment-panel-header">
+      <h2 id="inline-comment-panel-title">评论这段话</h2>
+      <button type="button" class="inline-comment-close" aria-label="关闭">×</button>
+    </header>
+    <blockquote class="inline-comment-quote" hidden></blockquote>
+    <div class="inline-comment-thread"></div>
+    <form class="inline-comment-form">
+      <input type="text" name="nickname" placeholder="昵称" required autocomplete="nickname">
+      <textarea name="comment" placeholder="写下你的评论" required></textarea>
+      <div class="inline-comment-form-actions">
+        <button type="submit">发布</button>
+      </div>
+      <p class="inline-comment-error" hidden></p>
+    </form>
+  </div>
+</div>
+
+<script>
+  window.INLINE_COMMENTS_POST_ID = {{ page.url | slugify | jsonify }};
+</script>
+<script src="{{ '/assets/js/inline-comments.js' | relative_url }}"></script>
+
+<style>
+  article.post.has-inline-comments {
+    position: relative;
+    overflow: visible;
+  }
+
+  .wrapper {
+    overflow: visible;
+  }
+
+  mark.inline-comment-mark {
+    background: transparent;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: #b36e6e;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.18em;
+    cursor: pointer;
+    border-radius: 1px;
+  }
+
+  mark.inline-comment-mark:hover,
+  mark.inline-comment-mark:focus {
+    background: rgba(179, 110, 110, 0.12);
+    outline: none;
+  }
+
+  mark.inline-comment-mark.is-active {
+    background: rgba(179, 110, 110, 0.16);
+  }
+
+  .inline-comment-toolbar {
+    position: fixed;
+    z-index: 1003;
+    pointer-events: none;
+  }
+
+  .inline-comment-add-btn {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #333;
+    user-select: none;
+  }
+
+  .inline-comment-add-btn .material-icons {
+    font-size: 18px;
+    color: #b36e6e;
+  }
+
+  .inline-comment-add-btn:hover {
+    background: #f5f5f5;
+  }
+
+  .inline-comment-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.28);
+    z-index: 1001;
+  }
+
+  .inline-comment-panel {
+    z-index: 1002;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    box-sizing: border-box;
+  }
+
+  .inline-comment-panel-inner {
+    max-height: min(70vh, 560px);
+    overflow: auto;
+    padding: 12px 14px 14px;
+  }
+
+  .inline-comment-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .inline-comment-panel-header h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    border: 0;
+    padding: 0;
+  }
+
+  .inline-comment-close {
+    border: 0;
+    background: transparent;
+    color: #666;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 2px;
+  }
+
+  .inline-comment-close:hover {
+    color: #111;
+  }
+
+  .inline-comment-quote {
+    margin: 0 0 12px;
+    padding: 8px 10px;
+    border-left: 3px solid #b36e6e;
+    background: #faf6f6;
+    color: #555;
+    font-size: 13px;
+  }
+
+  .inline-comment-thread {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .inline-comment-item {
+    padding-bottom: 2px;
+  }
+
+  .inline-comment-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 3px;
+  }
+
+  .inline-comment-author {
+    font-weight: 700;
+    color: #333;
+  }
+
+  .inline-comment-time {
+    color: #888;
+    font-size: 12px;
+  }
+
+  .inline-comment-body {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .inline-comment-item-actions {
+    margin-top: 4px;
+  }
+
+  .inline-comment-reply-btn {
+    border: 0;
+    background: transparent;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .inline-comment-reply-btn:hover {
+    color: #333;
+  }
+
+  .inline-comment-replies {
+    margin: 8px 0 0 12px;
+    padding-left: 10px;
+    border-left: 2px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .inline-comment-form input,
+  .inline-comment-form textarea,
+  .inline-comment-reply-form input,
+  .inline-comment-reply-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .inline-comment-form textarea,
+  .inline-comment-reply-form textarea {
+    min-height: 72px;
+    resize: vertical;
+  }
+
+  .inline-comment-form input:focus,
+  .inline-comment-form textarea:focus,
+  .inline-comment-reply-form input:focus,
+  .inline-comment-reply-form textarea:focus {
+    outline: none;
+    border-color: #bbb;
+  }
+
+  .inline-comment-form-actions button {
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .inline-comment-form-actions button:hover {
+    background: #e0e0e0;
+  }
+
+  .inline-comment-form-actions button:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  .inline-comment-error {
+    margin: 8px 0 0;
+    color: #a33;
+    font-size: 13px;
+  }
+
+  .inline-comment-reply-form {
+    margin-top: 8px;
+  }
+</style>

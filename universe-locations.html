@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>故事地点地图 · 64 篇已发布</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <style>
+    :root {
+      --bg: #0f1117;
+      --panel: #1a1d27;
+      --border: #2a3040;
+      --text: #e8ecf4;
+      --muted: #8b95a8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      padding: 1.25rem 1.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 { margin: 0 0 0.35rem; font-size: 1.35rem; font-weight: 600; }
+    header p { margin: 0; color: var(--muted); font-size: 0.9rem; max-width: 56rem; }
+    .layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      min-height: calc(100vh - 96px);
+    }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { max-height: 42vh; }
+    }
+    aside {
+      border-right: 1px solid var(--border);
+      background: var(--panel);
+      overflow: auto;
+      padding: 1rem;
+    }
+    .legend h2, .filters h2 { font-size: 0.8rem; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 0.6rem; }
+    .legend-items { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1rem; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.78rem; padding: 0.2rem 0.55rem; border-radius: 999px;
+      border: 1px solid var(--border); cursor: pointer; background: transparent; color: var(--text);
+    }
+    .chip.active { outline: 2px solid #fff3; }
+    .chip .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .filters input {
+      width: 100%; padding: 0.55rem 0.7rem; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.9rem;
+    }
+    .stats { font-size: 0.85rem; color: var(--muted); margin: 0.75rem 0 1rem; }
+    .post-list { list-style: none; padding: 0; margin: 0; }
+    .post-item { padding: 0.6rem 0.45rem; border-bottom: 1px solid var(--border); cursor: pointer; border-radius: 6px; }
+    .post-item:hover, .post-item.focused { background: #ffffff08; }
+    .post-item a { color: inherit; text-decoration: none; }
+    .post-title { font-size: 0.86rem; font-weight: 500; }
+    .post-meta { font-size: 0.74rem; color: var(--muted); margin-top: 0.2rem; }
+    .scale-tag, .zone-tag {
+      display: inline-block; font-size: 0.66rem; padding: 0.05rem 0.38rem;
+      border-radius: 4px; margin-right: 0.3rem; vertical-align: middle;
+    }
+    main { position: relative; }
+    #map { width: 100%; height: 100%; min-height: 500px; background: #0a0c12; }
+    .map-note {
+      position: absolute; bottom: 12px; left: 12px; z-index: 1000;
+      background: #1a1d27ee; border: 1px solid var(--border);
+      padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.74rem; color: var(--muted); max-width: 300px;
+    }
+    .unanchored { padding: 1rem 1.5rem 2rem; border-top: 1px solid var(--border); background: var(--panel); }
+    .unanchored h2 { font-size: 1rem; margin: 0 0 0.75rem; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem; }
+    .card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem; }
+    .card h3 { margin: 0 0 0.35rem; font-size: 0.92rem; }
+    .card p { margin: 0; font-size: 0.78rem; color: var(--muted); }
+    .leaflet-popup-content-wrapper { background: var(--panel); color: var(--text); border-radius: 10px; max-width: 340px; }
+    .leaflet-popup-content { margin: 12px 14px; max-height: 360px; overflow-y: auto; }
+    .leaflet-popup-tip { background: var(--panel); }
+    .popup-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; }
+    .popup-sub { color: var(--muted); font-size: 0.8rem; margin-bottom: 0.5rem; line-height: 1.45; }
+    .popup-infer { font-size: 0.76rem; color: #b8c4d8; background: #ffffff08; padding: 0.5rem 0.6rem; border-radius: 6px; margin-bottom: 0.55rem; }
+    .popup-posts { margin: 0; padding: 0; list-style: none; font-size: 0.82rem; }
+    .popup-posts li { padding: 0.35rem 0; border-top: 1px solid var(--border); }
+    .popup-posts li:first-child { border-top: none; }
+    .popup-posts a { color: #9ec5ff; text-decoration: none; }
+    .popup-posts .scene { display: block; font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
+    .city-marker {
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; border: 2px solid #fff; color: #fff; font-size: 10px; font-weight: 700;
+      box-shadow: 0 0 10px rgba(0,0,0,0.45);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>已发布故事 · 地点与规模</h1>
+    <p>每个<strong>城市仅一个落点</strong>，点击弹出该城全部篇目。虚构地名按正文方言、经济、职官与叙事气质推断<strong>区位</strong>与<strong>市级别</strong>（约当哪类现实城市），落点为示意坐标。</p>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <div class="legend">
+        <h2>城市规模（落点颜色）</h2>
+        <div class="legend-items" id="scale-filters"></div>
+      </div>
+      <div class="filters">
+        <h2>搜索</h2>
+        <input type="search" id="search" placeholder="标题、城市、区位…" autocomplete="off">
+      </div>
+      <div class="stats" id="stats"></div>
+      <ul class="post-list" id="post-list"></ul>
+    </aside>
+    <main>
+      <div id="map"></div>
+      <div class="map-note">圆点数字 = 该城篇数。紫色条目为校园/理论类，见页底。</div>
+    </main>
+  </div>
+
+  <section class="unanchored">
+    <h2>校园场景 / 理论文本（不单独落点）</h2>
+    <div class="card-grid" id="unanchored-grid"></div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script>
+    const SCALES = {
+      metropolis: { label: "一线/超大", color: "#e85d5d" },
+      major:      { label: "二线/省会", color: "#f0a04b" },
+      regional:   { label: "三线/地级", color: "#5b9bd5" },
+      county:     { label: "县镇/小城", color: "#6dbf7a" },
+      campus:     { label: "校园/未定", color: "#b07ce8" },
+      virtual:    { label: "理论/网络", color: "#9aa3b5" },
+      overseas:   { label: "海外", color: "#4ecdc4" },
+    };
+
+    const ZONES = {
+      north: "华北·东北",
+      east: "华东",
+      south_coast: "东南沿海",
+      south: "华南",
+      central: "华中",
+      southwest: "西南",
+      northwest: "西北",
+      overseas: "海外",
+    };
+
+    // 城市定义：一城一点。fictional 为 true 时 name 为正文地名，inference 为推断说明。
+    const CITIES = {
+      beijing: {
+        name: "北京", scale: "metropolis", zone: "north", lat: 39.904, lng: 116.407,
+        inference: "燕京、京客隆、中关村、五环、清华景润别苑等明示或强烈指向首都。",
+      },
+      shanghai: {
+        name: "上海", scale: "metropolis", zone: "east", lat: 31.231, lng: 121.474,
+        inference: "林瀚工作地、浦东、上戏、郎马家族、奴隶世界等同城互文。",
+      },
+      guangzhou: {
+        name: "广州", scale: "metropolis", zone: "south", lat: 23.129, lng: 113.264,
+        inference: "珠江新城康莱德/君悦、G市（姗姗线来源）、中年情侣主气质。",
+      },
+      shenzhen: {
+        name: "深圳", scale: "metropolis", zone: "south_coast", lat: 22.543, lng: 114.058,
+        inference: "亮哥出差、南方互联网白领、CBD律所创业线；移民商场气质的新一线。",
+      },
+      hangzhou: {
+        name: "杭州", scale: "major", zone: "east", lat: 30.274, lng: 120.155,
+        inference: "未具名长三角大城市：上市公司高层住宅、夫妻吧、富婆转让网、996酒吧；经济发达、互联网/金融白领密集。",
+      },
+      nanjing: {
+        name: "南京", scale: "major", zone: "east", lat: 32.060, lng: 118.796,
+        inference: "副市长/树人高中/春满论坛、大学社团绿主；华东省会级科教城。",
+      },
+      jinan: {
+        name: "济南", scale: "major", zone: "north", lat: 36.651, lng: 117.120,
+        inference: "领秀城、教授四合院、名人会所；王凯赵晓雨教授圈明示济南。",
+      },
+      shijiazhuang: {
+        name: "石家庄", scale: "major", zone: "north", lat: 38.042, lng: 114.514,
+        inference: "保定求学后返乡经商；华北省会，含保定段大学生活。",
+      },
+      tianjin: {
+        name: "天津", scale: "major", zone: "north", lat: 39.343, lng: 117.361,
+        inference: "民政局副局长、高档公寓、2010北方大城市单次酒店；渤海湾港口大城市气质。",
+      },
+      wuhan: {
+        name: "武汉", scale: "major", zone: "central", lat: 30.593, lng: 114.305,
+        inference: "二线城市春节回乡、多家庭绿帽提纲；九省通衢中部省会。",
+      },
+      chengdu: {
+        name: "成都", scale: "major", zone: "southwest", lat: 30.572, lng: 104.066,
+        inference: "西南森林露营、大学生QQ群；盆地消费城市、休闲气质。",
+      },
+      chongqing: {
+        name: "重庆", scale: "major", zone: "southwest", lat: 29.563, lng: 106.551,
+        inference: "图书馆+中学+QQ夫妻奴；西南二线、体制内档案感。",
+      },
+      zhengzhou: {
+        name: "郑州", scale: "regional", zone: "central", lat: 34.746, lng: 113.625,
+        inference: "商场批发小店、店长强势人妻；中原地级商业氛围。",
+      },
+      s_city: {
+        name: "S市", fictional: true, scale: "metropolis", zone: "east", lat: 31.299, lng: 120.585,
+        analog: "约当苏州（新一线）",
+        inference: "合租别墅、传媒公司、小学SP论坛、郊县私立大专；长三角制造+服务业、疫情后解封叙事，与上海同城圈但独立命名。",
+      },
+      jiangyuan: {
+        name: "江源市", fictional: true, scale: "regional", zone: "south_coast", lat: 26.665, lng: 119.547,
+        analog: "约当福建宁德（地级市）",
+        inference: "市政协主席、台资酒店、中日友好协会；闽东沿海县级升市、山区保姆、乡干部送人。",
+      },
+      jiangcheng: {
+        name: "江城", fictional: true, scale: "major", zone: "southwest", lat: 30.582, lng: 114.272,
+        analog: "约当重庆/宜昌（长江上游二线）",
+        inference: "「摆龙门阵」「出去耍」川渝方言；供电局、知青、军区大院、工厂保卫部；1960s–90s老工业史诗。",
+      },
+      saiwan: {
+        name: "薤湾镇", fictional: true, scale: "county", zone: "southwest", lat: 27.728, lng: 109.178,
+        analog: "约当贵州黔东南县镇",
+        inference: "粮管所、包谷面饼子、红薯粥、县委书记之妹；穷山沟计划经济残留、重男轻女。",
+      },
+      taoxian: {
+        name: "桃县", fictional: true, scale: "county", zone: "southwest", lat: 29.127, lng: 110.478,
+        analog: "约当湘西永顺/张家界辖县",
+        inference: "落后县域、县重点高中、小菲女王自述；邻市落后、钱医生心理诊所。",
+      },
+      n_city: {
+        name: "N市", fictional: true, scale: "regional", zone: "south", lat: 22.817, lng: 108.366,
+        analog: "约当南宁（二线省会）",
+        inference: "芬自G市（广州）来推销；夜场、150㎡毛坯商品房、别墅调教；华南西南二线灰色娱乐业。",
+      },
+      binhai: {
+        name: "滨海", fictional: true, scale: "regional", zone: "north", lat: 38.914, lng: 121.614,
+        analog: "约当大连（北方沿海）",
+        inference: "副司令千金、军队高干区、勤务女兵；渤海军港城市军政底色。",
+      },
+      huancheng: {
+        name: "焕城", fictional: true, scale: "regional", zone: "northwest", lat: 36.061, lng: 103.834,
+        analog: "约当兰州（三线省会）",
+        inference: "火车线终点、外企白领、农村乘客对比；西北干线枢纽、干燥内陆。",
+      },
+      southern_port: {
+        name: "南方口岸城", fictional: true, scale: "major", zone: "south_coast", lat: 23.354, lng: 116.682,
+        analog: "约当汕头/潮州（粤东口岸）",
+        inference: "海关处长、走私、副市长之子、黑社会红楼；口岸灰黑经济、闽南粤东气质。",
+      },
+      wuxi: {
+        name: "江南大学", fictional: true, scale: "regional", zone: "east", lat: 31.491, lng: 120.312,
+        analog: "约当无锡（高校城）",
+        inference: "校名含「江南」、日欧美留学生、系花宿舍女王；长三角国际教育、富裕商帮城市。",
+      },
+      henan_inland: {
+        name: "中原内陆小城", fictional: true, scale: "county", zone: "central", lat: 34.619, lng: 112.454,
+        analog: "约当洛阳/南阳辖县",
+        inference: "市政府办公室副主任、一梯两户、性用品店；华北华中交界、官本位宣传系统小城。",
+      },
+      handan_suburb: {
+        name: "滨河近郊", fictional: true, scale: "regional", zone: "north", lat: 36.625, lng: 114.539,
+        analog: "约当邯郸（三线）",
+        inference: "滨河小墅999茶室、SM论坛；华北平原近省城的隐秘会所带。",
+      },
+      north_county: {
+        name: "冀南某县", fictional: true, scale: "county", zone: "north", lat: 36.915, lng: 114.968,
+        analog: "约当河北南部县级机关",
+        inference: "小县城大院、省长之子处长、政府机构科长；华北平原县城攀附省城关系。",
+      },
+      hunan_town: {
+        name: "湘西山乡", fictional: true, scale: "county", zone: "southwest", lat: 27.738, lng: 109.957,
+        analog: "约当湘西乡镇",
+        inference: "副省长之女、乡长、掏粪工、吉普车；文革后农村阶级与厕奴家法。",
+      },
+      jianghuai: {
+        name: "江淮普通城", fictional: true, scale: "regional", zone: "east", lat: 32.394, lng: 119.412,
+        analog: "约当扬州/泰州",
+        inference: "供水公司、管道公司、两室一厅小家；江淮水网平原普通地级市。",
+      },
+      nanjing_satellite: {
+        name: "南京卫星城", fictional: true, scale: "regional", zone: "east", lat: 31.821, lng: 117.227,
+        analog: "约当合肥",
+        inference: "夫妻厕奴驱车4小时赴主家；华东腹地地级、高铁圈内。",
+      },
+      qingdao: {
+        name: "青岛", scale: "major", zone: "north", lat: 36.067, lng: 120.383,
+        inference: "X市研究生夫妻、换妻群；北方沿海科教、开放城市（种马线北体在北京，主场景归青岛）。",
+      },
+      sydney: {
+        name: "悉尼", scale: "overseas", zone: "overseas", lat: -33.868, lng: 151.209,
+        inference: "麦考理大学旁公寓、华人银行圈、北京主来访。",
+      },
+      newcastle: {
+        name: "纽卡斯尔（英）", scale: "overseas", zone: "overseas", lat: 54.978, lng: -1.615,
+        inference: "英国东北部华人移民、健身房派对。",
+      },
+      philadelphia: {
+        name: "费城", scale: "overseas", zone: "overseas", lat: 39.952, lng: -75.165,
+        inference: "野营惊魂夜续篇·宾州社区义警线。",
+      },
+    };
+
+    const POSTS = [
+      { title: "沦为厕奴的校花", slug: "2022-11-13-homecoming-toilet", cityId: "beijing", scale: "metropolis", scene: "清华·景润别苑·天堂俱乐部" },
+      { title: "亮哥的故事", slug: "2025-02-22-liangge", cityId: "beijing", scale: "metropolis", scene: "中海紫御·隐秘S圈（含深圳/沿海出差）" },
+      { title: "我是如何一步一步成为妻子的绿奴的", slug: "2025-01-19-becoming-a-cuckold-slave", cityId: "beijing", scale: "metropolis", scene: "中关村·五环·马尔代夫结识主" },
+      { title: "黑爹麦克的黄皮绿奴", slug: "2025-03-15-black-daddy-mike-straight", cityId: "beijing", scale: "metropolis", scene: "燕京九层公寓" },
+      { title: "我和我的女友被别人当成狗", slug: "2022-12-03-couple-dogs", cityId: "beijing", scale: "metropolis", scene: "职场项目合租" },
+      { title: "邢曼曼与赵磊", slug: "2021-11-05-xing-manman-and-zhao-lei", cityId: "beijing", scale: "metropolis", scene: "京客隆约见" },
+
+      { title: "绿奴的生活", slug: "2024-10-21-life-of-a-cuckold-slave", cityId: "shanghai", scale: "metropolis", scene: "林瀚工作地（含三亚度假）" },
+      { title: "狼族", slug: "2023-05-25-werewolves", cityId: "shanghai", scale: "metropolis", scene: "郎马家族·性奴俱乐部" },
+      { title: "上海戏剧学院女S日记", slug: "2021-07-26-bdsm-diary-shanghai-theatre-academy", cityId: "shanghai", scale: "metropolis", scene: "上戏·雨菲庄园·SM俱乐部" },
+      { title: "医者毒心", slug: "2021-12-03-doctress", cityId: "shanghai", scale: "metropolis", scene: "奴隶世界·与上戏同宇宙" },
+      { title: "郑总", slug: "2022-10-30-boss-zheng", cityId: "shanghai", scale: "metropolis", scene: "浦东公司·箱根出差" },
+      { title: "我的前半生", slug: "2025-02-20-the-first-half-of-my-life", cityId: "shanghai", scale: "metropolis", scene: "六点论坛·住家主Z" },
+      { title: "关于我买原味丝袜导致家庭成员增加的魔幻故事", slug: "2025-04-08-used-socks-and-destiny", cityId: "shanghai", scale: "metropolis", scene: "985国内段（后留学加拿大）" },
+
+      { title: "我和老婆的夫妻奴经历", slug: "2024-10-02-submissive-couple-experience-with-my-wife", cityId: "guangzhou", scale: "metropolis", scene: "君悦/康莱德·北京绿主遥控" },
+      { title: "4月的一次侍候经历", slug: "2023-02-12-april-bdsm", cityId: "guangzhou", scale: "regional", scene: "广州气质中年情侣主·酒店" },
+
+      { title: "关于我遇到的SM圈与反差婊们", slug: "2025-03-27-wang-yuze", cityId: "shenzhen", scale: "metropolis", scene: "CBD·律所·别墅·推特" },
+      { title: "大鸡巴外卖小哥张骁征服了我和我老婆", slug: "2025-03-27-big-dicked-delivery-rider", cityId: "shenzhen", scale: "regional", scene: "互联网白领家庭" },
+
+      { title: "老婆出轨健身教练，我成奴", slug: "2025-04-03-wifes-trainer", cityId: "hangzhou", scale: "major", scene: "高层住宅·上市公司总经理" },
+      { title: "和老婆一起沦为了情侣奴", slug: "2026-05-02-wife-and-i-became-couple-slaves", cityId: "hangzhou", scale: "major", scene: "夫妻吧·集丸酒吧" },
+      { title: "夫妻奴隶", slug: "2025-04-08-dominant-couple-submissive-couple", cityId: "hangzhou", scale: "major", scene: "Happening bar·三个月契约" },
+      { title: "贱奴跪下舔我的脚", slug: "2022-12-03-family-slavery", cityId: "hangzhou", scale: "regional", scene: "富婆女王多家庭线" },
+      { title: "我与婷的绿奴经历", slug: "2021-11-17-ting-and-me", cityId: "hangzhou", scale: "regional", scene: "大学社团·绿主四人局" },
+
+      { title: "女儿的男友", slug: "2022-06-22-daughters-boyfriend", cityId: "nanjing", scale: "regional", scene: "树人高中·副市长·春满论坛" },
+      { title: "出轨故事", slug: "2020-04-23-cuckold-story", cityId: "nanjing", scale: "regional", scene: "多家庭提纲·未完" },
+
+      { title: "真实绿帽奴的心路历程", slug: "2020-04-09-the-mental-path-of-a-cuckold-slave", cityId: "jinan", scale: "major", scene: "领秀城·教授四合院" },
+      { title: "矛盾的欲望", slug: "2022-09-17-conflicting-thirsts", cityId: "jinan", scale: "major", scene: "与心路历程同宇宙" },
+
+      { title: "室友的夫妻奴", slug: "2020-05-16-roommates-submissive-couple", cityId: "shijiazhuang", scale: "major", scene: "保定求学→石家庄经商" },
+
+      { title: "邻居", slug: "2020-11-03-the-neighbors", cityId: "tianjin", scale: "major", scene: "民政局·高档公寓" },
+      { title: "环保夫妻", slug: "2021-05-13-green-couple", cityId: "tianjin", scale: "major", scene: "2010北方大城市·单次酒店" },
+
+      { title: "过往：一个家庭的悲哀", slug: "2020-04-06-the-past-a-familys-tragedy", cityId: "wuhan", scale: "regional", scene: "春节回乡大家庭" },
+
+      { title: "野营惊魂夜", slug: "2026-03-26-camp-night", cityId: "chengdu", cityIds: ["chengdu", "philadelphia"], scale: "regional", scene: "国内森林露营·续篇费城义警线" },
+
+      { title: "淫虐录之网聊让我们成了夫妻奴", slug: "2023-02-15-from-online-to-offline", cityId: "chongqing", scale: "regional", scene: "图书馆·中学·QQ圈" },
+
+      { title: "惊喜之意外发现强势人妻喜欢下贱的感觉", slug: "2022-09-05-the-bossy-wife", cityId: "zhengzhou", scale: "regional", scene: "商场批发小店" },
+
+      { title: "合租情侣的奴隶生活", slug: "2026-06-06-cohabiting-couple-slave-life", cityId: "s_city", scale: "metropolis", scene: "合租别墅·Snow沙龙" },
+      { title: "母老虎改造计划", slug: "2026-03-28-mother-tiger-reform", cityId: "s_city", scale: "metropolis", scene: "SP论坛·小学" },
+      { title: "奇幻学院", slug: "2020-04-23-the-fantastic-college", cityId: "s_city", scale: "regional", scene: "郊县私立大专" },
+
+      { title: "靳童", slug: "2020-09-30-jin-tong", cityId: "jiangyuan", scale: "regional", scene: "政协主席·台风大酒店" },
+
+      { title: "疼爱", slug: "2020-04-23-family-discipline", cityId: "jiangcheng", scale: "major", scene: "1960s–90s跨代家法史诗" },
+
+      { title: "家庭女王", slug: "2022-09-17-domestic-queen", cityId: "saiwan", scale: "county", scene: "郦娟县域女王长篇" },
+
+      { title: "过往", slug: "2020-07-29-the-past", cityId: "taoxian", scale: "county", scene: "桃县·小菲女王·钱医生诊所" },
+
+      { title: "姗姗", slug: "2022-11-13-shanshan", cityId: "n_city", scale: "regional", scene: "芬自广州来·夜场别墅" },
+
+      { title: "司令千金尚雅芳", slug: "2022-11-13-shang-yafang", cityId: "binhai", scale: "regional", scene: "军队高干区" },
+
+      { title: "悲惨的除夕之夜", slug: "2020-09-01-new-years-eve", cityId: "huancheng", scale: "regional", scene: "火车线·外企白领" },
+
+      { title: "女白领的私生活", slug: "2020-10-31-secret-life-of-white-collars", cityId: "southern_port", scale: "major", scene: "海关走私·凶哥红楼" },
+
+      { title: "美女脚下的爬行动物", slug: "2020-11-07-crawling-under-beauties-feet", cityId: "wuxi", scale: "regional", scene: "江南大学宿舍女王长篇" },
+
+      { title: "与奴共舞", slug: "2020-10-23-dancing-with-slaves", cityId: "henan_inland", scale: "county", scene: "市政府宣传·一梯两户" },
+
+      { title: "调教老公成绿奴", slug: "2020-06-30-training-my-husband", cityId: "handan_suburb", scale: "regional", scene: "滨河999茶室·SM论坛" },
+
+      { title: "伺候一米九的高大上司", slug: "2023-03-04-serving-1-9-meters-boss-and-my-wife", cityId: "north_county", scale: "county", scene: "县长机关→处长豪宅" },
+
+      { title: "乡长一家的厕所", slug: "2021-08-06-town-chiefs-toilets", cityId: "hunan_town", scale: "county", scene: "副省长之女·乡长家" },
+
+      { title: "情夫与绿奴", slug: "2020-10-20-cuckold-slave", cityId: "jianghuai", scale: "regional", scene: "供水/管道公司邻里" },
+
+      { title: "一对夫妻厕奴", slug: "2022-09-17-a-submissive-couple", cityId: "nanjing_satellite", scale: "regional", scene: "外市驱车4小时赴主家" },
+
+      { title: "17岁的种马体育生给我老婆下种", slug: "2023-04-30-borrowing-sperms", cityId: "qingdao", cityIds: ["qingdao", "beijing"], scale: "major", scene: "X市研究生夫妻·换妻群（王旭北体在北京）" },
+
+      { title: "移民澳洲后的夫妻生活", slug: "2024-12-18-slave-couple-in-australia", cityId: "sydney", scale: "overseas", scene: "麦考理大学旁·北京主来访" },
+      { title: "AMWF性奴家庭", slug: "2025-04-08-amwf-cuckqueen", cityId: "newcastle", scale: "overseas", scene: "华人移民·健身房派对" },
+
+      { title: "他的胯下是我最爱的女友", slug: "2021-08-06-my-goddess-under-his-hips", cityId: null, scale: "campus", scene: "大学足球队·未定点名" },
+      { title: "两个姐姐和大叔", slug: "2026-02-13-two-sisters-and-an-uncle", cityId: null, scale: "campus", scene: "大学城QQ群·与野营同人物" },
+      { title: "女王到女奴", slug: "2022-04-07-conversion", cityId: null, scale: "campus", scene: "名牌大学·照片要挟" },
+      { title: "征服", slug: "2020-05-16-conquest", cityId: null, scale: "campus", scene: "省重点高中·市长千金别墅" },
+      { title: "甜甜的屁眼儿", slug: "2021-12-04-tiantians-asshole", cityId: null, scale: "campus", scene: "重点高中宿舍" },
+      { title: "初中情侣奴", slug: "2023-05-15-middle-school-slave-couple", cityId: null, scale: "campus", scene: "初二班级" },
+      { title: "入侵我的生活", slug: "2021-11-05-invasion-into-my-life", cityId: null, scale: "campus", scene: "大学外租屋·女S邻居" },
+      { title: "入侵我的生活（男生版）", slug: "2022-01-29-invasion-into-my-life-male", cityId: null, scale: "campus", scene: "大学外租屋·男S邻居" },
+      { title: "绿奴开发手册", slug: "2022-12-03-cuckold-handbook", cityId: null, scale: "virtual", scene: "网络社群教程" },
+      { title: "过奴夫妻主理论合集", slug: "2022-07-24-guonu-theories", cityId: null, scale: "virtual", scene: "夫妻主家规模板" },
+    ];
+
+    const activeScales = new Set(Object.keys(SCALES));
+    let searchQuery = "";
+    let focusedSlug = null;
+
+    const map = L.map("map", { zoomControl: true }).setView([35.2, 105.0], 4);
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      attribution: "&copy; OpenStreetMap &copy; CARTO",
+      subdomains: "abcd",
+      maxZoom: 19,
+    }).addTo(map);
+
+    const markerLayer = L.layerGroup().addTo(map);
+    const markersByCity = {};
+
+    function scaleTag(scale) {
+      const s = SCALES[scale];
+      return `<span class="scale-tag" style="background:${s.color}22;color:${s.color};border:1px solid ${s.color}55">${s.label}</span>`;
+    }
+
+    function zoneTag(zone) {
+      return `<span class="zone-tag" style="background:#ffffff10;color:#c5d0e0;border:1px solid #ffffff18">${ZONES[zone] || zone}</span>`;
+    }
+
+    function postPath(slug) {
+      return `_posts/${slug}.md`;
+    }
+
+    function cityIdsForPost(p) {
+      if (p.cityIds && p.cityIds.length) return p.cityIds;
+      return p.cityId ? [p.cityId] : [];
+    }
+
+    function cityForPost(p) {
+      const id = p.cityId || cityIdsForPost(p)[0];
+      return id ? CITIES[id] : null;
+    }
+
+    function postSearchHay(p) {
+      const c = cityForPost(p);
+      return [
+        p.title, p.scene, p.slug, SCALES[p.scale].label,
+        c && c.name, c && c.analog, c && c.inference, c && ZONES[c.zone],
+      ].filter(Boolean).join(" ").toLowerCase();
+    }
+
+    function filteredPosts() {
+      const q = searchQuery.trim().toLowerCase();
+      return POSTS.filter((p) => {
+        if (!activeScales.has(p.scale)) return false;
+        if (!q) return true;
+        return postSearchHay(p).includes(q);
+      });
+    }
+
+    function cityScaleFromPosts(posts) {
+      const order = ["metropolis", "major", "regional", "county", "overseas"];
+      let best = posts[0].scale;
+      for (const p of posts) {
+        if (order.indexOf(p.scale) < order.indexOf(best)) best = p.scale;
+      }
+      return CITIES[posts[0].cityId]?.scale || best;
+    }
+
+    function renderScaleFilters() {
+      const el = document.getElementById("scale-filters");
+      el.innerHTML = Object.entries(SCALES).map(([key, s]) =>
+        `<button type="button" class="chip active" data-scale="${key}">
+          <span class="dot" style="background:${s.color}"></span>${s.label}
+        </button>`
+      ).join("");
+      el.querySelectorAll(".chip").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const k = btn.dataset.scale;
+          btn.classList.toggle("active");
+          if (activeScales.has(k)) activeScales.delete(k); else activeScales.add(k);
+          render();
+        });
+      });
+    }
+
+    function renderList() {
+      const list = document.getElementById("post-list");
+      const posts = filteredPosts().sort((a, b) => a.title.localeCompare(b.title, "zh"));
+      list.innerHTML = posts.map((p) => {
+        const c = cityForPost(p);
+        const loc = c ? `${c.name}${c.fictional ? "（虚构）" : ""}` : "—";
+        return `
+        <li class="post-item${focusedSlug === p.slug ? " focused" : ""}" data-slug="${p.slug}" data-city="${p.cityId || ""}">
+          <a href="${postPath(p.slug)}">
+            <div class="post-title">${p.title}</div>
+            <div class="post-meta">${scaleTag(p.scale)}${loc} — ${p.scene}</div>
+          </a>
+        </li>`;
+      }).join("");
+
+      const anchored = filteredPosts().filter((p) => cityIdsForPost(p).length);
+      const cityIds = new Set(anchored.flatMap((p) => cityIdsForPost(p)));
+      document.getElementById("stats").textContent =
+        `显示 ${posts.length} / ${POSTS.length} 篇 · 地图 ${cityIds.size} 个城市`;
+
+      list.querySelectorAll(".post-item").forEach((li) => {
+        li.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          e.preventDefault();
+          focusPost(li.dataset.slug, li.dataset.city);
+        });
+      });
+    }
+
+    function renderUnanchored() {
+      const grid = document.getElementById("unanchored-grid");
+      const posts = filteredPosts().filter((p) => !p.cityId);
+      grid.innerHTML = posts.map((p) => `
+        <article class="card">
+          <h3><a href="${postPath(p.slug)}" style="color:inherit">${p.title}</a></h3>
+          <p>${scaleTag(p.scale)}${p.scene}</p>
+        </article>
+      `).join("");
+    }
+
+    function buildPopup(cityId, posts) {
+      const c = CITIES[cityId];
+      const scale = cityScaleFromPosts(posts);
+      const scaleLabel = SCALES[scale].label;
+      const zoneLabel = ZONES[c.zone];
+      const analog = c.analog ? `<br><strong>约当：</strong>${c.analog}` : "";
+      const fict = c.fictional ? "（虚构地名）" : "";
+      return `
+        <div class="popup-title">${c.name}${fict}</div>
+        <div class="popup-sub">${zoneTag(c.zone)} ${scaleTag(scale)} <strong>${posts.length} 篇</strong><br>${scaleLabel} · ${zoneLabel}${analog}</div>
+        <div class="popup-infer">${c.inference}</div>
+        <ul class="popup-posts">${posts.map((p) =>
+          `<li><a href="${postPath(p.slug)}">${p.title}</a><span class="scene">${p.scene}</span></li>`
+        ).join("")}</ul>`;
+    }
+
+    function renderMap() {
+      markerLayer.clearLayers();
+      Object.keys(markersByCity).forEach((k) => delete markersByCity[k]);
+
+      const byCity = {};
+      filteredPosts().forEach((p) => {
+        cityIdsForPost(p).forEach((cityId) => {
+          if (!byCity[cityId]) byCity[cityId] = [];
+          byCity[cityId].push(p);
+        });
+      });
+
+      Object.entries(byCity).forEach(([cityId, posts]) => {
+        const c = CITIES[cityId];
+        const scale = cityScaleFromPosts(posts);
+        const color = SCALES[scale].color;
+        const n = posts.length;
+        const size = Math.min(36, Math.max(22, 18 + n * 2));
+        const icon = L.divIcon({
+          className: "",
+          html: `<div class="city-marker" style="width:${size}px;height:${size}px;background:${color};font-size:${n > 9 ? 9 : 10}px">${n}</div>`,
+          iconSize: [size, size],
+          iconAnchor: [size / 2, size / 2],
+        });
+        const m = L.marker([c.lat, c.lng], { icon })
+          .bindPopup(buildPopup(cityId, posts), { maxWidth: 360 });
+        m._cityId = cityId;
+        m._slugSet = new Set(posts.map((p) => p.slug));
+        markersByCity[cityId] = m;
+        markerLayer.addLayer(m);
+      });
+    }
+
+    function focusPost(slug, cityId) {
+      focusedSlug = slug;
+      renderList();
+      const p = POSTS.find((x) => x.slug === slug);
+      const targetCity = cityId || (p && cityIdsForPost(p)[0]);
+      if (!targetCity) return;
+      const c = CITIES[targetCity];
+      const m = markersByCity[targetCity];
+      if (!c || !m) return;
+      const zoom = c.scale === "metropolis" ? 10 : c.scale === "overseas" ? 5 : c.scale === "county" ? 9 : 8;
+      map.setView([c.lat, c.lng], zoom, { animate: true });
+      m.openPopup();
+    }
+
+    function render() {
+      renderList();
+      renderMap();
+      renderUnanchored();
+    }
+
+    document.getElementById("search").addEventListener("input", (e) => {
+      searchQuery = e.target.value;
+      render();
+    });
+
+    renderScaleFilters();
+    render();
+  </script>
+</body>
+</html>
