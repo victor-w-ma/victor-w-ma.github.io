@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "合租情侣的奴隶生活"
-status: 连载
+status: 续写
 last_modified_at: 2026-09-05
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "绿奴的生活"
+status: 断更
 ---
 
 # 第一章 跪拜男神
