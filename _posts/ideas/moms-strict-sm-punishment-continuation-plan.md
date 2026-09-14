@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # 《强势妈妈的家规》续写规划 · 多路线至结局
 
 **对应转录**：`_posts/ideas/moms-strict-sm-punishment-grok.md`（Grok 对话至第 98 轮）
