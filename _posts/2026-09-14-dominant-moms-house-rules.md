@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "强势妈妈的家规"
-status: 断更
+status: 连载
 last_modified_at: 2026-09-15
 ---
 
