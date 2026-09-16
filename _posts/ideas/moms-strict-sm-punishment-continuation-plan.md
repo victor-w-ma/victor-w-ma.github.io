@@ -7,7 +7,7 @@ published: false
 **对应转录**：`_posts/ideas/moms-strict-sm-punishment-grok.md`（Grok 对话至第 98 轮）
 
 **性质**：路线备忘（未定稿）。对话记录不是前作。
-**正文进度**：小说从第一章重写，见 `_posts/2026-09-14-dominant-moms-house-rules.md`。目前写到「六、看穿」（对话第 6 轮：林宇看穿外壳，迅速臣服；无性、无羞辱、不提妈妈）。一张一张写，不把后段对话提前写进正文。
+**正文进度**：小说从第一章重写，见 `_posts/2026-09-14-dominant-moms-house-rules.md`。目前写到「六、舍规」（宿舍里继续支配三个同年舍友；林宇尚未出场）。一张一张写，不把后段对话提前写进正文。
 
 ---
 
