@@ -593,10 +593,6 @@ def publish_work() -> None:
 
 def main() -> None:
     publish_campus()
-    print()
-    publish_wall()
-    print()
-    publish_work()
 
 
 if __name__ == '__main__':
