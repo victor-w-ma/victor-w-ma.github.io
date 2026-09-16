@@ -7,7 +7,7 @@ published: false
 **对应转录**：`_posts/ideas/moms-strict-sm-punishment-grok.md`（Grok 对话至第 98 轮）
 
 **性质**：路线备忘（未定稿）。对话记录不是前作。
-**正文进度**：小说从第一章重写，见 `_posts/2026-09-14-dominant-moms-house-rules.md`。目前写到「四、侍奉」（对话第 4 轮：晚间洗脚、洗下体、洗屁眼、洗衣、按摩）。一张一张写，不把后段对话提前写进正文。
+**正文进度**：小说从第一章重写，见 `_posts/2026-09-14-dominant-moms-house-rules.md`。目前写到「五、宿舍」（对话第 5 轮：外强中干、开学后宿舍发威）。一张一张写，不把后段对话提前写进正文。
 
 ---
 
