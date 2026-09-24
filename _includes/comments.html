@@ -21,8 +21,8 @@
       font-family: Arial, sans-serif;
     }
     .comments h2 {
-      color: #333;
-      border-bottom: 2px solid #eee;
+      color: var(--c-ink);
+      border-bottom: 2px solid var(--c-line-4);
       padding-bottom: 10px;
     }
     #comment-form {
@@ -39,39 +39,39 @@
     #comment-form textarea {
       width: 100%;
       padding: 8px;
-      border: 1px solid #ddd;
+      border: 1px solid var(--c-line);
       border-radius: 4px;
     }
     #comment-form button {
-      background-color: #f0f0f0;
-      color: #333;
+      background-color: var(--c-fill);
+      color: var(--c-ink);
       padding: 8px 12px;
-      border: 1px solid #ddd;
+      border: 1px solid var(--c-line);
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
       transition: all 0.3s ease;
     }
     #comment-form button:hover {
-      background-color: #e0e0e0;
-      border-color: #ccc;
+      background-color: var(--c-fill-hover);
+      border-color: var(--c-line-3);
     }
     #comment-form button:active {
-      background-color: #222;
+      background-color: var(--c-press);
     }
     .comment {
       position: relative;
       padding: 10px;
       padding-right: 100px;
-      background-color: #f9f9f9;
-      border: 1px solid #e0e0e0;
+      background-color: var(--c-fill-soft);
+      border: 1px solid var(--c-fill-hover);
       border-radius: 4px;
       padding: 15px;
       margin-bottom: 15px;
     }
     .comment-author {
       font-weight: bold;
-      color: #333;
+      color: var(--c-ink);
       margin-bottom: 5px;
     }
     .comment-content {
@@ -91,20 +91,20 @@
       margin-left: 5px;
       display: flex;
       align-items: center;
-      color: #636363; /* Balanced gray color for the buttons */
+      color: var(--c-muted-2); /* Balanced gray color for the buttons */
     }
     .comment-actions i {
       font-size: 18px;
       margin-right: 2px;
-      color: #636363; /* Balanced gray color for the icons */
+      color: var(--c-muted-2); /* Balanced gray color for the icons */
     }
     .comment-actions span {
       font-size: 14px;
-      color: #636363; /* Balanced gray color for the text */
+      color: var(--c-muted-2); /* Balanced gray color for the text */
     }
     .nested-comments {
       margin-left: 20px;
-      border-left: 2px solid #ddd;
+      border-left: 2px solid var(--c-line);
       padding-left: 10px;
       padding-top: 10px; /* Add top padding to match the reply form */
       max-width: calc(100% - 30px);
@@ -125,7 +125,7 @@
       width: 100%;
       padding: 10px;
       margin-bottom: 10px;
-      border: 1px solid #e0e0e0;
+      border: 1px solid var(--c-fill-hover);
       border-radius: 4px;
       font-size: 14px;
     }
@@ -136,9 +136,9 @@
     }
     .comment-form button,
     .reply-form button {
-      background-color: #f0f0f0;  /* Grayish color matching the "Post comment" button */
-      color: #333;  /* Dark text color for contrast */
-      border: 1px solid #ccc;  /* Light border */
+      background-color: var(--c-fill);  /* Grayish color matching the "Post comment" button */
+      color: var(--c-ink);  /* Dark text color for contrast */
+      border: 1px solid var(--c-line-3);  /* Light border */
       padding: 10px 20px;
       text-align: center;
       text-decoration: none;
@@ -151,12 +151,12 @@
     }
     .comment-form button:hover,
     .reply-form button:hover {
-      background-color: #e0e0e0;  /* Slightly darker shade for hover effect */
+      background-color: var(--c-fill-hover);  /* Slightly darker shade for hover effect */
     }
     #comment-form textarea {
       width: 100%;
       padding: 8px;
-      border: 1px solid #ddd;
+      border: 1px solid var(--c-line);
       border-radius: 4px;
       box-sizing: border-box;
       resize: none;
@@ -170,7 +170,7 @@
     .reply-form textarea {
       width: 100%;
       padding: 8px;
-      border: 1px solid #ddd;
+      border: 1px solid var(--c-line);
       border-radius: 4px;
       box-sizing: border-box;
       resize: none;
@@ -184,7 +184,7 @@
     .reply-form textarea {
       width: 100%;
       padding: 8px;
-      border: 1px solid #ddd;
+      border: 1px solid var(--c-line);
       border-radius: 4px;
       box-sizing: border-box;
       resize: none;
@@ -202,7 +202,7 @@
     .reply-form input[type="text"] {
       width: 100%;
       padding: 8px;
-      border: 1px solid #ddd;
+      border: 1px solid var(--c-line);
       border-radius: 4px;
       box-sizing: border-box;
       font-family: Arial, sans-serif;

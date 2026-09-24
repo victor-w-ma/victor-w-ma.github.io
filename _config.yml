@@ -10,6 +10,10 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
+# Minima auto skin follows the OS / browser prefers-color-scheme setting.
+minima:
+  skin: auto
+
 google_analytics: G-HYN8MF0VM4
 
 # Keep header navigation explicit so utility docs don't appear as tabs.

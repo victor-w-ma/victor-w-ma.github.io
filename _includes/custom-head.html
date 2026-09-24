@@ -1,3 +1,6 @@
+<meta name="theme-color" content="#fdfdfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#181818" media="(prefers-color-scheme: dark)">
+
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
@@ -5,8 +8,73 @@
 
 <style>
   /* Scale site type from Minima's 16px base to 20px (×1.25). Rem rules follow html. */
+  /* Custom widgets follow the same light/dark switch as Minima's auto skin. */
+  :root {
+    color-scheme: light;
+    --c-ink: #333;
+    --c-ink-strong: #111;
+    --c-muted: #828282;
+    --c-muted-2: #636363;
+    --c-faint: #888;
+    --c-faint-2: #666;
+    --c-quote: #555;
+    --c-fill: #f0f0f0;
+    --c-fill-hover: #e0e0e0;
+    --c-fill-active: #d0d0d0;
+    --c-fill-soft: #f9f9f9;
+    --c-fill-quiet: #f5f5f5;
+    --c-surface: #fff;
+    --c-quote-bg: #faf6f6;
+    --c-line: #ddd;
+    --c-line-3: #ccc;
+    --c-line-4: #eee;
+    --c-line-focus: #bbb;
+    --c-press: #222;
+    --c-danger: #a33;
+    --c-shadow: rgba(0, 0, 0, 0.12);
+    --c-shadow-lg: rgba(0, 0, 0, 0.14);
+    --c-backdrop: rgba(0, 0, 0, 0.28);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --c-ink: #e4e4e4;
+      --c-ink-strong: #f2f2f2;
+      --c-muted: #9a9a9a;
+      --c-muted-2: #a3a3a3;
+      --c-faint: #9a9a9a;
+      --c-faint-2: #b5b5b5;
+      --c-quote: #c4b8b8;
+      --c-fill: #2c2c2c;
+      --c-fill-hover: #383838;
+      --c-fill-active: #444444;
+      --c-fill-soft: #242424;
+      --c-fill-quiet: #2a2a2a;
+      --c-surface: #222222;
+      --c-quote-bg: #2a2222;
+      --c-line: #444444;
+      --c-line-3: #4a4a4a;
+      --c-line-4: #333333;
+      --c-line-focus: #666666;
+      --c-press: #3f3f3f;
+      --c-danger: #e07a7a;
+      --c-shadow: rgba(0, 0, 0, 0.45);
+      --c-shadow-lg: rgba(0, 0, 0, 0.55);
+      --c-backdrop: rgba(0, 0, 0, 0.62);
+    }
+  }
+
   html {
     font-size: 20px;
+    color-scheme: light dark;
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: var(--c-surface);
+    color: var(--c-ink);
   }
 
   body {
