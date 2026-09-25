@@ -1,3 +1,23 @@
+<script>
+  (function () {
+    var lang = 'zh';
+    try {
+      lang = localStorage.getItem('siteLang') || 'zh';
+    } catch (err) {
+      lang = 'zh';
+    }
+    if (lang === 'en') {
+      document.documentElement.lang = 'en';
+      document.documentElement.classList.add('lang-en');
+    } else {
+      document.documentElement.lang = 'zh-CN';
+      document.documentElement.classList.remove('lang-en');
+    }
+    window.siteTr = function (zh, en) {
+      return document.documentElement.classList.contains('lang-en') ? en : zh;
+    };
+  })();
+</script>
 <meta name="theme-color" content="#fdfdfd" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#181818" media="(prefers-color-scheme: dark)">
 
@@ -124,6 +144,112 @@
   .post-status-badge.is-hiatus {
     background: #7c7874;
   }
+
+  html:not(.lang-en) .lang-en {
+    display: none !important;
+  }
+
+  html.lang-en .has-en > .lang-zh {
+    display: none !important;
+  }
+
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    float: right;
+    margin: 8px 10px 0 12px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .lang-toggle-button {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--c-ink);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    transition: background-color 0.3s ease;
+  }
+
+  .lang-toggle-button:hover {
+    background-color: var(--c-fill);
+  }
+
+  html:not(.lang-en) .lang-toggle-button[data-lang="zh"],
+  html.lang-en .lang-toggle-button[data-lang="en"] {
+    background-color: var(--c-fill);
+  }
+
+  html:not(.lang-en) .lang-toggle-button[data-lang="zh"]:hover,
+  html.lang-en .lang-toggle-button[data-lang="en"]:hover {
+    background-color: var(--c-fill-hover);
+  }
+
+  .translation-note {
+    margin: 0 0 1rem;
+    color: var(--c-muted);
+    font-size: 0.875rem;
+  }
+
+  .post-header .translation-note {
+    margin: 0.15rem 0 0;
+  }
+
+  .footer-translation-note {
+    margin: 0.75rem 0 0;
+    font-size: 0.875rem;
+  }
+
+  #google_translate_element {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  iframe.skiptranslate,
+  .goog-te-banner-frame,
+  #goog-gt-tt,
+  .goog-te-balloon-frame,
+  .goog-tooltip,
+  .goog-te-spinner-pos {
+    display: none !important;
+  }
+
+  body {
+    top: 0 !important;
+    position: static !important;
+  }
+
+  .goog-text-highlight {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  @media screen and (max-width: 600px) {
+    .lang-toggle {
+      position: absolute;
+      top: 10px;
+      right: 58px;
+      float: none;
+      margin: 0;
+      z-index: 2;
+    }
+
+    .site-header .site-title {
+      padding-right: 10.5rem;
+    }
+  }
 </style>
 
 <script>
@@ -149,6 +275,13 @@
       '完结': 'is-complete',
       '断更': 'is-hiatus'
     };
+    var BADGE_EN = {
+      '更新': 'Updated',
+      '续写': 'Serial',
+      '连载': 'Serial',
+      '完结': 'Complete',
+      '断更': 'Hiatus'
+    };
 
     function pad2(n) {
       return n < 10 ? '0' + n : String(n);
@@ -168,14 +301,24 @@
     }
 
     function applyBadge(timeEl, label) {
+      var enLabel = BADGE_EN[label] || BADGE_EN['完结'];
       var badge = timeEl.previousElementSibling;
       if (!badge || !badge.classList || !badge.classList.contains('post-status-badge')) {
         badge = document.createElement('span');
         timeEl.parentNode.insertBefore(badge, timeEl);
       }
-      badge.className = 'post-status-badge ' + (BADGE_CLASS[label] || BADGE_CLASS['完结']);
-      badge.setAttribute('aria-label', label);
-      badge.textContent = label;
+      badge.className = 'post-status-badge has-en notranslate ' + (BADGE_CLASS[label] || BADGE_CLASS['完结']);
+      badge.setAttribute('translate', 'no');
+      badge.setAttribute('aria-label', window.siteTr(label, enLabel));
+      var zh = document.createElement('span');
+      zh.className = 'lang-zh';
+      zh.textContent = label;
+      var en = document.createElement('span');
+      en.className = 'lang-en';
+      en.textContent = enLabel;
+      badge.textContent = '';
+      badge.appendChild(zh);
+      badge.appendChild(en);
     }
 
     var today = todayYmd();

@@ -49,3 +49,12 @@
   {%- assign post_badge_label = '完结' -%}
   {%- assign post_badge_class = 'is-complete' -%}
 {%- endif -%}
+{%- if post_badge_label == '更新' -%}
+  {%- assign post_badge_label_en = 'Updated' -%}
+{%- elsif post_badge_label == '续写' -%}
+  {%- assign post_badge_label_en = 'Serial' -%}
+{%- elsif post_badge_label == '断更' -%}
+  {%- assign post_badge_label_en = 'Hiatus' -%}
+{%- else -%}
+  {%- assign post_badge_label_en = 'Complete' -%}
+{%- endif -%}
