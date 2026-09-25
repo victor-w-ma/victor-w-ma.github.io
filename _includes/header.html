@@ -1,0 +1,35 @@
+<header class="site-header">
+
+  <div class="wrapper">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.minima.nav_pages | default: site.header_pages | default: default_paths -%}
+    <a class="site-title has-en notranslate" rel="author" href="{{ '/' | relative_url }}" translate="no">
+      <span class="lang-zh">{{ site.title | escape }}</span><span class="lang-en">{{ site.title_en | default: site.title | escape }}</span>
+    </a>
+
+    {%- unless page_paths == empty %}
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon"></span>
+        </label>
+
+        <div class="nav-items">
+          {%- for path in page_paths -%}
+            {%- assign hyperpage = site.pages | where: "path", path | first -%}
+            {%- if hyperpage.title -%}
+            <a class="nav-item has-en notranslate" href="{{ hyperpage.url | relative_url }}" translate="no">
+              <span class="lang-zh">{{ hyperpage.title | escape }}</span><span class="lang-en">{% if hyperpage.title_en %}{{ hyperpage.title_en | escape }}{% else %}{{ hyperpage.title | escape }}{% endif %}</span>
+            </a>
+            {%- endif -%}
+          {%- endfor %}
+        </div>
+      </nav>
+    {%- endunless %}
+
+    <div class="lang-toggle notranslate" role="group" data-zh-label="语言" data-en-label="Language" aria-label="语言" translate="no">
+      <button type="button" class="lang-toggle-button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" class="lang-toggle-button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>

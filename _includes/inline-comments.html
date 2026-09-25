@@ -1,25 +1,25 @@
-<div id="inline-comment-toolbar" class="inline-comment-toolbar" hidden>
-  <button type="button" id="inline-comment-add-btn" class="inline-comment-add-btn">
+<div id="inline-comment-toolbar" class="inline-comment-toolbar notranslate" hidden translate="no">
+  <button type="button" id="inline-comment-add-btn" class="inline-comment-add-btn has-en">
     <span class="material-icons" aria-hidden="true">mode_comment</span>
-    评论
+    <span class="lang-zh">评论</span><span class="lang-en">Comment</span>
   </button>
 </div>
 
 <div id="inline-comment-backdrop" class="inline-comment-backdrop" hidden></div>
 
-<div id="inline-comment-panel" class="inline-comment-panel" hidden role="dialog" aria-labelledby="inline-comment-panel-title">
+<div id="inline-comment-panel" class="inline-comment-panel notranslate" hidden role="dialog" aria-labelledby="inline-comment-panel-title" translate="no">
   <div class="inline-comment-panel-inner">
     <header class="inline-comment-panel-header">
       <h2 id="inline-comment-panel-title">评论这段话</h2>
-      <button type="button" class="inline-comment-close" aria-label="关闭">×</button>
+      <button type="button" class="inline-comment-close" data-zh-label="关闭" data-en-label="Close" aria-label="关闭">×</button>
     </header>
     <blockquote class="inline-comment-quote" hidden></blockquote>
     <div class="inline-comment-thread"></div>
     <form class="inline-comment-form">
-      <input type="text" name="nickname" placeholder="昵称" required autocomplete="nickname">
-      <textarea name="comment" placeholder="写下你的评论" required></textarea>
+      <input type="text" name="nickname" placeholder="昵称" data-en-placeholder="Nickname" required autocomplete="nickname">
+      <textarea name="comment" placeholder="写下你的评论" data-en-placeholder="Write a comment" required></textarea>
       <div class="inline-comment-form-actions">
-        <button type="submit">发布</button>
+        <button type="submit" class="has-en"><span class="lang-zh">发布</span><span class="lang-en">Post</span></button>
       </div>
       <p class="inline-comment-error" hidden></p>
     </form>
