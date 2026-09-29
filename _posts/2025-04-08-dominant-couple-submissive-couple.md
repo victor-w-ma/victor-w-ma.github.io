@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "夫妻奴隶"
+title_en: "Couple Slaves"
+en_include: translations/en/dominant-couple-submissive-couple.md
 ---
 
 我和老公是一对29岁的夫妻，结婚四年了。下面是我们夫妻的真实经历。

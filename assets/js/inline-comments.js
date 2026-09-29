@@ -36,8 +36,24 @@
   var openReply = null;
   var database = null;
 
+  function tr(zh, en) {
+    return window.siteTr ? window.siteTr(zh, en) : zh;
+  }
+
   function contentRoot() {
-    return document.querySelector('.post-content');
+    var article = document.querySelector('.post-content');
+    if (!article) {
+      return null;
+    }
+    var manual = article.querySelector('.lang-en');
+    var original = article.querySelector('.lang-zh');
+    if (document.documentElement.classList.contains('lang-en') && manual) {
+      return manual;
+    }
+    if (original) {
+      return original;
+    }
+    return article;
   }
 
   function articleRoot() {
@@ -110,7 +126,7 @@
     if (parent.closest('script, style, noscript, #toc, .inline-comment-toolbar, .inline-comment-panel, .inline-comment-backdrop')) {
       return true;
     }
-    if (parent.tagName === 'H1' && parent.textContent === '目录') {
+    if (parent.classList.contains('toc-title') || (parent.tagName === 'H1' && (parent.textContent === '目录' || parent.textContent === 'Contents'))) {
       return true;
     }
     return false;
@@ -326,7 +342,9 @@
     for (i = 0; i < marks.length; i++) {
       var id = marks[i].getAttribute('data-thread-id');
       var n = countComments(threads[id]);
-      var label = n > 0 ? '查看这段的 ' + n + ' 条评论' : '查看这段的评论';
+      var label = n > 0
+        ? tr('查看这段的 ' + n + ' 条评论', 'View ' + n + (n === 1 ? ' comment' : ' comments') + ' on this passage')
+        : tr('查看这段的评论', 'View comments on this passage');
       marks[i].setAttribute('aria-label', label);
       marks[i].title = label;
     }
@@ -617,7 +635,7 @@
     meta.className = 'inline-comment-meta';
     var author = document.createElement('span');
     author.className = 'inline-comment-author';
-    author.textContent = item.nickname || '匿名';
+    author.textContent = item.nickname || tr('匿名', 'Anonymous');
     var time = document.createElement('span');
     time.className = 'inline-comment-time';
     time.textContent = formatTime(item.timestamp);
@@ -634,8 +652,8 @@
     actions.className = 'inline-comment-item-actions';
     var replyBtn = document.createElement('button');
     replyBtn.type = 'button';
-    replyBtn.className = 'inline-comment-reply-btn';
-    replyBtn.textContent = '回复';
+    replyBtn.className = 'inline-comment-reply-btn notranslate';
+    replyBtn.textContent = tr('回复', 'Reply');
     replyBtn.addEventListener('click', function () {
       showReplyForm(wrap, item.id);
     });
@@ -657,22 +675,22 @@
       return;
     }
     var replyForm = document.createElement('form');
-    replyForm.className = 'inline-comment-reply-form';
+    replyForm.className = 'inline-comment-reply-form notranslate';
     var replyNick = document.createElement('input');
     replyNick.type = 'text';
     replyNick.name = 'nickname';
-    replyNick.placeholder = '昵称';
+    replyNick.placeholder = tr('昵称', 'Nickname');
     replyNick.required = true;
     replyNick.value = savedNickname();
     var replyText = document.createElement('textarea');
     replyText.name = 'comment';
-    replyText.placeholder = '回复';
+    replyText.placeholder = tr('回复', 'Reply');
     replyText.required = true;
     var replyActions = document.createElement('div');
     replyActions.className = 'inline-comment-form-actions';
     var replySubmit = document.createElement('button');
     replySubmit.type = 'submit';
-    replySubmit.textContent = '发布';
+    replySubmit.textContent = tr('发布', 'Post');
     replyActions.appendChild(replySubmit);
     replyForm.appendChild(replyNick);
     replyForm.appendChild(replyText);
@@ -773,10 +791,10 @@
     var quote = '';
     if (threadId && threads[threadId]) {
       quote = threads[threadId].quote;
-      titleEl.textContent = '这段话的评论';
+      titleEl.textContent = tr('这段话的评论', 'Comments on this passage');
     } else if (anchor) {
       quote = anchor.quote;
-      titleEl.textContent = '评论这段话';
+      titleEl.textContent = tr('评论这段话', 'Comment on this passage');
       lastAnchorRect = anchor.clientRect;
     }
     quoteEl.textContent = displayQuote(quote);
@@ -807,7 +825,7 @@
 
   function addComment(threadId, nickname, comment, parentId) {
     if (!database) {
-      showError('评论服务还没准备好，请稍后再试。');
+      showError(tr('评论服务还没准备好，请稍后再试。', 'Comments are not ready yet. Try again in a moment.'));
       return Promise.reject(new Error('no database'));
     }
     submitBtn.disabled = true;
@@ -823,14 +841,14 @@
       renderThread();
     }).catch(function (err) {
       submitBtn.disabled = false;
-      showError('发布失败，请重试。');
+      showError(tr('发布失败，请重试。', 'Could not post. Try again.'));
       console.error('inline comment failed', err);
     });
   }
 
   function createThread(anchor, nickname, comment) {
     if (!database) {
-      showError('评论服务还没准备好，请稍后再试。');
+      showError(tr('评论服务还没准备好，请稍后再试。', 'Comments are not ready yet. Try again in a moment.'));
       return Promise.reject(new Error('no database'));
     }
     var threadRef = database.ref('posts/' + postId + '/inlineThreads').push();
@@ -854,14 +872,14 @@
       pendingAnchor = null;
       commentInput.value = '';
       submitBtn.disabled = false;
-      titleEl.textContent = '这段话的评论';
+      titleEl.textContent = tr('这段话的评论', 'Comments on this passage');
       showError('');
       renderThread();
       refreshHighlights();
       positionPanel();
     }).catch(function (err) {
       submitBtn.disabled = false;
-      showError('发布失败，请重试。');
+      showError(tr('发布失败，请重试。', 'Could not post. Try again.'));
       console.error('inline thread failed', err);
     });
   }
@@ -1010,7 +1028,7 @@
     }, true);
 
     if (typeof firebase === 'undefined' || !firebase.database) {
-      showError('评论服务还没准备好，请稍后再试。');
+      showError(tr('评论服务还没准备好，请稍后再试。', 'Comments are not ready yet. Try again in a moment.'));
       return;
     }
     database = firebase.database();

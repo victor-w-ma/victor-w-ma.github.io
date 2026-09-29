@@ -4,8 +4,14 @@ layout: base
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
+    <h1 class="post-title p-name{% if page.title_en %} has-en notranslate{% endif %}" itemprop="name headline"{% if page.title_en %} translate="no"{% endif %}>
+      {%- if page.title_en -%}
+        <span class="lang-zh">{{ page.title | escape }}</span><span class="lang-en">{{ page.title_en | escape }}</span>
+      {%- else -%}
+        {{ page.title | escape }}
+      {%- endif -%}
+    </h1>
+    <p class="post-meta notranslate">
       {%- assign date_format = "%Y-%m-%d" -%}
       {%- include assign-post-display-date.html entry=page -%}
       {%- include post-date-label.html itemprop=true -%}
@@ -16,52 +22,67 @@ layout: base
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}
-      <span id="char-count-section" style="display: none;">• <span id="character-count"></span>字</span>
-      <span id="view-count-section" style="display: none;">• <span id="view-count"></span>次阅读</span>
+      <span id="char-count-section" class="has-en notranslate" style="display: none;">• <span id="character-count"></span><span class="lang-zh">字</span><span class="lang-en"> characters</span></span>
+      <span id="view-count-section" class="has-en notranslate" style="display: none;">• <span id="view-count"></span><span class="lang-zh">次阅读</span><span class="lang-en"> views</span></span>
     </p>
-    
+    {%- if page.en_include -%}
+      <p class="translation-note lang-en notranslate">English version.</p>
+    {%- else -%}
+      <p class="translation-note machine lang-en notranslate">Machine-translated from Chinese.</p>
+    {%- endif -%}
+
     {% include like.html %}
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="post-content e-content{% if page.en_include %} has-en{% endif %}" itemprop="articleBody">
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        const articleContent = document.querySelector('.post-content');
-        const headers = articleContent.querySelectorAll('h1, h2, h3');
-        
-        // Only create TOC if there are headers (excluding the TOC header itself)
+        var articleContent = document.querySelector('.post-content');
+        if (!articleContent) {
+          return;
+        }
+        var english = document.documentElement.classList.contains('lang-en');
+        var manual = articleContent.querySelector('.lang-en');
+        var original = articleContent.querySelector('.lang-zh');
+        var source = articleContent;
+        if (english && manual) {
+          source = manual;
+        } else if (original) {
+          source = original;
+        }
+        var headers = source.querySelectorAll('h1, h2, h3');
+
         if (headers.length > 0) {
-          const tocHeader = document.createElement('h1');
-          tocHeader.textContent = '目录';
-          const tocDiv = document.createElement('div');
+          var tocHeader = document.createElement('h1');
+          tocHeader.className = 'toc-title';
+          tocHeader.textContent = window.siteTr ? window.siteTr('目录', 'Contents') : '目录';
+          var tocDiv = document.createElement('div');
           tocDiv.id = 'toc';
-          
-          // Insert TOC elements at the start of content
-          articleContent.insertBefore(tocDiv, articleContent.firstChild);
-          articleContent.insertBefore(tocHeader, articleContent.firstChild);
-          
-          const tocList = document.createElement('ul');
-          
-          let currentLevel = 1;
-          let currentUl = tocList;
-          let previousUl = null;
-          
-          headers.forEach((header, index) => {
-            if (header.textContent === '目录') return; // Skip TOC title
-            
-            const level = parseInt(header.tagName.charAt(1));
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            
-            // Create an id for the header if it doesn't have one
+
+          source.insertBefore(tocDiv, source.firstChild);
+          source.insertBefore(tocHeader, source.firstChild);
+
+          var tocList = document.createElement('ul');
+
+          var currentLevel = 1;
+          var currentUl = tocList;
+          var previousUl = null;
+
+          headers.forEach(function(header) {
+            if (header.classList.contains('toc-title')) return;
+
+            var level = parseInt(header.tagName.charAt(1), 10);
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+
             if (!header.id) {
               header.id = header.textContent.toLowerCase().replace(/\s+/g, '-');
             }
-            
+
             a.href = '#' + header.id;
             a.textContent = header.textContent;
             li.appendChild(a);
-            
+
             if (level > currentLevel) {
               previousUl = currentUl;
               currentUl = document.createElement('ul');
@@ -69,25 +90,36 @@ layout: base
             } else if (level < currentLevel) {
               currentUl = previousUl;
             }
-            
+
             currentUl.appendChild(li);
             currentLevel = level;
           });
-          
+
           tocDiv.appendChild(tocList);
         }
 
-        // Character count code
-        const content = document.querySelector('.post-content').innerText;
-        const charCount = content.replace(/\s+/g, '').length;
-        const charCountSection = document.getElementById('char-count-section');
-        const charCountSpan = document.getElementById('character-count');
-        
+        var content = source.innerText;
+        var charCount = content.replace(/\s+/g, '').length;
+        var charCountSection = document.getElementById('char-count-section');
+        var charCountSpan = document.getElementById('character-count');
+
         charCountSpan.textContent = charCount;
         charCountSection.style.display = 'inline';
       });
     </script>
+    {%- if page.en_include -%}
+    <div class="lang-zh notranslate" translate="no">
+      {{ content }}
+    </div>
+    <div class="lang-en notranslate" lang="en" translate="no">
+      {%- capture en_source -%}
+        {%- include {{ page.en_include }} -%}
+      {%- endcapture -%}
+      {{ en_source | markdownify }}
+    </div>
+    {%- else -%}
     {{ content }}
+    {%- endif -%}
   </div>
 
   {% include inline-comments.html %}

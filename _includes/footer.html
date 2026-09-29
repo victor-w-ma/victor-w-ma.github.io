@@ -1,0 +1,36 @@
+<link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="{{ '/' | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+      {%- if site.author %}
+        <ul class="contact-list">
+          {% if site.author.name -%}
+            <li class="p-name">{{ site.author.name | escape }}</li>
+          {% endif -%}
+          {% if site.author.email -%}
+            <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+          {%- endif %}
+        </ul>
+      {%- endif %}
+      </div>
+      <div class="footer-col">
+        <p class="has-en notranslate" translate="no"><span class="lang-zh">{{ site.description | escape }}</span><span class="lang-en">{{ site.description_en | default: site.description | escape }}</span></p>
+        <p class="footer-translation-note lang-en notranslate">Where no English version is provided, text is machine-translated by <a href="https://translate.google.com/" rel="noopener noreferrer">Google Translate</a>.</p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      {%- include social.html -%}
+    </div>
+
+  </div>
+
+</footer>
+
+<div id="google_translate_element" aria-hidden="true"></div>
+<script src="{{ '/assets/js/lang.js' | relative_url }}"></script>

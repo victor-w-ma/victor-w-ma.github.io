@@ -1,6 +1,9 @@
 title: 中文SM经典小说
+title_en: "Classic Chinese SM Fiction"
+lang: zh-CN
 email: victorwsma@gmail.com
 description: 高质量中文SM小说集合
+description_en: "A collection of Chinese SM fiction"
 baseurl: ""
 
 markdown: kramdown

@@ -19,22 +19,28 @@ layout: base
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-    <div class="post-sort" role="toolbar" aria-label="文章排序">
-      <span class="post-sort-label">排序</span>
-      <button type="button" class="post-sort-button is-active" data-sort="date" aria-pressed="true">时间</button>
-      <button type="button" class="post-sort-button" data-sort="likes" aria-pressed="false" title="按净点赞（赞减踩）排序">点赞</button>
-      <button type="button" class="post-sort-button" data-sort="comments" aria-pressed="false">评论</button>
-      <button type="button" class="post-sort-button" data-sort="views" aria-pressed="false">阅读</button>
+    <div class="post-sort has-en notranslate" role="toolbar" data-zh-label="文章排序" data-en-label="Sort articles" aria-label="文章排序" translate="no">
+      <span class="post-sort-label lang-zh">排序</span>
+      <span class="post-sort-label lang-en">Sort</span>
+      <button type="button" class="post-sort-button is-active has-en" data-sort="date" aria-pressed="true"><span class="lang-zh">时间</span><span class="lang-en">Date</span></button>
+      <button type="button" class="post-sort-button has-en" data-sort="likes" aria-pressed="false" title="按净点赞（赞减踩）排序" data-zh-title="按净点赞（赞减踩）排序" data-en-title="Sort by net likes (likes minus dislikes)"><span class="lang-zh">点赞</span><span class="lang-en">Likes</span></button>
+      <button type="button" class="post-sort-button has-en" data-sort="comments" aria-pressed="false"><span class="lang-zh">评论</span><span class="lang-en">Comments</span></button>
+      <button type="button" class="post-sort-button has-en" data-sort="views" aria-pressed="false"><span class="lang-zh">阅读</span><span class="lang-en">Views</span></button>
     </div>
+    <p class="translation-note machine lang-en notranslate">Titles are machine-translated by Google Translate, except stories that have an English version.</p>
     <ul class="post-list" id="post-list">
       {%- assign date_format = "%Y-%m-%d" -%}
       {%- for post in posts -%}
       {%- include assign-post-display-date.html entry=post -%}
       <li data-post-id="{{ post.url | slugify }}" data-date="{{ post_display_unix }}">
-        <span class="post-meta">{%- include post-date-label.html -%}</span>
+        <span class="post-meta notranslate">{%- include post-date-label.html -%}</span>
         <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
+          <a class="post-link{% if post.title_en %} has-en notranslate{% endif %}" href="{{ post.url | relative_url }}"{% if post.title_en %} translate="no"{% endif %}>
+            {%- if post.title_en -%}
+              <span class="lang-zh">{{ post.title | escape }}</span><span class="lang-en">{{ post.title_en | escape }}</span>
+            {%- else -%}
+              {{ post.title | escape }}
+            {%- endif -%}
           </a>
         </h3>
         {%- if site.show_excerpts -%}
