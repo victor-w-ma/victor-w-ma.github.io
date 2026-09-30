@@ -1,5 +1,8 @@
 ---
 title: "出轨故事"
+title_en: "Cheating story"
+en_include: translations/en/cuckold-story.html
+en_machine: true
 layout: post
 status: 断更
 ---

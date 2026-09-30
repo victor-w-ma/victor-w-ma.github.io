@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "惊喜之意外发现强势人妻喜欢下贱的感觉"
+title_en: "Surprise and surprise: I discovered that a strong wife likes the feeling of being mean"
+en_include: translations/en/the-bossy-wife.html
+en_machine: true
 ---
 
 # 意外之喜

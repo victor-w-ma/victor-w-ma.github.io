@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "母老虎改造计划"
+title_en: "Tigress transformation plan"
+en_include: translations/en/mother-tiger-reform.html
+en_machine: true
 ---
 
 # 母老虎改造计划

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "光环背后"
+title_en: "Behind the Halo"
+en_include: translations/en/behind-the-halo.html
+en_machine: true
 ---
 
 ## 一、学期末的转校生

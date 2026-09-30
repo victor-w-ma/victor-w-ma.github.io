@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "SM度假生活"
+title_en: "SM Vacation Life"
+en_include: translations/en/sm-vacation-life.html
+en_machine: true
 status: 断更
 ---
 

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "魔女的屁股"
+title_en: "The witch's butt"
+en_include: translations/en/witchs-ass.html
+en_machine: true
 ---
 ## 第一章
 

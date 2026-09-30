@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "淫虐录之网聊让我们成了夫妻奴"
+title_en: "The online chat of pornographic sadomasochism made us become husband and wife slaves"
+en_include: translations/en/from-online-to-offline.html
+en_machine: true
 ---
 
 # 第一章

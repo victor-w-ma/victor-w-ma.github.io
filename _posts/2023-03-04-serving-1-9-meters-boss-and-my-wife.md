@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "伺候一米九的高大上司"
+title_en: "Serving a tall boss who is 1.9 meters tall"
+en_include: translations/en/serving-1-9-meters-boss-and-my-wife.html
+en_machine: true
 ---
 
 # 一、童年记忆

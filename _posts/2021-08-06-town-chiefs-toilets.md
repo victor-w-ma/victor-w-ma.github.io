@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "乡长一家的厕所"
+title_en: "The toilet of the mayor’s family"
+en_include: translations/en/town-chiefs-toilets.html
+en_machine: true
 ---
 
 

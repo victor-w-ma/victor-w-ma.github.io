@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "绿奴"
+title_en: "Green slave"
+en_include: translations/en/cuckold-zhao-licheng.html
+en_machine: true
 ---
 
 **绿奴（一）**

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "过奴夫妻主理论合集"
+title_en: "A collection of theories about slave couples and masters"
+en_include: translations/en/guonu-theories.html
+en_machine: true
 ---
 
 # 夫妻主的男家奴家规

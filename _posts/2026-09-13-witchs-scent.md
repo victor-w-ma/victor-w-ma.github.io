@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "魔女的味道"
+title_en: "The Witch's Taste"
+en_include: translations/en/witchs-scent.html
+en_machine: true
 ---
 ## 幻想和现实
 

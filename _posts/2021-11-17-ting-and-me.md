@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "我与婷的绿奴经历"
+title_en: "My green slave experience with Ting"
+en_include: translations/en/ting-and-me.html
+en_machine: true
 ---
 
 

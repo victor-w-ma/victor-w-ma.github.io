@@ -1,5 +1,8 @@
 ---
 title: "环保夫妻"
+title_en: "Environmentally friendly couple"
+en_include: translations/en/green-couple.html
+en_machine: true
 layout: post
 ---
 

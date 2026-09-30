@@ -1,5 +1,8 @@
 ---
 title: "奇幻学院"
+title_en: "Fantasy academy"
+en_include: translations/en/the-fantastic-college.html
+en_machine: true
 layout: post
 status: 断更
 ---

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "郑总"
+title_en: "Mr. Zheng"
+en_include: translations/en/boss-zheng.html
+en_machine: true
 ---
 
 # 1

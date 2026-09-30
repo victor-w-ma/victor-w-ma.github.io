@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "我们的夫妻奴经历"
+title_en: "Our experience as a husband-and-wife slave"
+en_include: translations/en/my-submissive-couple-experience.html
+en_machine: true
 ---
 
 2020年1月19日，我们的夫妻奴经历开始得很自然。

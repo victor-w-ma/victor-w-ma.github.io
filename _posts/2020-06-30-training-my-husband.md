@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "调教老公成绿奴"
+title_en: "Train your husband to become a green slave"
+en_include: translations/en/training-my-husband.html
+en_machine: true
 ---
 
 

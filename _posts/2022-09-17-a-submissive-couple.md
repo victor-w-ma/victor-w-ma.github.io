@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "一对夫妻厕奴"
+title_en: "Couple toilet slave"
+en_include: translations/en/a-submissive-couple.html
+en_machine: true
 ---
 
 就要凌晨12点的时候那对夫妻果然如约而至，说句实话我的心里并没有想着他们真的会来，因为我不能想象一个男人甘愿把自己和自己的女人奉献给一个男人。而且在上午的时候我接到了那个男人的电话，吞吞吐吐意思好像是想明天再来，被我严厉的拒绝，命令他们必须今天赶到。因为奴隶爽约的事情时有发生，况且他们在离我有4个多小时的其他城市，所以我根本没报什么希望。

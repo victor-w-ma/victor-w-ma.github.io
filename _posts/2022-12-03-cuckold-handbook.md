@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "绿奴开发手册"
+title_en: "Green Slave Development Manual"
+en_include: translations/en/cuckold-handbook.html
+en_machine: true
 ---
 
 # 前言

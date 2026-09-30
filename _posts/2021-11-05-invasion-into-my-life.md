@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "入侵我的生活"
+title_en: "Invade my life"
+en_include: translations/en/invasion-into-my-life.html
+en_machine: true
 ---
 
 

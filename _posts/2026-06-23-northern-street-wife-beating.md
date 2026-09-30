@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "红旗街的晚上"
+title_en: "Hongqi Street at night"
+en_include: translations/en/northern-street-wife-beating.html
+en_machine: true
 ---
 # （一）
 

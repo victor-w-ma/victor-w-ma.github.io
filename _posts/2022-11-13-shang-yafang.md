@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "司令千金尚雅芳"
+title_en: "Commander's daughter Shang Yafang"
+en_include: translations/en/shang-yafang.html
+en_machine: true
 ---
 
 我从前叫尚雅芳，我老爸是某军区副司令，我17岁高中毕业，没有参加考试就被保送进了军事学院。四年学习成绩还可以，并且入了，因为我能歌善舞，人又漂亮，所以还当选了校学生会文艺委员。

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "老婆出轨健身教练，我成奴"
+title_en: "My wife cheated on her fitness coach and I became a slave"
+en_include: translations/en/wifes-trainer.html
+en_machine: true
 ---
 
 五一长假的时候，那时候我在外地出差，打算上网看毛片的时候，发现有个热帖视频。我点进去一看，是一男一女在阳台做爱。那男的没有遮住脸，我一下就认出来了，是我家楼上的，叫林浩。他是我们小区最有名气的健身教练，刚大学毕业，身体特别强壮，阳光帅气，充满肌肉。现在看看他的裸体，小麦色肌肤，下面的鸡巴都比我的手腕大，又黑又亮。而那个女人只露出后背长发，可身材十分火辣。

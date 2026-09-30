@@ -1,5 +1,8 @@
 ---
 title: "真实绿帽奴的心路历程"
+title_en: "The journey of a real cuckold slave"
+en_include: translations/en/the-mental-path-of-a-cuckold-slave.html
+en_machine: true
 layout: post
 ---
 

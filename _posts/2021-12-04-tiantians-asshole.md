@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "甜甜的屁眼儿"
+title_en: "Sweet asshole"
+en_include: translations/en/tiantians-asshole.html
+en_machine: true
 ---
 
 

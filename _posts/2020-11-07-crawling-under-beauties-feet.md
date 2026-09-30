@@ -1,5 +1,8 @@
 ---
 title: "美女脚下的爬行动物"
+title_en: "Reptiles at the feet of beautiful women"
+en_include: translations/en/crawling-under-beauties-feet.html
+en_machine: true
 layout: post
 ---
 

@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  "移民澳洲后的夫妻生活"
+title_en: "Married life after immigrating to Australia"
+en_include: translations/en/slave-couple-in-australia.html
+en_machine: true
 status: 断更
 ---
 

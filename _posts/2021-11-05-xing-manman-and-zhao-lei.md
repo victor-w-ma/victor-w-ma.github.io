@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "邢曼曼与赵磊"
+title_en: "Xing Manman and Zhao Lei"
+en_include: translations/en/xing-manman-and-zhao-lei.html
+en_machine: true
 ---
 
 
