@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "我和老婆的夫妻奴经历"
+title_en: "My wife and I’s experience as a couple slave"
+en_include: translations/en/submissive-couple-experience-with-my-wife.html
+en_machine: true
 ---
 
 # （一）

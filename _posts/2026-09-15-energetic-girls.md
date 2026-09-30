@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "热力女孩"
+title_en: "Heat Girl"
+en_include: translations/en/energetic-girls.html
+en_machine: true
 ---
 
 十九岁的女孩子，清纯而美丽，含苞待放的曼妙年华，热力四射的青春年华……我们的故事就是讲述这么一群女生的故事，热力青春，热力女孩……

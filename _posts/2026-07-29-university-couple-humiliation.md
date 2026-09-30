@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "大学情侣主羞辱"
+title_en: "College Couple Main Humiliation"
+en_include: translations/en/university-couple-humiliation.html
+en_machine: true
 ---
 
 我大学是在一所偏向理工类的大学里念的，男多女少，女生不愁找男友，而高大帅气的男生也不少。我大一大二曾经谈过两个女朋友，都是白白瘦瘦的，165左右，看着很文静的那种女生。当时我们很疯狂，可能是在青春期的尾声吧，性欲经常很高涨。我们学校很大，又是新建的，而且男女生宿舍可以随便进——当然南方有不少学校都是这样。

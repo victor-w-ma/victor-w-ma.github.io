@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "悲惨的除夕之夜"
+title_en: "Tragic New Year's Eve"
+en_include: translations/en/new-years-eve.html
+en_machine: true
 ---
 
 

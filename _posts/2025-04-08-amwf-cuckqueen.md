@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "AMWF性奴家庭"
+title_en: "AMWF sex slave family"
+en_include: translations/en/amwf-cuckqueen.html
+en_machine: true
 status: 续写
 ---
 

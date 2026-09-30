@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "学姐的鞋底，学弟的天堂"
+title_en: "Senior sister's shoe sole, junior brother's paradise"
+en_include: translations/en/bottom-of-xiaohans-boots.html
+en_machine: true
 ---
 
 # 前言

@@ -1,5 +1,8 @@
 ---
 title: "与奴共舞"
+title_en: "Dance with slaves"
+en_include: translations/en/dancing-with-slaves.html
+en_machine: true
 layout: post
 status: 断更
 ---

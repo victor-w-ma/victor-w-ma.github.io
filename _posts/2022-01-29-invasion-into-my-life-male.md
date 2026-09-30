@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "入侵我的生活（男生版）"
+title_en: "Invade my life (boy version)"
+en_include: translations/en/invasion-into-my-life-male.html
+en_machine: true
 ---
 
 

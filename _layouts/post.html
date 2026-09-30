@@ -25,10 +25,10 @@ layout: base
       <span id="char-count-section" class="has-en notranslate" style="display: none;">• <span id="character-count"></span><span class="lang-zh">字</span><span class="lang-en"> characters</span></span>
       <span id="view-count-section" class="has-en notranslate" style="display: none;">• <span id="view-count"></span><span class="lang-zh">次阅读</span><span class="lang-en"> views</span></span>
     </p>
-    {%- if page.en_include -%}
-      <p class="translation-note lang-en notranslate">English version.</p>
-    {%- else -%}
+    {%- if page.en_machine -%}
       <p class="translation-note machine lang-en notranslate">Machine-translated from Chinese.</p>
+    {%- elsif page.en_include -%}
+      <p class="translation-note lang-en notranslate">English version.</p>
     {%- endif -%}
 
     {% include like.html %}

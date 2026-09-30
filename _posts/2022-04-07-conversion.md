@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "女王到女奴"
+title_en: "Queen to slave girl"
+en_include: translations/en/conversion.html
+en_machine: true
 ---
 
 

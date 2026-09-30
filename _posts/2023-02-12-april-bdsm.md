@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "4月的一次侍候经历"
+title_en: "A waiting experience in April"
+en_include: translations/en/april-bdsm.html
+en_machine: true
 ---
 
 写这些经历不容易，时间太久剩下一些让人回味的片断。有一些没写得很深入完整，都是真实的经历，伤眼请勿怪。

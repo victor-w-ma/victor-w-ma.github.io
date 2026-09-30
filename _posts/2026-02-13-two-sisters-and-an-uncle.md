@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "两个姐姐和大叔"
+title_en: "Two sisters and uncle"
+en_include: translations/en/two-sisters-and-an-uncle.html
+en_machine: true
 ---
 
 这件事原于一次QQ群的聚会。当时我刚刚上大一， QQ群里姐姐说搞一次聚会。

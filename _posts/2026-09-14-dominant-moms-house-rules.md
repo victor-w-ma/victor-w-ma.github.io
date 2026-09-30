@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "强势妈妈的家规"
+title_en: "The House Rules of a Strong-Willed Mother"
+en_include: translations/en/dominant-moms-house-rules.html
+en_machine: true
 status: 连载
 last_modified_at: 2026-09-29
 ---

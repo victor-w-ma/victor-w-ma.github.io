@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "和老婆一起沦为了情侣奴"
+title_en: "Became a couple slave with my wife"
+en_include: translations/en/wife-and-i-became-couple-slaves.html
+en_machine: true
 status: 断更
 ---
 

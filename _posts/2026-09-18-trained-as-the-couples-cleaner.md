@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "被学姐训练成清洁器"
+title_en: "Trained by the senior sister to become a cleaner"
+en_include: translations/en/trained-as-the-couples-cleaner.html
+en_machine: true
 ---
 
 【十分钟之内，到我宿舍楼下来】

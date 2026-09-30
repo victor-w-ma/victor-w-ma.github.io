@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "合租情侣的奴隶生活"
+title_en: "The slave life of a roommate couple"
+en_include: translations/en/cohabiting-couple-slave-life.html
+en_machine: true
 status: 续写
 last_modified_at: 2026-09-05
 ---

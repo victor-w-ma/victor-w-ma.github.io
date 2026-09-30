@@ -1,5 +1,8 @@
 ---
 title: "疼爱"
+title_en: "Love"
+en_include: translations/en/family-discipline.html
+en_machine: true
 layout: post
 status: 断更
 ---

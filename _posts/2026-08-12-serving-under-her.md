@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "胯下伺候"
+title_en: "Waiting Between the Legs"
+en_include: translations/en/serving-under-her.html
+en_machine: true
 ---
 
 晶利落地把房间大门打开虚掩着，跪在门口的地上，头上戴上一个黑色头套，眼前一片漆黑，只有嘴巴露出来，跪在那里等待，他的心里很忐忑，但是又觉得跪着很舒服，这是晶的主子庆龄临走以前吩咐的。

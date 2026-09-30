@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "矛盾的欲望"
+title_en: "Conflicting desires"
+en_include: translations/en/conflicting-thirsts.html
+en_machine: true
 ---
 
 

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "蔓儿的生活"
+title_en: "Man'er’s Life"
+en_include: translations/en/man-er-life.html
+en_machine: true
 ---
 
 那年，李蔓儿第一年上大学，大学，是可以彻底改变一个人的。

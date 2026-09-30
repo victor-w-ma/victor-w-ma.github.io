@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "关于我买原味丝袜导致家庭成员增加的魔幻故事"
+title_en: "The magical story about how my buying original stockings led to an increase in family members"
+en_include: translations/en/used-socks-and-destiny.html
+en_machine: true
 ---
 
 # 1

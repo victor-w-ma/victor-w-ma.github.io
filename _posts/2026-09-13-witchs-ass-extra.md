@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "魔女的屁股（番外）"
+title_en: "The Witch's Butt (Extra)"
+en_include: translations/en/witchs-ass-extra.html
+en_machine: true
 ---
 ## 第一章 神女的条件
 

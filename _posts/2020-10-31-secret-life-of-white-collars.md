@@ -1,5 +1,8 @@
 ---
 title: "女白领的私生活"
+title_en: "Private life of female white-collar workers"
+en_include: translations/en/secret-life-of-white-collars.html
+en_machine: true
 layout: post
 ---
 

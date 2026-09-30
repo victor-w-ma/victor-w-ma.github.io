@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "我和我的女友被别人当成狗"
+title_en: "My girlfriend and I were treated like dogs by others"
+en_include: translations/en/couple-dogs.html
+en_machine: true
 ---
 
 # 一、我的故事

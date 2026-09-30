@@ -1,5 +1,8 @@
 ---
 title: "他的胯下是我最爱的女友"
+title_en: "Under his crotch is my favorite girlfriend"
+en_include: translations/en/my-goddess-under-his-hips.html
+en_machine: true
 layout: post
 ---
 

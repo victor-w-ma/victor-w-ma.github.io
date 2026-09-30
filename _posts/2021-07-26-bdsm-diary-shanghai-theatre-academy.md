@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "上海戏剧学院女S日记"
+title_en: "Diary of a Girl S at Shanghai Theater Academy"
+en_include: translations/en/bdsm-diary-shanghai-theatre-academy.html
+en_machine: true
 ---
 
 

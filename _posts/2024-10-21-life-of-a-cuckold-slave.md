@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "绿奴的生活"
+title_en: "Green slave life"
+en_include: translations/en/life-of-a-cuckold-slave.html
+en_machine: true
 status: 断更
 ---
 

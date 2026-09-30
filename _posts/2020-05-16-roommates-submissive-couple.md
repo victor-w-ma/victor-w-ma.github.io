@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "室友的夫妻奴"
+title_en: "Roommate’s couple slave"
+en_include: translations/en/roommates-submissive-couple.html
+en_machine: true
 ---
 
 

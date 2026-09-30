@@ -1,5 +1,8 @@
 ---
 title: "情夫与绿奴"
+title_en: "Lover and Green Slave"
+en_include: translations/en/cuckold-slave.html
+en_machine: true
 layout: post
 status: 断更
 ---

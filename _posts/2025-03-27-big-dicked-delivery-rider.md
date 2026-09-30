@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "大鸡巴外卖小哥张骁征服了我和我老婆"
+title_en: "Zhang Xiao, the delivery boy with big dick, conquered my wife and me"
+en_include: translations/en/big-dicked-delivery-rider.html
+en_machine: true
 ---
 
 ## 第一章

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "狼族"
+title_en: "Wolf clan"
+en_include: translations/en/werewolves.html
+en_machine: true
 ---
 
 # 概要

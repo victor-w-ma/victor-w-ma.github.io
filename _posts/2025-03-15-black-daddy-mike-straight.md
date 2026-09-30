@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "黑爹麦克的黄皮绿奴"
+title_en: "Black Daddy Mike's yellow-skinned green slave"
+en_include: translations/en/black-daddy-mike-straight.html
+en_machine: true
 ---
 
 # 第一章 黑人麦克

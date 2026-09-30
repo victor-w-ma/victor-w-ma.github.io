@@ -1,5 +1,8 @@
 ---
 title: "过往：一个家庭的悲哀"
+title_en: "Past: The sorrow of a family"
+en_include: translations/en/the-past-a-familys-tragedy.html
+en_machine: true
 layout: post
 ---
 

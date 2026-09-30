@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  "我的前半生"
+title_en: "My first half life"
+en_include: translations/en/the-first-half-of-my-life.html
+en_machine: true
 ---
 
 # 起源
