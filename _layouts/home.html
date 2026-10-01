@@ -3,7 +3,7 @@ layout: base
 ---
 
 <div class="home">
-  {%- if page.title -%}
+  {%- if page.title and page.lang != "en" -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
@@ -19,34 +19,55 @@ layout: base
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-    <div class="post-sort has-en notranslate" role="toolbar" data-zh-label="文章排序" data-en-label="Sort articles" aria-label="文章排序" translate="no">
-      <span class="post-sort-label lang-zh">排序</span>
-      <span class="post-sort-label lang-en">Sort</span>
-      <button type="button" class="post-sort-button is-active has-en" data-sort="date" aria-pressed="true"><span class="lang-zh">时间</span><span class="lang-en">Date</span></button>
-      <button type="button" class="post-sort-button has-en" data-sort="likes" aria-pressed="false" title="按净点赞（赞减踩）排序" data-zh-title="按净点赞（赞减踩）排序" data-en-title="Sort by net likes (likes minus dislikes)"><span class="lang-zh">点赞</span><span class="lang-en">Likes</span></button>
-      <button type="button" class="post-sort-button has-en" data-sort="comments" aria-pressed="false"><span class="lang-zh">评论</span><span class="lang-en">Comments</span></button>
-      <button type="button" class="post-sort-button has-en" data-sort="views" aria-pressed="false"><span class="lang-zh">阅读</span><span class="lang-en">Views</span></button>
+    {%- if page.lang == "en" -%}
+      {%- assign sort_label = "Sort" -%}
+      {%- assign sort_aria = "Sort articles" -%}
+      {%- assign label_date = "Date" -%}
+      {%- assign label_likes = "Likes" -%}
+      {%- assign label_comments = "Comments" -%}
+      {%- assign label_views = "Views" -%}
+      {%- assign likes_title = "Sort by net likes (likes minus dislikes)" -%}
+    {%- else -%}
+      {%- assign sort_label = "排序" -%}
+      {%- assign sort_aria = "文章排序" -%}
+      {%- assign label_date = "时间" -%}
+      {%- assign label_likes = "点赞" -%}
+      {%- assign label_comments = "评论" -%}
+      {%- assign label_views = "阅读" -%}
+      {%- assign likes_title = "按净点赞（赞减踩）排序" -%}
+    {%- endif -%}
+    <div class="post-sort" role="toolbar" aria-label="{{ sort_aria }}">
+      <span class="post-sort-label">{{ sort_label }}</span>
+      <button type="button" class="post-sort-button is-active" data-sort="date" aria-pressed="true">{{ label_date }}</button>
+      <button type="button" class="post-sort-button" data-sort="likes" aria-pressed="false" title="{{ likes_title }}">{{ label_likes }}</button>
+      <button type="button" class="post-sort-button" data-sort="comments" aria-pressed="false">{{ label_comments }}</button>
+      <button type="button" class="post-sort-button" data-sort="views" aria-pressed="false">{{ label_views }}</button>
     </div>
-    <p class="translation-note lang-en notranslate">Each story has a static English version. Machine-translated stories are labeled on the story page.</p>
+    {%- if page.lang == "en" -%}
+      <p class="translation-note">Each story has a static English version. Machine-translated stories are labeled on the story page.</p>
+    {%- endif -%}
     <ul class="post-list" id="post-list">
       {%- assign date_format = "%Y-%m-%d" -%}
       {%- for post in posts -%}
+      {%- if page.lang != "en" or post.en_include -%}
       {%- include assign-post-display-date.html entry=post -%}
+      {%- if page.lang == "en" -%}
+        {%- assign item_url = "/en" | append: post.url -%}
+        {%- assign item_title = post.title_en | default: post.title -%}
+      {%- else -%}
+        {%- assign item_url = post.url -%}
+        {%- assign item_title = post.title -%}
+      {%- endif -%}
       <li data-post-id="{{ post.url | slugify }}" data-date="{{ post_display_unix }}">
-        <span class="post-meta notranslate">{%- include post-date-label.html -%}</span>
+        <span class="post-meta">{%- include post-date-label.html -%}</span>
         <h3>
-          <a class="post-link{% if post.title_en %} has-en notranslate{% endif %}" href="{{ post.url | relative_url }}"{% if post.title_en %} translate="no"{% endif %}>
-            {%- if post.title_en -%}
-              <span class="lang-zh">{{ post.title | escape }}</span><span class="lang-en">{{ post.title_en | escape }}</span>
-            {%- else -%}
-              {{ post.title | escape }}
-            {%- endif -%}
-          </a>
+          <a class="post-link" href="{{ item_url | relative_url }}">{{ item_title | escape }}</a>
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
       </li>
+      {%- endif -%}
       {%- endfor -%}
     </ul>
 

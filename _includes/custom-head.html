@@ -1,22 +1,14 @@
+{%- include lang-urls.html -%}
+{%- unless page.url == "/404.html" -%}
+<link rel="alternate" hreflang="zh-CN" href="{{ zh_href | relative_url }}">
+<link rel="alternate" hreflang="en" href="{{ en_href | relative_url }}">
+{%- endunless -%}
 <script>
-  (function () {
-    var lang = 'zh';
-    try {
-      lang = localStorage.getItem('siteLang') || 'zh';
-    } catch (err) {
-      lang = 'zh';
-    }
-    if (lang === 'en') {
-      document.documentElement.lang = 'en';
-      document.documentElement.classList.add('lang-en');
-    } else {
-      document.documentElement.lang = 'zh-CN';
-      document.documentElement.classList.remove('lang-en');
-    }
-    window.siteTr = function (zh, en) {
-      return document.documentElement.classList.contains('lang-en') ? en : zh;
-    };
-  })();
+  document.documentElement.lang = "{% if page.lang == 'en' %}en{% else %}zh-CN{% endif %}";
+  window.siteTr = function (zh, en) {
+    return document.documentElement.lang === 'en' ? en : zh;
+  };
+  document.cookie = "googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
 </script>
 <meta name="google" content="notranslate">
 <meta name="theme-color" content="#fdfdfd" media="(prefers-color-scheme: light)">
@@ -146,14 +138,6 @@
     background: #7c7874;
   }
 
-  html:not(.lang-en) .lang-en {
-    display: none !important;
-  }
-
-  html.lang-en .has-en > .lang-zh {
-    display: none !important;
-  }
-
   .lang-toggle {
     display: inline-flex;
     align-items: center;
@@ -164,7 +148,7 @@
     white-space: nowrap;
   }
 
-  .lang-toggle-button {
+  a.lang-toggle-button {
     padding: 6px 14px;
     border: none;
     border-radius: 20px;
@@ -174,21 +158,23 @@
     font-family: inherit;
     font-size: 0.875rem;
     line-height: 1.4;
+    text-decoration: none;
     transition: background-color 0.3s ease;
   }
 
-  .lang-toggle-button:hover {
+  a.lang-toggle-button:hover {
+    background-color: var(--c-fill);
+    color: var(--c-ink);
+    text-decoration: none;
+  }
+
+  a.lang-toggle-button[aria-current="page"] {
     background-color: var(--c-fill);
   }
 
-  html:not(.lang-en) .lang-toggle-button[data-lang="zh"],
-  html.lang-en .lang-toggle-button[data-lang="en"] {
-    background-color: var(--c-fill);
-  }
-
-  html:not(.lang-en) .lang-toggle-button[data-lang="zh"]:hover,
-  html.lang-en .lang-toggle-button[data-lang="en"]:hover {
+  a.lang-toggle-button[aria-current="page"]:hover {
     background-color: var(--c-fill-hover);
+    color: var(--c-ink);
   }
 
   .translation-note {
@@ -310,18 +296,11 @@
         badge = document.createElement('span');
         timeEl.parentNode.insertBefore(badge, timeEl);
       }
-      badge.className = 'post-status-badge has-en notranslate ' + (BADGE_CLASS[label] || BADGE_CLASS['完结']);
+      var text = window.siteTr ? window.siteTr(label, enLabel) : label;
+      badge.className = 'post-status-badge notranslate ' + (BADGE_CLASS[label] || BADGE_CLASS['完结']);
       badge.setAttribute('translate', 'no');
-      badge.setAttribute('aria-label', window.siteTr(label, enLabel));
-      var zh = document.createElement('span');
-      zh.className = 'lang-zh';
-      zh.textContent = label;
-      var en = document.createElement('span');
-      en.className = 'lang-en';
-      en.textContent = enLabel;
-      badge.textContent = '';
-      badge.appendChild(zh);
-      badge.appendChild(en);
+      badge.setAttribute('aria-label', text);
+      badge.textContent = text;
     }
 
     var today = todayYmd();

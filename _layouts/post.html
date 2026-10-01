@@ -1,61 +1,70 @@
 ---
 layout: base
 ---
+{%- if page.lang == "en" -%}
+  {%- assign story = site.posts | where: "url", page.zh_url | first -%}
+  {%- assign story_url = page.zh_url -%}
+  {%- assign toc_label = "Contents" -%}
+  {%- assign unit_chars = " characters" -%}
+  {%- assign unit_views = " views" -%}
+{%- else -%}
+  {%- assign story = page -%}
+  {%- assign story_url = page.url -%}
+  {%- assign toc_label = "目录" -%}
+  {%- assign unit_chars = "字" -%}
+  {%- assign unit_views = "次阅读" -%}
+{%- endif -%}
+{%- assign story_id = story_url | slugify -%}
+{%- assign display_title = page.title -%}
+{%- if story -%}
+  {%- if page.lang == "en" -%}
+    {%- assign display_title = story.title_en | default: story.title -%}
+  {%- else -%}
+    {%- assign display_title = story.title -%}
+  {%- endif -%}
+{%- endif -%}
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name{% if page.title_en %} has-en notranslate{% endif %}" itemprop="name headline"{% if page.title_en %} translate="no"{% endif %}>
-      {%- if page.title_en -%}
-        <span class="lang-zh">{{ page.title | escape }}</span><span class="lang-en">{{ page.title_en | escape }}</span>
-      {%- else -%}
-        {{ page.title | escape }}
-      {%- endif -%}
-    </h1>
-    <p class="post-meta notranslate">
+    <h1 class="post-title p-name" itemprop="name headline">{{ display_title | escape }}</h1>
+    <p class="post-meta">
       {%- assign date_format = "%Y-%m-%d" -%}
-      {%- include assign-post-display-date.html entry=page -%}
-      {%- include post-date-label.html itemprop=true -%}
-      {%- if page.author -%}
-        • {% for author in page.author %}
+      {%- if story -%}
+        {%- include assign-post-display-date.html entry=story -%}
+        {%- include post-date-label.html itemprop=true -%}
+      {%- endif -%}
+      {%- if story.author -%}
+        • {% for author in story.author %}
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}
-      <span id="char-count-section" class="has-en notranslate" style="display: none;">• <span id="character-count"></span><span class="lang-zh">字</span><span class="lang-en"> characters</span></span>
-      <span id="view-count-section" class="has-en notranslate" style="display: none;">• <span id="view-count"></span><span class="lang-zh">次阅读</span><span class="lang-en"> views</span></span>
+      <span id="char-count-section" style="display: none;">• <span id="character-count"></span>{{ unit_chars }}</span>
+      <span id="view-count-section" style="display: none;">• <span id="view-count"></span>{{ unit_views }}</span>
     </p>
-    {%- if page.en_machine -%}
-      <p class="translation-note machine lang-en notranslate">Machine-translated from Chinese.</p>
-    {%- elsif page.en_include -%}
-      <p class="translation-note lang-en notranslate">English version.</p>
+    {%- if page.lang == "en" and story.en_machine -%}
+      <p class="translation-note machine">Machine-translated from Chinese.</p>
+    {%- elsif page.lang == "en" and story.en_include -%}
+      <p class="translation-note">English version.</p>
     {%- endif -%}
 
     {% include like.html %}
   </header>
 
-  <div class="post-content e-content{% if page.en_include %} has-en{% endif %}" itemprop="articleBody">
+  <div class="post-content e-content" itemprop="articleBody">
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        var articleContent = document.querySelector('.post-content');
-        if (!articleContent) {
+        var source = document.querySelector('.post-content');
+        if (!source) {
           return;
-        }
-        var english = document.documentElement.classList.contains('lang-en');
-        var manual = articleContent.querySelector('.lang-en');
-        var original = articleContent.querySelector('.lang-zh');
-        var source = articleContent;
-        if (english && manual) {
-          source = manual;
-        } else if (original) {
-          source = original;
         }
         var headers = source.querySelectorAll('h1, h2, h3');
 
         if (headers.length > 0) {
           var tocHeader = document.createElement('h1');
           tocHeader.className = 'toc-title';
-          tocHeader.textContent = window.siteTr ? window.siteTr('目录', 'Contents') : '目录';
+          tocHeader.textContent = {{ toc_label | jsonify }};
           var tocDiv = document.createElement('div');
           tocDiv.id = 'toc';
 
@@ -107,18 +116,13 @@ layout: base
         charCountSection.style.display = 'inline';
       });
     </script>
-    {%- if page.en_include -%}
-    <div class="lang-zh notranslate" translate="no">
-      {{ content }}
-    </div>
-    <div class="lang-en notranslate" lang="en" translate="no">
+    {%- if page.lang == "en" and story.en_include -%}
       {%- capture en_source -%}
-        {%- include {{ page.en_include }} -%}
+        {%- include {{ story.en_include }} -%}
       {%- endcapture -%}
       {{ en_source | markdownify }}
-    </div>
     {%- else -%}
-    {{ content }}
+      {{ content }}
     {%- endif -%}
   </div>
 

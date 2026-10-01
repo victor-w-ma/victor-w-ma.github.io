@@ -1,15 +1,15 @@
 <section class="comments">
-  <h2 class="has-en notranslate" translate="no"><span class="lang-zh">评论</span><span class="lang-en">Comments</span></h2>
+  <h2 class="notranslate" translate="no">{% if page.lang == 'en' %}Comments{% else %}评论{% endif %}</h2>
   <form id="comment-form" class="notranslate" translate="no">
     <div>
-      <label for="nickname" class="has-en"><span class="lang-zh">昵称：</span><span class="lang-en">Nickname</span></label>
-      <input type="text" id="nickname" name="nickname" required placeholder="昵称" data-en-placeholder="Nickname">
+      <label for="nickname">{% if page.lang == 'en' %}Nickname{% else %}昵称：{% endif %}</label>
+      <input type="text" id="nickname" name="nickname" required placeholder="{% if page.lang == 'en' %}Nickname{% else %}昵称{% endif %}">
     </div>
     <div>
-      <label for="comment" class="has-en"><span class="lang-zh">评论：</span><span class="lang-en">Comment</span></label>
-      <textarea id="comment" name="comment" required placeholder="写下你的评论" data-en-placeholder="Write a comment"></textarea>
+      <label for="comment">{% if page.lang == 'en' %}Comment{% else %}评论：{% endif %}</label>
+      <textarea id="comment" name="comment" required placeholder="{% if page.lang == 'en' %}Write a comment{% else %}写下你的评论{% endif %}"></textarea>
     </div>
-    <button type="submit" class="has-en"><span class="lang-zh">发布</span><span class="lang-en">Post</span></button>
+    <button type="submit">{% if page.lang == 'en' %}Post{% else %}发布{% endif %}</button>
   </form>
   <div id="comments-list"></div>
 
@@ -218,7 +218,7 @@
       const database = firebase.database();
 
       // Get the current post's URL and canonicalize it for use as a unique identifier
-      const postId = "{{ page.url | slugify }}";
+      const postId = "{{ story_id | default: page.url | slugify }}";
 
       // Function to add a new comment
       function addComment(nickname, comment, parentId = null) {

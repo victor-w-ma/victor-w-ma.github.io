@@ -1,0 +1,23 @@
+{%- comment -%}
+  Sets zh_href and en_href for the current page.
+  Language lives in the URL. Nothing is read from browser storage.
+{%- endcomment -%}
+{%- if page.lang == "en" -%}
+  {%- assign zh_href = page.zh_url | default: "/" -%}
+  {%- assign en_href = page.url -%}
+{%- elsif page.url == "/404.html" -%}
+  {%- assign zh_href = "/" -%}
+  {%- assign en_href = "/en/" -%}
+{%- elsif page.url == "/" or page.url == "/index.html" -%}
+  {%- assign zh_href = "/" -%}
+  {%- assign en_href = "/en/" -%}
+{%- elsif page.url == "/contact/" or page.url == "/contact.html" -%}
+  {%- assign zh_href = page.url -%}
+  {%- assign en_href = "/en/contact/" -%}
+{%- elsif page.en_include -%}
+  {%- assign zh_href = page.url -%}
+  {%- assign en_href = "/en" | append: page.url -%}
+{%- else -%}
+  {%- assign zh_href = page.url | default: "/" -%}
+  {%- assign en_href = "/en/" -%}
+{%- endif -%}
