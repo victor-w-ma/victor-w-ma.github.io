@@ -1,7 +1,7 @@
 <div id="inline-comment-toolbar" class="inline-comment-toolbar notranslate" hidden translate="no">
   <button type="button" id="inline-comment-add-btn" class="inline-comment-add-btn has-en">
     <span class="material-icons" aria-hidden="true">mode_comment</span>
-    <span class="lang-zh">评论</span><span class="lang-en">Comment</span>
+    {% if page.lang == 'en' %}Comment{% else %}评论{% endif %}
   </button>
 </div>
 
@@ -10,16 +10,16 @@
 <div id="inline-comment-panel" class="inline-comment-panel notranslate" hidden role="dialog" aria-labelledby="inline-comment-panel-title" translate="no">
   <div class="inline-comment-panel-inner">
     <header class="inline-comment-panel-header">
-      <h2 id="inline-comment-panel-title">评论这段话</h2>
-      <button type="button" class="inline-comment-close" data-zh-label="关闭" data-en-label="Close" aria-label="关闭">×</button>
+      <h2 id="inline-comment-panel-title">{% if page.lang == 'en' %}Comment on this passage{% else %}评论这段话{% endif %}</h2>
+      <button type="button" class="inline-comment-close" aria-label="{% if page.lang == 'en' %}Close{% else %}关闭{% endif %}">×</button>
     </header>
     <blockquote class="inline-comment-quote" hidden></blockquote>
     <div class="inline-comment-thread"></div>
     <form class="inline-comment-form">
-      <input type="text" name="nickname" placeholder="昵称" data-en-placeholder="Nickname" required autocomplete="nickname">
-      <textarea name="comment" placeholder="写下你的评论" data-en-placeholder="Write a comment" required></textarea>
+      <input type="text" name="nickname" placeholder="{% if page.lang == 'en' %}Nickname{% else %}昵称{% endif %}" required autocomplete="nickname">
+      <textarea name="comment" placeholder="{% if page.lang == 'en' %}Write a comment{% else %}写下你的评论{% endif %}" required></textarea>
       <div class="inline-comment-form-actions">
-        <button type="submit" class="has-en"><span class="lang-zh">发布</span><span class="lang-en">Post</span></button>
+        <button type="submit">{% if page.lang == 'en' %}Post{% else %}发布{% endif %}</button>
       </div>
       <p class="inline-comment-error" hidden></p>
     </form>
@@ -27,7 +27,7 @@
 </div>
 
 <script>
-  window.INLINE_COMMENTS_POST_ID = {{ page.url | slugify | jsonify }};
+  window.INLINE_COMMENTS_POST_ID = {{ story_id | default: page.url | slugify | jsonify }};
 </script>
 <script src="{{ '/assets/js/inline-comments.js' | relative_url }}"></script>
 

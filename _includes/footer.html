@@ -1,7 +1,12 @@
 <link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
 
 <footer class="site-footer h-card">
-  <data class="u-url" value="{{ '/' | relative_url }}"></data>
+  {%- if page.lang == "en" -%}
+    {%- assign footer_home = "/en/" -%}
+  {%- else -%}
+    {%- assign footer_home = "/" -%}
+  {%- endif -%}
+  <data class="u-url" value="{{ footer_home | relative_url }}"></data>
 
   <div class="wrapper">
 
@@ -19,8 +24,12 @@
       {%- endif %}
       </div>
       <div class="footer-col">
-        <p class="has-en notranslate" translate="no"><span class="lang-zh">{{ site.description | escape }}</span><span class="lang-en">{{ site.description_en | default: site.description | escape }}</span></p>
-        <p class="footer-translation-note lang-en notranslate">English story text is stored with the site. Machine-translated stories are labeled on the story page.</p>
+        {%- if page.lang == "en" -%}
+          <p>{{ site.description_en | default: site.description | escape }}</p>
+          <p class="footer-translation-note">English story text is stored with the site. Machine-translated stories are labeled on the story page.</p>
+        {%- else -%}
+          <p>{{ site.description | escape }}</p>
+        {%- endif -%}
       </div>
     </div>
 
@@ -31,5 +40,3 @@
   </div>
 
 </footer>
-
-<script src="{{ '/assets/js/lang.js' | relative_url }}"></script>

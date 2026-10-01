@@ -49,7 +49,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    var postId = "{{ page.url | slugify }}";
+    var postId = "{{ story_id | default: page.url | slugify }}";
     var dbRef = firebase.database().ref('posts/' + postId);
 
     var likeButton = document.getElementById('like-button');

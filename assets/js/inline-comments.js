@@ -41,19 +41,7 @@
   }
 
   function contentRoot() {
-    var article = document.querySelector('.post-content');
-    if (!article) {
-      return null;
-    }
-    var manual = article.querySelector('.lang-en');
-    var original = article.querySelector('.lang-zh');
-    if (document.documentElement.classList.contains('lang-en') && manual) {
-      return manual;
-    }
-    if (original) {
-      return original;
-    }
-    return article;
+    return document.querySelector('.post-content');
   }
 
   function articleRoot() {

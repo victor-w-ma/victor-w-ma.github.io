@@ -1,11 +1,17 @@
+{%- include lang-urls.html -%}
 <header class="site-header">
 
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.minima.nav_pages | default: site.header_pages | default: default_paths -%}
-    <a class="site-title has-en notranslate" rel="author" href="{{ '/' | relative_url }}" translate="no">
-      <span class="lang-zh">{{ site.title | escape }}</span><span class="lang-en">{{ site.title_en | default: site.title | escape }}</span>
-    </a>
+    {%- if page.lang == "en" -%}
+      {%- assign home_href = "/en/" -%}
+      {%- assign site_name = site.title_en | default: site.title -%}
+    {%- else -%}
+      {%- assign home_href = "/" -%}
+      {%- assign site_name = site.title -%}
+    {%- endif -%}
+    <a class="site-title" rel="author" href="{{ home_href | relative_url }}">{{ site_name | escape }}</a>
 
     {%- unless page_paths == empty %}
       <nav class="site-nav">
@@ -18,18 +24,29 @@
           {%- for path in page_paths -%}
             {%- assign hyperpage = site.pages | where: "path", path | first -%}
             {%- if hyperpage.title -%}
-            <a class="nav-item has-en notranslate" href="{{ hyperpage.url | relative_url }}" translate="no">
-              <span class="lang-zh">{{ hyperpage.title | escape }}</span><span class="lang-en">{% if hyperpage.title_en %}{{ hyperpage.title_en | escape }}{% else %}{{ hyperpage.title | escape }}{% endif %}</span>
-            </a>
+              {%- if page.lang == "en" -%}
+                {%- assign nav_match = site.pages | where: "zh_url", hyperpage.url | first -%}
+                {%- if nav_match -%}
+                  {%- assign nav_href = nav_match.url -%}
+                  {%- assign nav_label = nav_match.title -%}
+                {%- else -%}
+                  {%- assign nav_href = hyperpage.url -%}
+                  {%- assign nav_label = hyperpage.title -%}
+                {%- endif -%}
+              {%- else -%}
+                {%- assign nav_href = hyperpage.url -%}
+                {%- assign nav_label = hyperpage.title -%}
+              {%- endif -%}
+            <a class="nav-item" href="{{ nav_href | relative_url }}">{{ nav_label | escape }}</a>
             {%- endif -%}
           {%- endfor %}
         </div>
       </nav>
     {%- endunless %}
 
-    <div class="lang-toggle notranslate" role="group" data-zh-label="语言" data-en-label="Language" aria-label="语言" translate="no">
-      <button type="button" class="lang-toggle-button" data-lang="zh" aria-pressed="true">中文</button>
-      <button type="button" class="lang-toggle-button" data-lang="en" aria-pressed="false">EN</button>
-    </div>
+    <nav class="lang-toggle" aria-label="{% if page.lang == 'en' %}Language{% else %}语言{% endif %}">
+      <a class="lang-toggle-button" href="{{ zh_href | relative_url }}" hreflang="zh-CN" lang="zh-CN"{% if page.lang != "en" and page.url != "/404.html" %} aria-current="page"{% endif %}>中文</a>
+      <a class="lang-toggle-button" href="{{ en_href | relative_url }}" hreflang="en" lang="en"{% if page.lang == "en" %} aria-current="page"{% endif %}>EN</a>
+    </nav>
   </div>
 </header>
