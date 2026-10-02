@@ -7,7 +7,7 @@ published: false
 **对应转录**：`_posts/ideas/moms-strict-sm-punishment-grok.md`（Grok 对话至第 98 轮）
 
 **性质**：路线备忘（未定稿）。对话记录不是前作。
-**正文进度**：小说从第一章重写，见 `_posts/2026-09-14-dominant-moms-house-rules.md`。目前写到「十三、规矩」（按 Grok 生活加压稿：早报、换裙、男生汇报、作息饮食、问问男朋友、离不开；未提苏婉）。一张一张写，不把后段对话提前写进正文。
+**正文进度**：小说从第一章重写，见 `_posts/2026-09-14-dominant-moms-house-rules.md`。目前写到「十四、罚跪」（按 Grok：忘汇报、面朝墙跪四十分钟、跪着道歉；非性；未提苏婉）。一张一张写，不把后段对话提前写进正文。
 
 ---
 
