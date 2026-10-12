@@ -16,7 +16,7 @@
   {%- assign item_url = include.entry.url -%}
   {%- assign item_title = include.entry.title -%}
 {%- endif -%}
-<li data-post-id="{{ include.entry.url | slugify }}" data-date="{{ post_display_unix }}"{% if post_is_recommended %} data-recommended="true"{% endif %}>
+<li data-post-id="{{ include.entry.url | slugify }}" data-date="{{ post_display_unix }}"{% if post_is_recommended %} data-recommended="true" data-recommended-rank="{{ post_recommended_rank }}"{% endif %}>
   <span class="post-meta">{%- include post-date-label.html -%}</span>
   <h3>
     <a class="post-link" href="{{ item_url | relative_url }}">{{ item_title | escape }}</a>

@@ -24,8 +24,10 @@ header_pages:
   - contact.md
 
 # Homepage pin list. Match the last URL segment (without .html), e.g. zhu-min.
-# Recommended posts always sort above others, then by the selected sort.
-recommended_slugs: []
+# Recommended posts always sort above others, in this list order, then by the selected sort.
+recommended_slugs:
+  - the-past-a-familys-tragedy
+  - doctress
 
 # Hide utility docs from site output/navigation.
 exclude:
@@ -34,3 +36,6 @@ exclude:
   - _works
   - _posts/archive
   - _posts/archive/**
+  - _posts/ideas/zhou-wanbai-outline.md
+  - _posts/ideas/zhou-wanbai-threads.md
+  - _posts/ideas/zhou-wanbai-agent-chat-log.md

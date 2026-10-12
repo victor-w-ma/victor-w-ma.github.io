@@ -62,6 +62,10 @@
 {%- assign _url_file = include.entry.url | split: '/' | last -%}
 {%- assign post_slug = _url_file | replace: '.html', '' -%}
 {%- assign post_is_recommended = nil -%}
-{%- if site.recommended_slugs contains post_slug -%}
-  {%- assign post_is_recommended = true -%}
-{%- endif -%}
+{%- assign post_recommended_rank = 0 -%}
+{%- for _rec_slug in site.recommended_slugs -%}
+  {%- if _rec_slug == post_slug -%}
+    {%- assign post_is_recommended = true -%}
+    {%- assign post_recommended_rank = forloop.index -%}
+  {%- endif -%}
+{%- endfor -%}

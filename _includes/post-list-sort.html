@@ -107,6 +107,13 @@
         if (recB !== recA) {
           return recB - recA;
         }
+        if (recA && recB) {
+          var rankA = Number(a.getAttribute('data-recommended-rank')) || 0;
+          var rankB = Number(b.getAttribute('data-recommended-rank')) || 0;
+          if (rankA !== rankB) {
+            return rankA - rankB;
+          }
+        }
         var delta = sortValue(b, mode) - sortValue(a, mode);
         if (delta !== 0) {
           return delta;
