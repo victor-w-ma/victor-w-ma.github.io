@@ -1,0 +1,29 @@
+{%- if page.lang != "en" or include.entry.en_include -%}
+{%- include assign-post-display-date.html entry=include.entry -%}
+{%- assign _show_item = nil -%}
+{%- if include.pin_mode == "recommended" and post_is_recommended -%}
+  {%- assign _show_item = true -%}
+{%- elsif include.pin_mode == "rest" -%}
+  {%- unless post_is_recommended -%}
+    {%- assign _show_item = true -%}
+  {%- endunless -%}
+{%- endif -%}
+{%- if _show_item -%}
+{%- if page.lang == "en" -%}
+  {%- assign item_url = "/en" | append: include.entry.url -%}
+  {%- assign item_title = include.entry.title_en | default: include.entry.title -%}
+{%- else -%}
+  {%- assign item_url = include.entry.url -%}
+  {%- assign item_title = include.entry.title -%}
+{%- endif -%}
+<li data-post-id="{{ include.entry.url | slugify }}" data-date="{{ post_display_unix }}"{% if post_is_recommended %} data-recommended="true"{% endif %}>
+  <span class="post-meta">{%- include post-date-label.html -%}</span>
+  <h3>
+    <a class="post-link" href="{{ item_url | relative_url }}">{{ item_title | escape }}</a>
+  </h3>
+  {%- if site.show_excerpts -%}
+    {{ include.entry.excerpt }}
+  {%- endif -%}
+</li>
+{%- endif -%}
+{%- endif -%}

@@ -1,1 +1,4 @@
+{%- if post_is_recommended -%}
+<span class="post-status-badge is-recommended notranslate" translate="no" aria-label="{% if page.lang == 'en' %}Featured{% else %}推荐{% endif %}">{% if page.lang == 'en' %}Featured{% else %}推荐{% endif %}</span>
+{%- endif -%}
 <span class="post-status-badge notranslate {{ post_badge_class }}" translate="no" aria-label="{% if page.lang == 'en' %}{{ post_badge_label_en }}{% else %}{{ post_badge_label }}{% endif %}">{% if page.lang == 'en' %}{{ post_badge_label_en }}{% else %}{{ post_badge_label }}{% endif %}</span><time class="dt-published" datetime="{{ post_display_date | date_to_xmlschema }}"{% if include.itemprop %} itemprop="datePublished"{% endif %} data-day="{{ post_display_day }}" data-status="{{ post_base_status }}">{{ post_display_date | date: date_format }}</time>

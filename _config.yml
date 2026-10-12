@@ -23,6 +23,10 @@ google_analytics: G-HYN8MF0VM4
 header_pages:
   - contact.md
 
+# Homepage pin list. Match the last URL segment (without .html), e.g. zhu-min.
+# Recommended posts always sort above others, then by the selected sort.
+recommended_slugs: []
+
 # Hide utility docs from site output/navigation.
 exclude:
   - AGENTS.md

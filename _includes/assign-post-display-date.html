@@ -1,6 +1,7 @@
 {%- comment -%}
   Sets post_display_date, post_display_unix, post_display_day,
-  post_base_status, post_badge_label, and post_badge_class.
+  post_base_status, post_badge_label, post_badge_class, post_slug,
+  and post_is_recommended.
 
   Visible date is the later of date / last_modified_at / modified_date.
   Badge: 更新 if that date is within 15 days; otherwise 续写 / 断更 / 完结
@@ -57,4 +58,10 @@
   {%- assign post_badge_label_en = 'Hiatus' -%}
 {%- else -%}
   {%- assign post_badge_label_en = 'Complete' -%}
+{%- endif -%}
+{%- assign _url_file = include.entry.url | split: '/' | last -%}
+{%- assign post_slug = _url_file | replace: '.html', '' -%}
+{%- assign post_is_recommended = nil -%}
+{%- if site.recommended_slugs contains post_slug -%}
+  {%- assign post_is_recommended = true -%}
 {%- endif -%}

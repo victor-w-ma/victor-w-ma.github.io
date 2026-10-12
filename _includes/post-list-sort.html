@@ -96,8 +96,17 @@
       history.replaceState(null, '', url);
     }
 
+    function isRecommended(item) {
+      return item.getAttribute('data-recommended') === 'true';
+    }
+
     function applySort(mode) {
       items.sort(function(a, b) {
+        var recA = isRecommended(a) ? 1 : 0;
+        var recB = isRecommended(b) ? 1 : 0;
+        if (recB !== recA) {
+          return recB - recA;
+        }
         var delta = sortValue(b, mode) - sortValue(a, mode);
         if (delta !== 0) {
           return delta;

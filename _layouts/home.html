@@ -49,25 +49,10 @@ layout: base
     <ul class="post-list" id="post-list">
       {%- assign date_format = "%Y-%m-%d" -%}
       {%- for post in posts -%}
-      {%- if page.lang != "en" or post.en_include -%}
-      {%- include assign-post-display-date.html entry=post -%}
-      {%- if page.lang == "en" -%}
-        {%- assign item_url = "/en" | append: post.url -%}
-        {%- assign item_title = post.title_en | default: post.title -%}
-      {%- else -%}
-        {%- assign item_url = post.url -%}
-        {%- assign item_title = post.title -%}
-      {%- endif -%}
-      <li data-post-id="{{ post.url | slugify }}" data-date="{{ post_display_unix }}">
-        <span class="post-meta">{%- include post-date-label.html -%}</span>
-        <h3>
-          <a class="post-link" href="{{ item_url | relative_url }}">{{ item_title | escape }}</a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endif -%}
+        {%- include post-list-item.html entry=post pin_mode="recommended" -%}
+      {%- endfor -%}
+      {%- for post in posts -%}
+        {%- include post-list-item.html entry=post pin_mode="rest" -%}
       {%- endfor -%}
     </ul>
 
