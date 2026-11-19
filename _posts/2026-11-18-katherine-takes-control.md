@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "凯瑟琳掌权"
+title: "凯瑟琳"
 title_en: "Katherine Takes Control"
 en_include: translations/en/katherine-takes-control.md
 status: 断更
