@@ -94,19 +94,19 @@ graph TD
 ---
 
 ### Check-In #1 — Live Scolding, Posture Smacks, Stand & Watch
-- **Timing:** ~3–4 weeks after Pt. 15, at Chen's mansion.
-- **Setup:** Even if Chen achieved tentative, awkward progress with Liang in private, forcing him to **dominate Liang live under Jay's gaze** makes him stiff and nervous. Liang initially hopes Chen will pass.
+- **Timing & cast:** ~3–4 weeks after Pt. 15, at Chen's mansion. **Carly is present** (Jay + Carly + Chen + Liang).
+- **Setup:** Even if Chen achieved tentative, awkward progress with Liang in private, forcing him to **dominate Liang live under Jay's gaze** (with Carly there too) makes him stiff and nervous. Having already frozen while Jay fucked Liang over his own couch in Pt. 15, absorbing Jay's physical correction here stays completely in character. Liang initially hopes Chen will pass.
 - **Execution:**
   - Jay sits back and orders Chen to show what he has learned.
-  - Every stiff command, hesitant touch, apologetic glance, or slumped stance is interrupted immediately: **Jay scolds Chen in real time and smacks him for posture** right in front of Liang.
-  - Absorbing physical corrections from a younger white man without fighting back destroys Chen's presence on the spot; Liang visibly cools and pulls away emotionally.
+  - Every stiff command, hesitant touch, apologetic glance, or slumped stance is interrupted immediately: **Jay scolds Chen in real time and smacks him for posture** right in front of Liang and Carly.
+  - Absorbing physical corrections from a younger white man without fighting back destroys Chen's presence on the spot; Liang visibly cools and pulls away emotionally, while Carly watches her intimidating father shrink in real time—breaking her lifelong fear of him.
   - **Stand and watch:** Jay dismisses Chen to the side, ordering him to **stand at attention and watch** while Jay executes a full, effortless demonstration on Liang—**hair pulling, slapping, spanking, verbal humiliation, spitting into her mouth, and fucking her over the couch**.
-- **State after Check-In #1:** Chen's confidence is cracked, though not yet completely destroyed; Liang's respect for him starts eroding fast.
+- **State after Check-In #1:** Chen's confidence is cracked, though not yet completely destroyed; Liang's respect for him starts eroding fast, and Carly stops fearing her father.
 
 ---
 
 ### Check-In #2 — Real-Time Slaps, Kneeling, Collapsed Retry, Mirrored Demo on Chen
-- **Timing:** ~4–6 weeks later (between Pt. 15 and the wedding).
+- **Timing & cast:** ~4–6 weeks later (between Pt. 15 and the wedding). **Carly is absent**—strictly **Jay + Chen + Liang**, making the breakdown raw and unbuffered and preserving the shock of Chen's final state for Carly at the wedding.
 - **Round 1 — Slapped for every mistake → Kneel & watch:**
   - Chen attempts the live exam again, visibly more rattled than before.
   - Every mistake now earns a **direct slap** in real time.
@@ -122,13 +122,13 @@ graph TD
     4. **Verbal humiliation** — mocking his spinelessness, his inability to satisfy his wife, and his submission.
     5. **Spitting into his mouth** — forcing his mouth open and making him swallow Jay's spit in front of Liang.
     6. **Belt smacking across his bare ass** — replacing the fucking portion of Liang's demo with a sustained, brutal belt whipping across Chen's bare ass until Chen completely breaks.
-- **The Private Flip (Between Check-In #2 and the Wedding):**
+- **The Gradual Private Flip (Between Check-In #2 and the Wedding):**
   - Watching her stern, billionaire husband get hair-pulled, slapped, spit-fed, and belt-whipped over her couch permanently destroys Liang's last trace of respect for him.
-  - When they are alone, **Liang begins looking down on Chen and dominating him herself**—mocking his failure, ordering him onto his knees, making him serve her, and reporting to Jay—fully shattering Chen's hope of ever recovering his old position.
+  - Rather than turning into a cartoon dominatrix overnight, **Liang's flip happens gradually when they are alone**: first shutting down his attempts to sound authoritative, then refusing him sex and assigning humbling everyday tasks, and—once she sees him obey meekly—steadily escalating into ordering him onto his knees, mocking his failure, dominating him openly at home, and reporting to Jay, fully shattering Chen's hope.
 
 ---
 
-### Climax — Modified Pt. 26 (Wedding Hallway + Overtly Submissive Aisle Walk & Double Kowtow)
+### Climax — Modified Pt. 26 (Wedding Hallway + Overtly Submissive Aisle Walk & Double Kowtow + Stay-Behind Outing)
 
 #### Part A — The Hallway (Failed Final Test + Sherry Reveal)
 - Before the ceremony, Jay encounters Chen and Liang outside Carly's room.
@@ -137,16 +137,21 @@ graph TD
 - Chen has zero leverage left to set conditions (unlike canon).
 
 #### Part B — Overtly Submissive Walk Down the Aisle & Altar Kowtows
-Because the wedding is already openly outing (all of Jay's women, Hideo, Dave, and Madison are publicly present and in on the lifestyle), the traditional processional is inverted into Chen's public sealing as a cuckold and slave:
+Because the canon wedding is already openly outing (officiated by **Louise**, with all of Jay's women publicly revealed right after the vows), the processional is inverted into Chen's public sealing as a cuckold and slave:
 
 1. **Reversed processional — Chen follows Carly:**
-   - Instead of the father leading the bride, **Carly walks ahead**, confident and radiant (visibly pregnant, wearing her collar/bridal styling), and **Chen follows submissively behind her** down the aisle—visibly humbled in front of Liang, Sherry, Hideo, and the guests.
+   - Instead of the father leading the bride, **Carly walks ahead**, confident and radiant (visibly pregnant, wearing her bridal styling), and **Chen follows submissively behind her** down the aisle—visibly humbled in front of Liang, Sherry, Hideo, and the guests.
 2. **Altar Kowtow #1 — Presenting Carly to Master (Jay):**
    - At the foot of the dais, **Chen drops to his knees and kowtows (额头触地)** to **Jay**, formally presenting his daughter Carly to his **Master**.
    - Direct thematic payoff to Chen's Pt. 15 speech about his father watching Chinese men bow down and lose their spine.
 3. **Altar Kowtow #2 — Kneeling & Kowtowing to His New Mistress (Carly):**
    - Because **Jay is Chen's Master**, **Carly**—by marrying Jay right there at the altar—officially becomes **Chen's new Mistress**.
-   - Before Chen can rise, Jay immediately orders him to **kneel and kowtow to his new Mistress (Carly)** as well, completing the total inversion of father and daughter in front of the entire room (including Liang, Sherry, and a stunned Hideo).
+   - Before Chen can rise, Jay immediately orders him to **kneel and kowtow to his new Mistress (Carly)** as well, completing the total inversion of father and daughter in front of the entire room (including Liang, Sherry, and a stunned Hideo). Since Carly was absent from Check-In #2, seeing her father drop and kowtow to her at the altar lands with full dramatic contrast.
+
+#### Part C — Canon Stay-Behind Outing (Flipped Liang Line)
+- Immediately after Louise pronounces Jay and Carly *"husband and first wife,"* she makes the canon announcement: *"Jay has asked for a private moment with his new wife and all the women that he's slept with."*
+- Just as in canon, **both Liang (Mrs. Young) and Sherry openly stay behind** while Jay's parents and the other guests file out in shock (with Carly then stripping for her diamond *"Jay's Slut"* choker, Jay proposing to and fucking Kyrsten over the pedestal, and every woman—including Sherry, Liang, and Jackie—stepping up to address Carly).
+- **Key canon flip:** In Literotica Pt. 26, Liang tells Carly *"Carly, your Master has given me my Master [Chen]."* Here, with Chen broken, **Liang's line flips**—she stays behind openly as one of Jay's owned women, thanking Carly for bringing a real Master into the family, while **Sherry** (standing right there in the same room) finally realizes her mother has been Jay's woman all along.
 
 ---
 
