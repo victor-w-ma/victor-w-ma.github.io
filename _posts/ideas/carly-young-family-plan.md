@@ -25,9 +25,9 @@ The original Literotica series started with a tight **WMAF / raceplay** premise 
 ```mermaid
 graph TD
  jay["Jay"]
- carly["② Carly"]
- liang["② Liang"]
- sherry["② Sherry"]
+ carly["Carly"]
+ liang["Liang"]
+ sherry["Sherry"]
  chen["Chen"]
  hideo["Hideo"]
 
@@ -35,12 +35,15 @@ graph TD
  jay -->|调教| liang
  jay -->|调教| sherry
  jay -->|调教| chen
+ carly -->|调教| liang
+ carly -->|调教| sherry
  carly -->|调教| chen
  liang -->|调教| chen
+ sherry -->|调教| chen
  sherry -->|调教| hideo
 ```
 
-**Jay** is the sole top-level Master. He trains Carly, Liang, and Sherry, and directly breaks and trains **Chen** across Check-Ins #1 and #2. **Liang** flips over Chen privately after Check-In #2; **Carly** becomes Chen's new Mistress at the wedding altar by marrying Jay; **Sherry** sits over **Hideo** in a parallel second-generation cuckold chain.
+**Jay** is the sole top-level Master; he trains Carly, Liang, and Sherry, and directly breaks and trains **Chen** across Check-Ins #1 and #2. Once she marries Jay and becomes Mistress, **Carly** steps into **2nd-in-command** of the Young family (`Carly → Liang / Sherry / Chen`) while remaining completely submissive to Jay the moment he commands her. **Liang** and **Sherry** sit in Tier 3—both answering to Jay and Carly, and **both sitting directly over Chen**—while Sherry also holds **Hideo** at the bottom. Every woman in the family Chen once intimidated now sits above him, each in a distinct register.
 
 *(Broader raceplay cast if expanded later: white Tier-2 co-tops **Jackie** [Carly's former college Mistress, Pt. 17], **Kyrsten**, and **Louise** ["white goddess" over Carly, Pt. 22], plus Carly's half-Asian Boston roommates **Alex** and **Natalie** [Pt. 11].)*
 
@@ -155,8 +158,41 @@ Because the canon wedding is already openly outing (officiated by **Louise**, wi
 
 ---
 
-## Post-Wedding Follow-Up Hooks
+## Post-Wedding Extension Arc (Three Beats)
 
-1. **Sherry learns about Liang (full mutual reveal):** After witnessing Chen kowtow at the altar, Sherry finally discovers Liang's Pt. 15 submission, the living-room check-ins, and Liang's private dominance over Chen.
-2. **Chen & Hideo paired together:** Two generations of Asian men from the exact same migration background (Fortune 5000 patriarch + Stanford MBA) serving at the bottom of the same household under **Liang** and **Sherry**.
-3. **Sherry's NYU graduation & breeding:** Following through on Jay impregnating Sherry once she finishes school while Hideo fulfills his Pt. 23 promise (*"I will take care of the baby"*).
+The post-wedding arc pays off every edge in the 4-tier hierarchy on-page—establishing **Carly as 2nd-in-command**, giving **each of the three Young women a distinct dynamic over Chen**, and bringing **Chen and Hideo** together at the bottom of the same household.
+
+### Three Distinct Styles of Dominance Over Chen
+- **Carly (2nd-in-Command / Mistress):** Calm, formal, assured—wielding official authority as Master's First Wife over Liang, Sherry, and Chen, while instantly switching back into Jay's eager submissive whenever Jay calls her *slut*.
+- **Liang (Wife at Home):** Cold, cutting, everyday control—holding Chen's leash at home, enforcing posture and domestic service, and reporting back to Jay and Carly.
+- **Sherry (Younger Daughter / Bratty Revenge):** Blunt, ruthless payback for Chen's high-school blowup over her dating white boys—weaponizing her post-orgasm bratty streak and her white-owned body directly against her father.
+
+---
+
+### Post-Wedding Beat 1 — Morning After the Wedding: The Mutual Reveal & First Floor-Sharing
+- **Trigger:** Immediately follows Pt. 26's altar kowtow and Louise's stay-behind outing, where **Sherry** realized her mother **Liang** stayed behind as one of Jay's women.
+- **Mutual reveal (Liang & Sherry):** In the suite/brunch with Jay and Carly, Liang admits Pt. 15, the two live-graded check-ins, and her gradual flip over Chen. Sherry's old fear of her parents discovering her lifestyle evaporates into shock and thrill at realizing her strict mother shares her exact craving.
+- **Carly steps into 2nd-in-command:** Newly married **Carly** begins running the family side of Jay's hierarchy—checking on Liang's control of Chen, reminding Sherry of the rules, and establishing that mother, sister, and father all answer to her under Jay.
+- **Chen & Hideo paired for the first time:** The Fortune 5000 patriarch and the Stanford MBA end up side by side in the same subordinate corner—both realizing Jay offered them the exact same challenge and both failed it.
+
+---
+
+### Post-Wedding Beat 2 — Birth of Carly's Baby: Carly Exercises #2 Rank & Sherry Breaks Chen Personally
+- **Trigger:** Several months later, Carly gives birth to Jay's **half-white child** (paying off Chen's Pt. 15 outburst: *"Do you already hate your grandchild simply because he's half white?"*). Chen and Liang visit Jay and Carly's home (with Sherry and Hideo visiting as well).
+- **Carly over Liang & Chen:**
+  - **Carly → Chen:** Turns the altar kowtow into daily reality—making Chen kneel and ask permission from *Master* and *Mistress* before holding his grandchild, assigning him deferential domestic service during the visit, and letting him fund a trust for Jay's mixed-race heir while kneeling to his own daughter.
+  - **Carly → Liang:** Liang drops her remaining maternal authority, deferring to Carly as Mistress and accepting Carly's oversight of how she disciplines Chen at home.
+- **Sherry → Chen (Signature Revenge Beat):**
+  - Paying off Chen's high-school anger over her dating white boys and his Pt. 15 *"lily white hands"* line, **Sherry directly degrades Chen herself**—forcing him to kneel and read the Chinese **`White Owned Holes`** tattoo on her shoulder blade out loud, and after Jay finishes inside her, **straddling/pressing her cum-filled pussy onto Chen's face to smear Jay's white sperm across his cheeks and mouth, taunting him: *"Still hate white dick, Dad?"***
+  - Whenever Sherry gets overly bratty or sloppy, **Carly** (as #2) or **Jay** steps in to correct her—reinforcing the full ladder `Jay → Carly → Sherry → Chen / Hideo`.
+
+---
+
+### Post-Wedding Beat 3 — Sherry's NYU Graduation, Breeding & Return to Chen's Mansion
+- **Trigger:** Sherry finishes NYU, expiring the graduation condition on breeding her (Pt. 15, 22, 26).
+- **Breeding Sherry & the outward marriage to Hideo:**
+  - Jay follows through on impregnating Sherry with **Hideo** watching and honoring his Pt. 23 promise (*"I will take care of the baby"*), while Hideo stays on Sherry's 5-orgasms-for-1-BJ allowance.
+  - Chen funds a respectable outward wedding for Sherry and Hideo for extended family / Hideo's traditional parents, knowing privately that Sherry is carrying Jay's second mixed-race child right over her Chinese tattoo.
+- **Final Bookend Scene (Back in Chen's Mansion Living Room):**
+  - Full Young-family dinner back in the exact opulent living room from Pt. 15, with the **Go board** still sitting untouched in the corner.
+  - **Jay** sits at the head with **Carly** as his #2 (with their child), flanked by **Liang** and pregnant **Sherry**; **Chen** and **Hideo** serve side by side at the bottom beneath their wives and daughters—closing the entire two-generation arc where it began.
