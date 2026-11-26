@@ -6,7 +6,7 @@ published: false
 
 **Status:** Story / backstory planning document (`published: false`, not for site publication).
 **Source series:** *Carly's WMAF Fantasy* by Masterful_Husband (Literotica, 32 parts — Jackie appears in Pt. 17, 18, 25, and 26).
-**Companion plan:** `_posts/ideas/carly-young-family-plan.md` (Young family rewrite & post-wedding 4-tier hierarchy).
+**Companion plans:** `_posts/ideas/carly-young-family-plan.md` (Young family rewrite & post-wedding 4-tier hierarchy) and `_posts/ideas/carly-asian-ex-reunion-plan.md` (Carly's Brown Asian ex Daniel Liu at alumni weekend).
 
 ---
 
