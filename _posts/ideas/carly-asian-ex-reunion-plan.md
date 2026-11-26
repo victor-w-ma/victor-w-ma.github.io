@@ -28,7 +28,7 @@ Carly goes home and tells Jay. Jay, loving and ruthless in the same breath, **or
 - **Jay is absent, then present as will.** The reunion is Carly's alone, so the later seduction is clearly **his order**, not a jealous husband crashing an alumni mixer. She comes home, reports, and is sent back armed.
 - **Easy cheat, lasting rank.** Seduction is not a campaign. He is already gone. They cheat the next time they are alone. The work is not getting him into bed. The work is that Carly stays **on top in bed and in the affair**—girlfriend-above, not a guilty equal, not a one-off.
 - **Chen's preferred son-in-law, used.** Daniel is everything Chen wanted. Jay never has to meet him to put him under Carly.
-- **Yilin is not a stereotype and not a fighter.** Overachiever, GC motive, same ranking. She watches herself get dropped in real time and stays consistent.
+- **Yilin swallows the snub, not the affair.** At the reception she lets herself be ignored because the ranking says Carly sits higher. When she finds out they cheated, that is her GC path and her public place—she **picks a fight**. Carly wins it by naming the passport and making Daniel prove who he belongs to.
 
 ---
 
@@ -51,7 +51,8 @@ Carly goes home and tells Jay. Jay, loving and ruthless in the same breath, **or
 - **Overachiever, above both of them:** She knows it. She is polite about it. She does not need to say it.
 - **Private ranking: Whites > ABCs > FOBs.** Same map as Daniel. White partner = top of the local market; ABC = passport, still Chinese enough to take home; FOB = same boat, no immigration value. She does not date FOBs. That is a rule.
 - **Why Daniel:** He is an **ABC and a citizen**. Marriage is a green-card path. He is successful enough that her parents will accept the story. He is not white. She knows the difference.
-- **Why she does not challenge the snub:** Carly is ABC and married to a white man. On Yilin's map that is **above** her. Fighting Carly for Daniel's attention would be fighting up the ladder. She holds the ranking, so she stands there, still, and lets herself be ignored. It humiliates her. It also makes sense to her. She will not make a scene to defend a position she does not believe she holds.
+- **Why she does not challenge the snub (reunion only):** Carly is ABC and married to a white man. On Yilin's map that is **above** her. Fighting for Daniel's *attention* at a mixer would be fighting up the ladder. She holds the ranking, so she stands there and lets herself be ignored.
+- **Why she does pick a fight later:** The affair is not attention. It is her public girlfriend slot and her green card. She is an overachiever. She will not be the quiet FOB who finds out and asks for terms. She comes in hot.
 - **What she is not:** Not a wide-eyed traditional girlfriend. Not a girl who thinks Daniel is the catch of her life. Not Jay's next project unless a later beat says so. Not someone who asks what *Master* means; she is not at the seduction unless Carly or Jay puts her there.
 
 ---
@@ -124,7 +125,7 @@ She texts Jay when Daniel is still in the room, or from the bathroom with the do
 ### Beat 6 — The Relationship, with Her on Top
 This is the lasting beat, not the sex.
 
-- Daniel goes back to Yilin the same night and still does not look at her properly. He is already Carly's. Yilin holds the ranking and does not pick a fight.
+- Daniel goes back to Yilin the same night and still does not look at her properly. He is already Carly's. Yilin has not found out yet, so she still does not pick a fight about the snub.
 - Going forward, Carly runs the affair like a small D/s: she tells him when to show up, he does not get to play boyfriend, he does not get to renegotiate with softness. In bed she stays on top. Outside bed she is the one who can end his week with a text.
 - With Jay, she drops the dominance at the door and is First Wife / slut again. The Domme is a role he assigned her for Daniel, and she wears it for Daniel only.
 - Yilin can remain the public girlfriend and the GC path **until she finds out**. She is not stupid, and the ranking does not make her blind.
@@ -132,22 +133,20 @@ This is the lasting beat, not the sex.
 ### Beat 7 — Yilin Finds Out
 She does not need a soap-opera catch. She already had the reunion. After that, Daniel's attention, hours, phone, and the way he comes home are enough. She confirms it the way she confirms a paper: quietly, completely, before she says a word.
 
-She does not scream at him. She does not fight Carly for him. The ranking already told her she would lose.
+She does not ask for terms. She **picks a fight**.
 
-She goes to **Carly**, not just Daniel. Daniel is in the room and still looks at Carly. That is the proof, again.
+She comes in as the overachiever who has been patient once and will not be patient twice: Daniel is *her* ABC, her public boyfriend, her green-card path. Carly already has a white husband. Yilin will not be the quiet FOB in the corner while they keep her as cover. She goes at Carly—voice up, ranking or not, because this time it is her place and her visa, not a drink at a mixer.
 
-What Yilin actually wants from the conversation is terms, not a confession:
-- She already watched him ignore her for an ABC married to a white man. The affair is that ranking with the clothes off.
-- She is not going to compete with Carly. That would be competing up the ladder.
-- She wants to know whether she is still the public girlfriend and the green-card path, or whether Carly is done with that cover. She will not be the last person in the room to know.
+Carly, as directed, stays dominant in the relationship and **puts her down**.
 
-Carly, as directed, stays dominant in the relationship. She does not deny, apologize, or soften it into a mistake. She tells Yilin the shape: Daniel is hers now; Jay told her to take him; Yilin was never going to be first once Carly walked in. If Yilin wants to stay with him for the passport, that is Yilin's calculation. It is not a threat fight Carly is interested in.
+- She does not deny the affair. She names it, then names **why Yilin is really here**: not love, not Daniel, a **green card**. She says it in front of Daniel so Yilin cannot pretend the room did not hear. The olympiad CV, the MIT lab, the girl who will not date FOBs—all of it is immigration strategy, and Carly will not let her dress it up as a relationship Daniel owes her.
+- Then she **flexes control over Daniel**. She does not argue with Yilin as an equal. She talks to him. Sit down. Look at me. Tell her who you belong to. Tell her you cheated because she told you to. Stay when Yilin tells you to leave. Kiss Carly's hand / kneel / answer *her* instead of your girlfriend. Yilin has to watch the man she is fighting for take orders from the woman she is fighting.
 
-Daniel has nothing useful to say. He looks at Carly when Yilin asks him a direct question.
+Daniel folds on cue. That is the degradation: Yilin came to win him back and instead watches him perform whose he is.
 
-Yilin's exit from the scene is still consistent: she does not pick a fight with Carly, and she does not pretend she is surprised. She may stay for the GC with her eyes open. She may leave. She may start looking past Daniel toward the white husband Carly already has. None of that puts her on the training graph yet. Finding out is the beat. What she does with the ranking after she has proof is the next one.
+Yilin can still be furious after. Fury does not get her Daniel. Carly has already won the fight by making the GC visible and making him choose in the room. What Yilin does next—stay as the exposed cover, walk, or look at the white husband Carly already has—is a later beat. Putting her down is not yet training. She stays off the graph unless Jay or Carly later takes her.
 
-Carly reports the conversation to Jay the same night. He decides whether Yilin is left as a witness, a remaining cover, or a later problem.
+Carly reports the fight to Jay the same night, including that Yilin came in hot and that Daniel performed.
 
 ---
 
@@ -156,7 +155,7 @@ Carly reports the conversation to Jay the same night. He decides whether Yilin i
 - **Carly:** Closes the Brown cover by topping it and *keeping* it. She is not the girl who dated Daniel to hide. She is the wife Jay sent to take him, dominant in that bed and that relationship, submissive the moment she is home.
 - **Jay:** Never needed to enter the room. Loving because he believed her and armed her; Master because the affair is an order with a shape: her on top, ongoing.
 - **Daniel:** Gets the ABC he still ranks above Yilin, immediately, and only as her subordinate. Cheating was easy. The relationship is not equal.
-- **Yilin:** Finds out without becoming a different person. She confirms, goes to Carly, asks for terms, does not fight up the ladder. The GC, walking, or looking at Jay are all still open. She is still not a training node until a later beat makes her one.
+- **Yilin:** Swallows the reunion snub, then **picks a fight** when she has proof. She loses it in the room: Carly calls the green card out loud and makes Daniel take Carly's side in front of her. Still not a training node until a later beat makes her one.
 
 ---
 
@@ -174,4 +173,4 @@ graph TD
  carly -->|调教| daniel
 ```
 
-Jackie is unchanged in `_posts/ideas/carly-jackie-backstory-plan.md` and is simply not in this scene. Do not draw `Jay -->|调教| Daniel` unless Jay later handles him in person. Yilin finding out is not training: still do not draw her unless a later beat actually puts her under someone.
+Jackie is unchanged in `_posts/ideas/carly-jackie-backstory-plan.md` and is simply not in this scene. Do not draw `Jay -->|调教| Daniel` unless Jay later handles him in person. Carly putting Yilin down in a fight is humiliation, not yet training: still do not draw Yilin unless a later beat actually puts her under someone.
