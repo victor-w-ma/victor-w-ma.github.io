@@ -127,7 +127,27 @@ This is the lasting beat, not the sex.
 - Daniel goes back to Yilin the same night and still does not look at her properly. He is already Carly's. Yilin holds the ranking and does not pick a fight.
 - Going forward, Carly runs the affair like a small D/s: she tells him when to show up, he does not get to play boyfriend, he does not get to renegotiate with softness. In bed she stays on top. Outside bed she is the one who can end his week with a text.
 - With Jay, she drops the dominance at the door and is First Wife / slut again. The Domme is a role he assigned her for Daniel, and she wears it for Daniel only.
-- Yilin can remain the public girlfriend and the GC path. That is Daniel's problem and her ranking. Carly does not have to steal Yilin's place in the open. She already sits above it.
+- Yilin can remain the public girlfriend and the GC path **until she finds out**. She is not stupid, and the ranking does not make her blind.
+
+### Beat 7 — Yilin Finds Out
+She does not need a soap-opera catch. She already had the reunion. After that, Daniel's attention, hours, phone, and the way he comes home are enough. She confirms it the way she confirms a paper: quietly, completely, before she says a word.
+
+She does not scream at him. She does not fight Carly for him. The ranking already told her she would lose.
+
+She goes to **Carly**, not just Daniel. Daniel is in the room and still looks at Carly. That is the proof, again.
+
+What Yilin actually wants from the conversation is terms, not a confession:
+- She already watched him ignore her for an ABC married to a white man. The affair is that ranking with the clothes off.
+- She is not going to compete with Carly. That would be competing up the ladder.
+- She wants to know whether she is still the public girlfriend and the green-card path, or whether Carly is done with that cover. She will not be the last person in the room to know.
+
+Carly, as directed, stays dominant in the relationship. She does not deny, apologize, or soften it into a mistake. She tells Yilin the shape: Daniel is hers now; Jay told her to take him; Yilin was never going to be first once Carly walked in. If Yilin wants to stay with him for the passport, that is Yilin's calculation. It is not a threat fight Carly is interested in.
+
+Daniel has nothing useful to say. He looks at Carly when Yilin asks him a direct question.
+
+Yilin's exit from the scene is still consistent: she does not pick a fight with Carly, and she does not pretend she is surprised. She may stay for the GC with her eyes open. She may leave. She may start looking past Daniel toward the white husband Carly already has. None of that puts her on the training graph yet. Finding out is the beat. What she does with the ranking after she has proof is the next one.
+
+Carly reports the conversation to Jay the same night. He decides whether Yilin is left as a witness, a remaining cover, or a later problem.
 
 ---
 
@@ -136,7 +156,7 @@ This is the lasting beat, not the sex.
 - **Carly:** Closes the Brown cover by topping it and *keeping* it. She is not the girl who dated Daniel to hide. She is the wife Jay sent to take him, dominant in that bed and that relationship, submissive the moment she is home.
 - **Jay:** Never needed to enter the room. Loving because he believed her and armed her; Master because the affair is an order with a shape: her on top, ongoing.
 - **Daniel:** Gets the ABC he still ranks above Yilin, immediately, and only as her subordinate. Cheating was easy. The relationship is not equal.
-- **Yilin:** Stays consistent and unpaid for it. She let the snub happen because the ranking said so, then lives next to the affair the same way. Still not a training node unless a later beat makes her one.
+- **Yilin:** Finds out without becoming a different person. She confirms, goes to Carly, asks for terms, does not fight up the ladder. The GC, walking, or looking at Jay are all still open. She is still not a training node until a later beat makes her one.
 
 ---
 
@@ -154,4 +174,4 @@ graph TD
  carly -->|调教| daniel
 ```
 
-Jackie is unchanged in `_posts/ideas/carly-jackie-backstory-plan.md` and is simply not in this scene. Do not draw `Jay -->|调教| Daniel` unless Jay later handles him in person. Do not draw Yilin at all unless she is actually trained.
+Jackie is unchanged in `_posts/ideas/carly-jackie-backstory-plan.md` and is simply not in this scene. Do not draw `Jay -->|调教| Daniel` unless Jay later handles him in person. Yilin finding out is not training: still do not draw her unless a later beat actually puts her under someone.
