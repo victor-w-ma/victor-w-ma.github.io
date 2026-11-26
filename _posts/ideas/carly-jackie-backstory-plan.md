@@ -18,7 +18,7 @@ In canon, Jackie only appears for a quick ambush/reversal arc in Orlando (Pt. 17
 1. **Jackie's full character dossier & hidden submissive psychology** (orientation, dating life outside boyfriend-stealing, and what "asshole alphas" made her do in bed).
 2. **The Brown University prequel arc** (how Jackie controlled Carly beyond boyfriend-stealing, how Carly's Asian boyfriends fit into the hierarchy, and how Jackie's own off-campus humiliations fed her cruelty toward Carly).
 3. **The Orlando pivot (Pt. 17–18)** (when Jay learned the full history and Carly's lingering resentment, and how he broke Jackie's armor).
-4. **A post-wedding return beat** tying Jackie back into newly married First Wife / #2 **Carly**.
+4. **A two-phase post-wedding arc**: first **Jay's deliberate, loving revenge night** to settle the Brown University debt and heal Carly's lingering bitterness, followed by the **post-revenge equilibrium** where **Jackie stays on as Carly's consensual bedroom Dom** under Jay's roof because the dynamic arouses all three of them.
 
 ---
 
@@ -35,7 +35,7 @@ graph TD
  jackie -->|调教| carly
 ```
 
-**Jay** is the sole top-level Master; he directly dominates both **Jackie** (as a rough, non-domestic brat-submissive plaything) and **Carly** (his devoted First Wife and #2 over the Young family). **Jackie**'s arrow to **Carly** represents her foundational **Brown University** conditioning—she never holds permanent authority over Carly once Jay takes over, and in the post-wedding extension Jay can explicitly flip that college dynamic on its head for a night.
+**Jay** is the sole top-level Master; he directly dominates both **Jackie** (as a rough, non-domestic brat-submissive plaything) and **Carly** (his deeply loved First Wife and #2 over the Young family). **Jackie**'s arrow to **Carly** evolves across two stages: it starts as toxic **Brown University** conditioning, gets **settled once** via Jay's loving one-night revenge reversal (`Carly` over `Jackie` under Jay's hand to clear Carly's resentment), and then **resumes consensually in the bedroom** on Jay's permission because it turns all three of them on. Outside sex—and over the Young family—Carly remains Jay's undisputed First Wife and #2.
 
 ---
 
@@ -110,14 +110,32 @@ Jackie's grip on Carly at Brown was not just occasional bedroom cruelty—it was
 
 ---
 
-## Post-Wedding Extension Opportunity — Jackie's Return Against Mistress Carly
+## Post-Wedding Extension Arc — Loving Revenge & Consensual Return to `Jackie → Carly`
 
-Connects directly to `_posts/ideas/carly-young-family-plan.md`, where newly married **Carly** holds formal **2nd-in-command / First Wife** status under Jay.
+Connects directly to `_posts/ideas/carly-young-family-plan.md`, where newly married **Carly** holds formal **2nd-in-command / First Wife** status under Jay, and balances Jay's colder treatment of Chen by spotlighting his **deeply loving, protective devotion to Carly** (*Masterful_Husband* core).
 
-- **Trigger:** Months after the wedding (where Jackie stood among the stay-behind women watching Carly receive her diamond *"Jay's Slut"* choker and become First Wife), Jackie drops back into town expecting the usual dynamic: rough sex with *"stud"* Jay and a few smug jabs at Carly when Jay isn't looking.
-- **The clash:** Jackie instinctively slips into her old Brown University needle—testing whether married Carly still flinches when Jackie talks down to her or tries to pull rank as a white woman.
-- **Jay backs Carly's #2 rank:** Instead of letting Jackie slide, Jay cuts her off, reminds her whose house she is standing in, and **orders Jackie to answer to his First Wife for the night**.
-- **The role reversal (preserving Jackie's personality):**
-  - Jackie does *not* suddenly turn into a meek devotee—she glares, spits venom, and only complies because **Jay physically backs Carly up** (holding Jackie's hair, slapping her ass when she mouths off, making it clear she doesn't get Jay's cock unless she obeys Carly first).
-  - Under Jay's hand, Carly gets direct, controlled payback for four years at Brown—making Jackie kneel, swallow her pride, and perform the exact humiliations she once forced on Carly (kneeling between Carly's legs after Jay finishes inside his wife, eating Jay's cum out of Carly while Jay holds Jackie's head in place).
-  - Afterward, Jackie still leaves with her sharp tongue intact—furious, thoroughly fucked out, and hating every second of losing to her old dorm slave—while permanently cementing that **Carly sits above Jackie inside Jay's household**.
+### Why Pt. 17 Alone Was Not Real Vengeance
+In Orlando (Pt. 17), pinning Jackie's wrists, slapping her ass, calling her a whore, and fucking her for 4.5 hours *looked* like punishment—but because rough alpha dominance is Jackie's actual kink, **Jackie got off on it**. She walked away satisfied, still calling Jay *"stud,"* and never truly paid for four years of humiliating Carly at Brown. Beneath Carly's devotion, Jay recognizes that a real scar and bitterness still linger.
+
+### Phase 1 — Jay's Loving Revenge Night (Settling the Brown Debt)
+To genuinely avenge Carly—without turning Jackie's punishment into a kink she enjoys—Jay targets the exact four things Jackie **hates and cannot sexualize**: *submitting to Carly, mundane servitude, exposing her insecurity, and orgasm/cock denial.*
+
+1. **The Leverage (Bargain Trap):** After Pt. 17's marathon, Jay is the best alpha lay Jackie has ever had; she comes back hungry for another night. Before laying a finger on her, Jay sets a cold, non-negotiable condition: ***"You want me to fuck you again? You owe my wife first. One full night doing whatever Carly says—and if you walk out that door, I never touch you again."*** Jackie's craving and pride lock her in.
+2. **Exposing the "Queen Bee" Myth in Front of Carly:** Drawing on what he learned during Pt. 17's 4.5-hour session, Jay strips away Jackie's untouchable white-goddess aura while Jackie kneels at Carly's feet—forcing Jackie to admit out loud that the whole time she played royalty in their Brown dorm, off-campus asshole alphas were throat-fucking her, slapping her around, and tossing her out, and Carly was simply the one person Jackie could punch down on to feel big again.
+3. **Unsexy Domestic Servitude:** Mirroring Brown University dorm servitude, Jackie is denied anything sexy or playful for the first half of the evening—fetching Carly's drink, kneeling to remove Carly's heels, carrying Carly's robe, and sitting silently on the floor at Carly's feet while Jay and Carly dine and talk warmly. Whenever Jackie rolls her eyes or snaps *"stud—,"* Jay shuts her down coldly with zero rough banter.
+4. **The Reversed Brown Ritual (Under Jay's Backing):** Jay makes love to and claims **Carly** openly and possessively in front of Jackie while Jackie kneels beside the bed forbidden to touch herself. After Jay finishes inside his wife, he pulls Carly's legs open and **orders Jackie between Carly's thighs to eat his cum out of Carly's pussy**—a 1-to-1 flip of Brown University—with **Carly holding Jackie's dark hair** and Jay standing directly behind Jackie so she cannot pull away. Because Jackie is *"not really into girls"* and only liked the power high of topping Carly, being on the bottom gives her zero erotic thrill—pure ego defeat.
+5. **The Final Sting — Denying Jackie the Reward:** Once Jackie finishes cleaning Carly up—flushed, humbled, expecting Jay to finally pin her down and fuck her rough as her payoff—**Jay refuses to touch her** (*"You paid your debt to my wife. Get dressed."*). Denying her rough alpha sex prevents her from rewriting the evening as a hot threesome; she leaves aching, defeated, and knowing Carly beat her cleanly.
+6. **Loving Aftercare (The Emotional Core):** The moment the door shuts, Jay drops the cold Dom mask, pulls Carly into his arms, and gives her deep, tender aftercare—telling her plainly that he saw how much Brown still hurt her, that Pt. 17 was too fun for Jackie, and that **nobody—not her father, not her college bully—ever gets to own a piece of his wife without his blessing.**
+
+### Phase 2 — The Post-Revenge Equilibrium: Jackie Stays as Carly's Bedroom Dom
+Once the **real emotional debt is paid** and the bitterness is gone from Carly's heart, the dynamic settles into a **far hotter permanent equilibrium** on Jackie's subsequent visits:
+
+- **Why Jackie resumes topping Carly (with Jay's explicit permission):** Now that Carly has beaten Jackie once, seen behind Jackie's insecure mask, and felt the rock-solid security of Jay's love as First Wife, **submitting to Jackie stops being trauma and becomes pure, consensual erotic play**. Topping Jackie gave Carly *closure*, not her primary sexual turn-on; Carly's deepest wiring is still kneeling to a sharp-tongued white woman while belonging to a dominant white Master.
+- **How the threesomes work going forward:** On Jackie's next visit, Jay tells her *"You paid my wife back. Now—on my permission—you can play with her the old way while I fuck you."* The three-way ladder locks cleanly into place:
+  - **Jay → Jackie:** Jay finally gives Jackie the rough, breathless, asshole-alpha manhandling she craves.
+  - **Jackie → Carly (Bedroom / Play-Only Dom):** Back in her natural element, Jackie gets to pull Carly's hair, mock her, and make Carly kneel and clean Jay's cum out of Jackie's pussy—**strictly inside the bedroom under Jay's permission**.
+  - **Jay → Carly:** Jay remains Carly's loving Master and husband; outside the bedroom (and across the Young family), Carly's First Wife / #2 rank is untouchable, and both women know Jay can flip Jackie back onto her knees for Carly anytime he chooses.
+- **Why it arouses all three:**
+  - **For Jay:** Peak WMAF hierarchy heat—watching his untamed white fucktoy dominate his devoted Asian wife strictly at his pleasure while he physically owns them both.
+  - **For Carly:** Resentment-free indulgence of her most potent Brown-wired kink, wrapped in total emotional safety as Jay's cherished wife.
+  - **For Jackie:** Both of her real cravings in the same room—getting roughly broken by the one alpha stud who matches her while getting her Brown University dominance rush over Carly back.
