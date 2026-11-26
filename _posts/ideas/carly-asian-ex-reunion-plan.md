@@ -18,7 +18,7 @@ This beat brings **one** of them back—**Daniel Liu**—after Carly is already 
 
 Daniel and Yilin hold the **same private ranking: Whites > ABCs > FOBs.** He does **not** think he dated up. Yilin is the FOB he could actually hold after striking out with white women and ABCs; she is dating him because he is a citizen. The moment he sees Carly—an ABC who married white—he starts **ignoring Yilin**. Yilin does not challenge it. The ranking says not to.
 
-Carly goes home and tells Jay. Jay, loving and ruthless in the same breath, **orders her to go back and dominantly seduce Daniel**—not as a lifestyle Domme, as First Wife acting on Master's instruction. Daniel is the one man from Brown who was supposed to be her respectable ending. Jay wants him folded under Carly.
+Carly goes home and tells Jay. Jay, loving and ruthless in the same breath, **orders her to go back and dominantly seduce Daniel**—not as a one-night errand, as a **relationship** she is to hold from above. It is not hard. Daniel has already ranked her over Yilin. They **cheat quickly**. As directed, Carly is dominant **in bed** and **in the relationship** that follows: she is his woman now, on her terms, still Jay's First Wife.
 
 ---
 
@@ -26,7 +26,7 @@ Carly goes home and tells Jay. Jay, loving and ruthless in the same breath, **or
 
 - **Shared map, different rungs.** Daniel and Yilin already agree on Whites > ABCs > FOBs. He ignores her for Carly because Carly sits higher on *his* map (ABC, white husband). She lets him because Carly sits higher on *hers* too. Nobody has to invent the hierarchy; they perform it in a campus reception.
 - **Jay is absent, then present as will.** The reunion is Carly's alone, so the later seduction is clearly **his order**, not a jealous husband crashing an alumni mixer. She comes home, reports, and is sent back armed.
-- **Carly tops from below.** She does not become Jackie. She dominates Daniel *because she belongs to Jay*. The choker is the rank. Daniel finally gets the ABC girl he still ranks above his FOB girlfriend—and she will not let him have her as a man. She uses him.
+- **Easy cheat, lasting rank.** Seduction is not a campaign. He is already gone. They cheat the next time they are alone. The work is not getting him into bed. The work is that Carly stays **on top in bed and in the affair**—girlfriend-above, not a guilty equal, not a one-off.
 - **Chen's preferred son-in-law, used.** Daniel is everything Chen wanted. Jay never has to meet him to put him under Carly.
 - **Yilin is not a stereotype and not a fighter.** Overachiever, GC motive, same ranking. She watches herself get dropped in real time and stays consistent.
 
@@ -97,54 +97,52 @@ Jay gets the aftercare version first: she is his, she is home, she is a little s
 - Daniel still wants her. He ranked her above the woman he arrived with in under a minute.
 - He does not think Yilin is an upgrade. Same map as Yilin: whites, then ABCs, then FOBs. He dated down and could not hide it once an ABC who married white was in the room.
 - Yilin is the real overachiever, she is here for a green card, and she **let herself be ignored** because she holds that ranking too.
-- Daniel asked for coffee. Carly did not say yes.
+- Daniel asked for coffee. Carly said maybe. She already knew it would not be hard.
 
 Jay is not jealous of Daniel. He is interested. The boy Chen would have picked is still orbiting his wife, and he did it in front of a woman who agrees she sits lower.
 
 ### Beat 4 — Jay's Order
 Jay does not go to Providence. He sends **Carly**.
 
-The instruction is specific enough that she cannot turn it into a soft reunion:
-- Go back. Take the coffee. **Dominantly seduce him.**
-- She is not asking Daniel if he missed her. She is taking him.
-- He does not get her holes—those are Jay's (Pt. 25: no other flesh-and-blood cock). She uses his mouth, his pride, his ranking.
-- She does it as *his* wife. The choker stays on. If Daniel wants the ABC who married white, he can have the terms that come with her.
-- She reports everything. If she wants to be cruel, she has permission. If she starts feeling like she is cheating, she is to remember she is working.
+The instruction is not "see if you can." It is:
+- Go back. Take the coffee. **Seduce him.** It will be easy. Do not be sweet about it.
+- **Be dominant in bed.** She is not the old girlfriend having a weak moment. She takes him. She is on top. She sets the pace, the positions, whether he gets to come. The choker stays on.
+- **Be dominant in the relationship.** This is not a one-time cheat she pretends did not happen. After they sleep together, she *keeps* him—texts, orders, when he may see her, that Yilin does not get a vote. He is hers now, under Jay.
+- She reports. If she feels like she is cheating on Jay, she is wrong: she is working. Daniel is the one cheating on Yilin.
 
-This is Jay being loving in his language: he heard that her old cover still thinks he has a claim, and he is giving her the kill shot instead of going himself.
+This is Jay being loving in his language: her old cover still thinks he has a claim, so Jay lets her take the claim and hold it.
 
-### Beat 5 — Carly Tops Daniel
-Coffee becomes a walk becomes her hotel room, or his, if Yilin is elsewhere. Carly does not flirt from below. She talks down the map he already believes:
+### Beat 5 — They Cheat Quickly
+Coffee is barely coffee. He has been gone since the reception. Carly does not have to talk him into a hotel room. A look, a "come up," and they are already cheating.
 
-- He ignored a woman smarter than both of them because Carly is ABC and married white. She names it.
-- He never stood up to Jackie. He never kept a white girl. He never kept her. He is not going to keep her now.
-- She belongs to Jay. Daniel can kneel for a piece of that, or he can go back to the girlfriend he does not look at.
+She does not flirt from below. She puts him on his back / on his knees and uses him from above—riding, hair in her fist, telling him when he may touch her. She names the ranking while she does it: he ignored a smarter woman for her because she is ABC and married white; he is cheating first and thinking later; Yilin does not get to contest this.
 
-He folds the way he folded at Brown—polite, hungry, ashamed, still ranking her above Yilin while she ranks him under her shoe. She has him on his knees, mouth on her, her hand in his hair the way Jackie used to hold hers. She does not come for *him*; she comes because Jay told her to take this. She does not let Daniel inside her. She might make him thank her, make him admit the ranking out loud, make him admit he was already cheating in his head the second he saw her.
+He folds the way he folded at Brown, except this time he gets what he wanted and it still is not his. He comes into the affair as her subordinate, not as her secret boyfriend.
 
-She texts Jay from the bathroom. Jay tells her whether to send Daniel home to Yilin still ignored, or to make Daniel say something to Yilin. Default: send him back. Let him sit next to the woman he ranked below Carly with Carly's taste still in his mouth.
+She texts Jay when Daniel is still in the room, or from the bathroom with the door open. Jay tells her to keep him.
 
-### Beat 6 — After
-Carly comes home to Jay and drops back into First Wife / slut with no leftover Domme in her posture. The dominance was an errand. He takes her properly, the way Daniel was not allowed to, and praises her for doing it well.
+### Beat 6 — The Relationship, with Her on Top
+This is the lasting beat, not the sex.
 
-Daniel is not added as a household slave unless a later beat wants that. The immediate result is enough: Chen's preferred boy, used by the daughter Chen lost, on the white husband's order, while the FOB girlfriend who shares his ranking does not even get to contest it.
-
-Yilin, if she notices the shift when he comes back, still does not challenge. She may decide the GC is still worth it. She may start looking past him harder. She does not pick a fight with Carly.
+- Daniel goes back to Yilin the same night and still does not look at her properly. He is already Carly's. Yilin holds the ranking and does not pick a fight.
+- Going forward, Carly runs the affair like a small D/s: she tells him when to show up, he does not get to play boyfriend, he does not get to renegotiate with softness. In bed she stays on top. Outside bed she is the one who can end his week with a text.
+- With Jay, she drops the dominance at the door and is First Wife / slut again. The Domme is a role he assigned her for Daniel, and she wears it for Daniel only.
+- Yilin can remain the public girlfriend and the GC path. That is Daniel's problem and her ranking. Carly does not have to steal Yilin's place in the open. She already sits above it.
 
 ---
 
 ## What This Does for Each Person
 
-- **Carly:** Closes the Brown cover by topping it. She is not the girl who dated Daniel to hide. She is the wife Jay sent to take him. Then she goes home and is his again.
-- **Jay:** Never needed to enter the room. Loving because he believed her and armed her; Master because the seduction is an order, not a hall pass.
-- **Daniel:** Gets the ABC he still ranks above Yilin, and only as someone he is not allowed to fuck. His map is used against him.
-- **Yilin:** Stays consistent and unpaid for it. She let the snub happen because the ranking said so. She is still not a training node unless a later beat makes her one.
+- **Carly:** Closes the Brown cover by topping it and *keeping* it. She is not the girl who dated Daniel to hide. She is the wife Jay sent to take him, dominant in that bed and that relationship, submissive the moment she is home.
+- **Jay:** Never needed to enter the room. Loving because he believed her and armed her; Master because the affair is an order with a shape: her on top, ongoing.
+- **Daniel:** Gets the ABC he still ranks above Yilin, immediately, and only as her subordinate. Cheating was easy. The relationship is not equal.
+- **Yilin:** Stays consistent and unpaid for it. She let the snub happen because the ranking said so, then lives next to the affair the same way. Still not a training node unless a later beat makes her one.
 
 ---
 
 ## Power Structure
 
-Jay remains the only top. Carly's edge to Daniel is **directed**, not a new identity: she trains/uses him because Jay told her to. Yilin stays off the graph.
+Jay remains the only top. Carly's edge to Daniel is **directed and ongoing**: Jay told her to seduce him, be dominant in bed, and hold the relationship from above. She is not a lifestyle Domme. She is First Wife with one man under her. Yilin stays off the graph.
 
 ```mermaid
 graph TD
