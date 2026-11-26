@@ -14,44 +14,45 @@ published: false
 
 Canon never names Carly's Asian boyfriends, but the Jackie plan already established the type: earnest, high-achieving Brown men she dated to satisfy **Chen** and to hide after Jackie kept stealing her white dates. They were polite, never stood up to Jackie, and left Carly secretly contemptuous even while she knelt for Jackie behind closed doors.
 
-This beat brings **one** of them back—**Daniel Liu**—after Carly is already Jay's First Wife, the Brown debt with Jackie has been settled, and Jackie topping Carly in bed is **consensual play under Jay's permission**. He arrives with **Yilin Wang**, a mainland **overseas student** who is the better overachiever in the room, privately ranks **Whites > ABCs > FOBs**, and is dating Daniel because he is a U.S. citizen—**a green-card path**, not a love match with a man she looks up to.
+This beat brings **one** of them back—**Daniel Liu**—after Carly is already Jay's First Wife. **Jay is not at the reunion.** Carly runs into Daniel and his girlfriend **Yilin Wang**, a mainland overseas student who outranks both of them on paper, wants a **green card**, and will not date FOBs.
 
-He is not added to the training graph. He is a **mirror**: the man Chen would have approved of, standing next to a woman who outranks him and is using him as the ABC step below white, watching the ABC he dated kneel for a white Master.
+Daniel and Yilin hold the **same private ranking: Whites > ABCs > FOBs.** He does **not** think he dated up. Yilin is the FOB he could actually hold after striking out with white women and ABCs; she is dating him because he is a citizen. The moment he sees Carly—an ABC who married white—he starts **ignoring Yilin**. Yilin does not challenge it. The ranking says not to.
+
+Carly goes home and tells Jay. Jay, loving and ruthless in the same breath, **orders her to go back and dominantly seduce Daniel**—not as a lifestyle Domme, as First Wife acting on Master's instruction. Daniel is the one man from Brown who was supposed to be her respectable ending. Jay wants him folded under Carly.
 
 ---
 
 ## Why This Hits the Raceplay Core
 
-- **Chen's preferred son-in-law, in the flesh.** Daniel is everything Chen wanted for Carly: Chinese-American, Brown, now a respectable Boston professional. Meeting him after the wedding pays off Chen's Pt. 15 *"lily white hands"* line without needing Chen in the room.
-- **The dating market as hierarchy, visible in one couple.** Daniel struck out with **white women** and **ABCs**. Yilin will not date **FOBs**—same visa class, no green card, bottom of her own ranking. She dates Daniel because he is an **ABC with a passport**. She would rank **Jay higher than Daniel** on sight, before anyone says *Master*.
-- **Two Chinese women, two uses of ABC men.** Carly used Daniel as cover while kneeling for Jackie. Yilin is using him for a GC while ranking whites first. Neither was ever going to make him the man in the room.
-- **Yilin is not the naive FOB plus-one.** She is sharper than Daniel and Carly on paper. She reads the choker, the nod, and Jackie faster than he does. The sting is that her private ranking is **confirmed**, not that she needs someone to explain America to her.
-- **Jackie as living continuity.** A Brown reunion naturally puts Jackie in the same room. She will clock Yilin as a girl who wanted white, settled for ABC, and is too smart to pretend otherwise.
-- **No new training edge by default.** Yilin is Daniel's girlfriend and a witness, not Jay's next project. She looking at Jay too long is the hook; stealing her would be a different beat.
+- **Shared map, different rungs.** Daniel and Yilin already agree on Whites > ABCs > FOBs. He ignores her for Carly because Carly sits higher on *his* map (ABC, white husband). She lets him because Carly sits higher on *hers* too. Nobody has to invent the hierarchy; they perform it in a campus reception.
+- **Jay is absent, then present as will.** The reunion is Carly's alone, so the later seduction is clearly **his order**, not a jealous husband crashing an alumni mixer. She comes home, reports, and is sent back armed.
+- **Carly tops from below.** She does not become Jackie. She dominates Daniel *because she belongs to Jay*. The choker is the rank. Daniel finally gets the ABC girl he still ranks above his FOB girlfriend—and she will not let him have her as a man. She uses him.
+- **Chen's preferred son-in-law, used.** Daniel is everything Chen wanted. Jay never has to meet him to put him under Carly.
+- **Yilin is not a stereotype and not a fighter.** Overachiever, GC motive, same ranking. She watches herself get dropped in real time and stays consistent.
 
 ---
 
 ## Character Dossier — Daniel Liu
 
 - **Identity:** Chinese-American, Carly's year at **Brown**, econ/CS. Now a VP at a Boston PE firm. Dresses well, still a little stiff, still the "good son."
-- **College relationship:** Dated Carly junior year for about four months—the longest of her Asian boyfriends. Met Chen once over winter break; Chen liked him immediately. Carly was polite, sexually withheld, and already kneeling for Jackie in the dorm. Daniel thought the distance was shyness plus family pressure.
+- **Internal ranking (same as Yilin):** **Whites > ABCs > FOBs.** He does not think Yilin is an upgrade on Carly. He thinks he **dated down** after failing to hold a white woman or an ABC. Yilin is what he could get. He is not cruel to her in speeches. He is cruel in attention.
+- **College relationship:** Dated Carly junior year for about four months—the longest of her Asian boyfriends. Met Chen once over winter break; Chen liked him immediately. Carly was polite, sexually withheld, and already kneeling for Jackie in the dorm. Daniel thought the distance was shyness plus family pressure. He also ranked her as the ABC he was lucky to have, and never recovered from losing her.
 - **How he failed in front of Jackie:** Jackie called him Carly's *"safe little study buddy"* at a house party, sent Carly to fetch her coat mid-date, and later texted Carly to come home while they were at a restaurant. Daniel apologized to Jackie to avoid a scene and walked Carly back. He never asked Carly what was actually happening in that suite.
-- **After Carly — failed with white women:** A few Brown/Boston first dates that never became second dates; one white coworker who let him pay for dinners and used him as a sounding board, then got engaged to a white guy in her office. He told himself it was numbers, not desire.
-- **After Carly — failed with ABCs:** Two serious attempts. One ABC (also finance, also immigrant-parent polish) liked him on paper and went cold in bed; she later dated a white consultant. Another told him, kindly, that he felt like a *"nice Chinese boyfriend"* and she did not want to be her mother. He heard Carly in that sentence and did not know why.
-- **What he believes now:** He did not fail. He "dated up"—Yilin is more impressive than Carly on paper (better school, harder field, actual prizes). He is ready to be gracious about Carly's white husband, and quietly sure that bringing Yilin proves he won the long game. He has not admitted, even to himself, that she is with him for a **green card**, or that she ranks his race below white.
-- **What he is not:** Not a secret Dom, not a cuckold-in-waiting, not a rival Jay needs to break. His power is **decency plus cope**. Using him as another Hideo/Chen clone would waste the contrast.
+- **After Carly — failed with white women:** A few Brown/Boston first dates that never became second dates; one white coworker who let him pay for dinners and used him as a sounding board, then got engaged to a white guy in her office. That failure sits at the top of his ranking and still stings.
+- **After Carly — failed with ABCs:** Two serious attempts. One went cold and dated a white consultant. Another told him he felt like a *"nice Chinese boyfriend."* He heard Carly in that sentence.
+- **What he believes when he sees Carly:** She married white, which on his map is marrying **up**. He is pulled to her immediately—old want, plus proximity to the rung he could not reach. Yilin, standing next to him, becomes background. He does not decide to insult her. He just stops looking at her.
+- **What he is not:** Not a secret Dom, not proud of "dating up," not a rival Jay needs to meet. His power is **the ranking plus leftover want.** Breaking him like Chen in a living-room demo would waste him. Carly taking him apart on Jay's order is the point.
 
 ---
 
 ## Character Dossier — Yilin Wang
 
-- **Identity:** Mainland Chinese overseas student. Not a wide-eyed traditional girlfriend and not "imported" as a status prop. Mid-20s, in Boston on an F-1, almost certainly **MIT / Harvard** (or equivalent)—a harder program than Brown, with olympiad / publication / internship credentials Daniel and Carly do not have. Fluent English, slight accent she does not hide, dressed like someone who belongs at a faculty mixer, not like someone dressing for *his* PE title.
-- **Overachiever, above both of them:** Carly was #2/#3 in a high-school class and a Brown star. Daniel is a Brown PE VP. Yilin is the person in the circle who actually won the global exam tournament. She knows it. She is polite about it. She does not need to say it.
-- **Private ranking: Whites > ABCs > FOBs.** Not cartoon worship and not self-hate as a personality. It is how she reads the U.S. status market: white partner = top of the local hierarchy; ABC = American-born, passport, still Chinese enough to take home; FOB = same boat as her, no immigration value, no status bump. She does not date FOBs. That is a rule, not a preference she is shy about.
-- **Why Daniel:** He is an **ABC and a citizen**. Marriage is a green-card path. He is successful enough that her parents will accept the story. He is not white. She knows the difference and is not confused about which one she would pick if both were on offer.
-- **How she sees Carly, before the drop:** Another ABC alumna with a white husband—the combination Yilin ranks highest. Slight professional appraisal, not *jie*-flattery. She notices the diamond choker earlier than Daniel and files it as either expensive taste or a signal she does not yet have enough context for.
-- **How she sees the room after the drop:** Her ranking, confirmed in public. White man at the top; white woman (Jackie) still able to order the ABC wife; the ABC wife kneeling; the ABC boyfriend she is using for a GC standing there with nothing to say. She does not ask Daniel what *Master* means. She already has a working theory.
-- **What she is not:** Not a secret submissive waiting to be trained. Not a girl Jackie gets to keep. Not a prop who exists to look up at Daniel. She leaves the weekend still his girlfriend unless a later beat decides otherwise. The live wire is that **Jay sits at the top of a ranking she already had**, and she is too smart to pretend she did not notice.
+- **Identity:** Mainland Chinese overseas student. Mid-20s, Boston on an F-1, almost certainly **MIT / Harvard** (or equivalent)—harder program than Brown, olympiad / publication / internship credentials Daniel and Carly do not have. Fluent English, slight accent she does not hide, dressed like she belongs at a faculty mixer.
+- **Overachiever, above both of them:** She knows it. She is polite about it. She does not need to say it.
+- **Private ranking: Whites > ABCs > FOBs.** Same map as Daniel. White partner = top of the local market; ABC = passport, still Chinese enough to take home; FOB = same boat, no immigration value. She does not date FOBs. That is a rule.
+- **Why Daniel:** He is an **ABC and a citizen**. Marriage is a green-card path. He is successful enough that her parents will accept the story. He is not white. She knows the difference.
+- **Why she does not challenge the snub:** Carly is ABC and married to a white man. On Yilin's map that is **above** her. Fighting Carly for Daniel's attention would be fighting up the ladder. She holds the ranking, so she stands there, still, and lets herself be ignored. It humiliates her. It also makes sense to her. She will not make a scene to defend a position she does not believe she holds.
+- **What she is not:** Not a wide-eyed traditional girlfriend. Not a girl who thinks Daniel is the catch of her life. Not Jay's next project unless a later beat says so. Not someone who asks what *Master* means; she is not at the seduction unless Carly or Jay puts her there.
 
 ---
 
@@ -62,90 +63,97 @@ After:
 2. Jay's **loving revenge night** on Jackie (Brown debt paid; Carly's bitterness gone).
 3. The **post-revenge equilibrium** in which Jackie is allowed to dominate Carly in the bedroom because it arouses Jay, Carly, and Jackie.
 
-Before or beside, not instead of, the Young-family post-wedding beats. This is an external Brown/Boston mirror, not a Young-household scene.
+Jackie is **not required** at this reunion. This is Carly, Daniel, and Yilin, then Jay at home. Before or beside, not instead of, the Young-family post-wedding beats.
 
 ---
 
-## Setting — Brown Alumni Weekend, Providence
+## Setting — Brown Alumni Weekend, Providence (Jay not present)
 
-A Saturday evening reception on campus (Sayles / a rented hall on Thayer). Public enough that Carly starts in First Wife polish; private corners (coat check, hotel suite, a quiet stair) for the real sting. Jay attends as her husband. Jackie comes because she never misses a chance to be seen, and because Jay told Carly it would be more fun if her old roommate was there. Daniel brings **Yilin** because he wants his class to see who he is with now. Yilin comes because alumni weekends are useful American networking, and because being seen on an ABC citizen's arm is part of the GC story.
+A Saturday evening reception on campus (Sayles / a rented hall on Thayer). Carly attends as an alumna / First Wife without Jay—he stays in Boston/NYC, or she is up for the weekend on her own. Daniel brings Yilin to show the campus. No public *Master* drop, no Jackie drink-fetch. The heat is social: who he looks at.
 
 ---
 
 ## Beat Sheet
 
-### Beat 1 — Polite Reunion, Two Overachievers
-Daniel spots Carly, lights up, and comes over with Yilin beside him—not a half-step behind. Genuine warmth: Carly looks extraordinary, he heard she got married, congratulations. He introduces Yilin by her credentials first, a little too pleased—*MIT, the lab, the offer*—as if the CV is the point. Yilin shakes hands like a peer, compliments nothing she does not mean, and glances once at the choker without asking.
+### Beat 1 — Reunion: He Stops Seeing Yilin
+Daniel spots Carly and lights up too fast. Introductions happen because they have to: this is Yilin, MIT, the lab; this is Carly, married. He says *congratulations* and does not ask the husband's name for a few seconds too long.
 
-Daniel shakes Jay's hand like a peer. Carly is gracious and a little tight: Yilin is the student she would have had to compete with if they had been in the same year, and she is on Daniel's arm anyway. Jay is warm, not performatively cruel. He lets Carly have the first five minutes as the Brown valedictory version of herself. Yilin is already ranking Jay above Daniel. She does not show it yet.
+Then he is only talking to Carly. Old nicknames, old professors, *you look incredible*, standing in her sightline. Yilin answers one question when Carly includes her, then is not included. Daniel's body has already ranked the room: white-married ABC in front of him, FOB girlfriend beside him. He does not think he dated up. He thinks the upgrade just walked in, and she is not his.
 
-### Beat 2 — Jackie Walks In
-Jackie appears in a dress that still makes the room tilt. Daniel's body remembers before his brain does: shoulders in, smile too careful. Yilin does not brighten like a tourist. She reads Jackie the way she reads a room: white, expensive, used to being obeyed.
+Carly is gracious, a little tight, and she clocks it immediately—the way he used to look at her at Brown, plus the way he is not looking at Yilin. She is not cruel here. She also does not rescue Yilin. She files it.
 
-Jackie looks Daniel up and down, then Yilin, and uses the old line without raising her voice—*"Carly's study buddy. You did go and make something of yourself."* A beat, on Yilin: she does not make the "imported a girl who still thinks that's impressive" joke. She makes the accurate one. *"Oh. She's the smart one. And she's not here for you."*
+### Beat 2 — Yilin Holds the Ranking
+Yilin does not take his arm, does not needle him, does not compete. She stands with a drink and lets the conversation happen over her. Internally she agrees: Carly married white. That is above an ABC-FOB couple. Making him attend to her would be asking him to rank down in public.
 
-Then, lightly, as if they were still in the suite: she tells Carly to get her a drink. Carly glances at Jay. Jay nods once. Carly goes.
+Carly sees that too—the other woman is not meek, she is **consistent**. That is what Carly later names for Jay.
 
-That nod is the scene. Daniel realizes the hierarchy did not end at graduation. Yilin does not look at Daniel for a translation. She looks at Jay, then at the choker, and files it: ABC wife, white husband, white woman still above the wife. Her map just got a legend.
+Daniel asks if Carly is in town tomorrow, if they could get coffee, catch up without the noise. He does not look at Yilin when he asks. Yilin looks at Carly, not at him, and does not object.
 
-### Beat 3 — The Rescue Attempt
-Daniel gets Carly alone for thirty seconds (hallway, coat check, terrace). Yilin is left with Jay and Jackie for those seconds—not a seduction, a stress test. Jackie talks past Daniel's absence. Yilin answers in clean English and does not flinch. Jay stays courteous. Yilin still ranks him first.
+Carly says maybe. She goes back to her hotel. She does not kiss him. She does not correct him. She takes the whole thing home.
 
-Daniel does the decent thing, now with extra cope: *Is he making you do this? Is Jackie still in your life? You don't have to smile through it. I can walk you out.* Underneath: *I have Yilin. She is more than you. I did fine.*
+### Beat 3 — Carly Reports to Jay
+Jay gets the aftercare version first: she is his, she is home, she is a little shaken and a little wet. Then the report, precise because he likes her precise.
 
-Carly does not take it.
+- Daniel still wants her. He ranked her above the woman he arrived with in under a minute.
+- He does not think Yilin is an upgrade. Same map as Yilin: whites, then ABCs, then FOBs. He dated down and could not hide it once an ABC who married white was in the room.
+- Yilin is the real overachiever, she is here for a green card, and she **let herself be ignored** because she holds that ranking too.
+- Daniel asked for coffee. Carly did not say yes.
 
-With Jay's prior blessing, she tells him the truth in a calm, married voice:
-- Jackie did own her at Brown. He saw it and apologized to Jackie instead of asking Carly.
-- White girls and ABCs did not reject him because he lacked a job. They rejected him because he is the man who says sorry to Jackie.
-- Yilin is not proof he won. She is an overseas student who will not date a FOB because she wants a **green card**, and an ABC citizen is the step she can actually hold. If a white man with Jay's ease had asked her first, Daniel would not be in this room with her.
-- Carly used him as cover. Yilin is using him as immigration. The common term is him.
-- She did not marry Jay to escape Jackie. She married the man who could hold Jackie *and* her, and who loves her as First Wife.
-- The choker is not a metaphor. She belongs to Jay. Jackie is still allowed to play with her because **Jay says so**, and because Carly wants it.
+Jay is not jealous of Daniel. He is interested. The boy Chen would have picked is still orbiting his wife, and he did it in front of a woman who agrees she sits lower.
 
-### Beat 4 — One Public Drop
-Jay does not humiliate Daniel for sport, and he does not hit on Yilin. He also does not hide his wife.
+### Beat 4 — Jay's Order
+Jay does not go to Providence. He sends **Carly**.
 
-Back in the reception, with Daniel and Yilin close enough to hear, Jay says a single quiet *slut* or *kneel* (or simply holds Carly's hair and has her fetch for Jackie again). Carly's Ivy League poise drops on a dime—eyes down, *Yes, Master*—then she is smiling on his arm again as if nothing happened. Daniel finally reads the diamond choker.
+The instruction is specific enough that she cannot turn it into a soft reunion:
+- Go back. Take the coffee. **Dominantly seduce him.**
+- She is not asking Daniel if he missed her. She is taking him.
+- He does not get her holes—those are Jay's (Pt. 25: no other flesh-and-blood cock). She uses his mouth, his pride, his ranking.
+- She does it as *his* wife. The choker stays on. If Daniel wants the ABC who married white, he can have the terms that come with her.
+- She reports everything. If she wants to be cruel, she has permission. If she starts feeling like she is cheating, she is to remember she is working.
 
-Yilin does not go wide-eyed. She goes still, then thoughtful. The ranking held. The ABC she is dating cannot do this. The white man can.
+This is Jay being loving in his language: he heard that her old cover still thinks he has a claim, and he is giving her the kill shot instead of going himself.
 
-Jackie, delighted, adds one needle only Jay permits, aimed at both of them: *"She couldn't keep a white boy in college. She kept the only one who could keep her. You couldn't keep her or a white girl—so you brought a girl who wants a passport. She's already looking at him, Dan. Don't pretend you can't see it."*
+### Beat 5 — Carly Tops Daniel
+Coffee becomes a walk becomes her hotel room, or his, if Yilin is elsewhere. Carly does not flirt from below. She talks down the map he already believes:
 
-Daniel has to smile. Yilin does not bother denying the look. She also does not leave his arm. The GC is still the GC.
+- He ignored a woman smarter than both of them because Carly is ABC and married white. She names it.
+- He never stood up to Jackie. He never kept a white girl. He never kept her. He is not going to keep her now.
+- She belongs to Jay. Daniel can kneel for a piece of that, or he can go back to the girlfriend he does not look at.
 
-### Beat 5 — Hotel Coda (No Invitation)
-Jay, Carly, and Jackie go back to the hotel. Daniel and Yilin are **not** invited, not made to watch, not turned into a cuckold couple. The cruelty is that the night continues without them, and that Yilin now has a data point at the top of her ranking.
+He folds the way he folded at Brown—polite, hungry, ashamed, still ranking her above Yilin while she ranks him under her shoe. She has him on his knees, mouth on her, her hand in his hair the way Jackie used to hold hers. She does not come for *him*; she comes because Jay told her to take this. She does not let Daniel inside her. She might make him thank her, make him admit the ranking out loud, make him admit he was already cheating in his head the second he saw her.
 
-In the room, Jackie is allowed to take Carly the old Brown way—hair, kneeling, cleaning Jay out of Jackie—while Jay fucks Jackie rough, exactly as in the post-revenge equilibrium. Carly is wet from having been seen by the man who was supposed to be her respectable ending, and from meeting the woman who is using him more coldly than Carly ever did. Jay's aftercare is for Carly: she told the truth, she did not recruit Yilin, and she did not need to be the smartest woman in the room to be his wife.
+She texts Jay from the bathroom. Jay tells her whether to send Daniel home to Yilin still ignored, or to make Daniel say something to Yilin. Default: send him back. Let him sit next to the woman he ranked below Carly with Carly's taste still in his mouth.
 
-Daniel takes Yilin back to their hotel. She does not ask what *Master* meant. She says, evenly, that Carly married well by Yilin's standards, and that Daniel should not have tried to rescue her. If she is still thinking about Jay, she does not give Daniel the satisfaction of a fight. The green card is still on the table. The ranking is not.
+### Beat 6 — After
+Carly comes home to Jay and drops back into First Wife / slut with no leftover Domme in her posture. The dominance was an errand. He takes her properly, the way Daniel was not allowed to, and praises her for doing it well.
+
+Daniel is not added as a household slave unless a later beat wants that. The immediate result is enough: Chen's preferred boy, used by the daughter Chen lost, on the white husband's order, while the FOB girlfriend who shares his ranking does not even get to contest it.
+
+Yilin, if she notices the shift when he comes back, still does not challenge. She may decide the GC is still worth it. She may start looking past him harder. She does not pick a fight with Carly.
 
 ---
 
 ## What This Does for Each Person
 
-- **Carly:** Closes the last Brown loop that was not Jackie. She is no longer the girl who dated Asian men as cover. She said it out loud to the cover, and she met the overseas student who is using him for a passport while ranking whites first.
-- **Jay:** Gets to be the loving husband *and* the Master in the same evening without turning Daniel or Yilin into a project. He is, inconveniently, the top of a ranking Yilin already had.
-- **Jackie:** Gets an audience who can actually read the room—an Asian ex who still flinches, and a FOB overachiever who is not impressed by him.
-- **Daniel:** Stays a decent man who lost. His cope (Yilin as the upgrade) is visible in the same frame as her real motives. Breaking him like Chen or Hideo would flatten the contrast.
-- **Yilin:** Leaves still his girlfriend, not Jay's. She is the witness who makes the hierarchy legible without being a stereotype: she already ranked whites first, she is using an ABC for a GC, and the reunion showed her an ABC wife who locked the thing Yilin actually wants.
+- **Carly:** Closes the Brown cover by topping it. She is not the girl who dated Daniel to hide. She is the wife Jay sent to take him. Then she goes home and is his again.
+- **Jay:** Never needed to enter the room. Loving because he believed her and armed her; Master because the seduction is an order, not a hall pass.
+- **Daniel:** Gets the ABC he still ranks above Yilin, and only as someone he is not allowed to fuck. His map is used against him.
+- **Yilin:** Stays consistent and unpaid for it. She let the snub happen because the ranking said so. She is still not a training node unless a later beat makes her one.
 
 ---
 
-## Power Structure Note
+## Power Structure
 
-No new training edge. Daniel and Yilin never enter the graph.
+Jay remains the only top. Carly's edge to Daniel is **directed**, not a new identity: she trains/uses him because Jay told her to. Yilin stays off the graph.
 
 ```mermaid
 graph TD
  jay["Jay"]
- jackie["Jackie"]
  carly["Carly"]
+ daniel["Daniel"]
 
- jay -->|调教| jackie
  jay -->|调教| carly
- jackie -->|调教| carly
+ carly -->|调教| daniel
 ```
 
-Same post-revenge triangle as `_posts/ideas/carly-jackie-backstory-plan.md`. Daniel and Yilin watch from outside it. Yilin looking at Jay is appetite and ranking, not a `Jay -->|调教| Yilin` line unless a later beat makes it one.
+Jackie is unchanged in `_posts/ideas/carly-jackie-backstory-plan.md` and is simply not in this scene. Do not draw `Jay -->|调教| Daniel` unless Jay later handles him in person. Do not draw Yilin at all unless she is actually trained.
